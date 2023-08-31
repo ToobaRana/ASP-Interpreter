@@ -15,11 +15,11 @@ public class Token {
     public int lineNum;
 
     Token(TokenKind k) {
-	this(k, 0);
+		this(k, 0);
     }
 
     Token(TokenKind k, int lNum) {
-	kind = k;  lineNum = lNum;
+		kind = k;  lineNum = lNum;
     }
 
     void checkResWords() {
