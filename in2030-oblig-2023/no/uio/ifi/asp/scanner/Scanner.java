@@ -82,6 +82,9 @@ public class Scanner {
 		// -- Must be changed in part 1:
 
 		Boolean isCommentOrBlank = false;
+		int indentAmount = 0;
+		String newLine = "";
+
 
 		//If the line contains something
 		if(!line.isBlank()){
@@ -93,29 +96,73 @@ public class Scanner {
 					break;
 				}
 				
-				//hvis blank linje
-				// else if (line ) {
-				// 	isCommentOrBlank = true;
-				// 	continue;
-				// }
+				else if (l == ' ' || l == '\t'){
+					newLine = expandLeadingTabs(line);
+				}
 
-				expandLeadingTabs(line);
-
-				// else if (l == ' ' || l == '\t'){
-				// 	expandLeadingTabs(line);
-				// }
-	
 			}
+
+			indentAmount = findIndent(newLine)/ TABDIST;
+			System.out.println("HEUHEUIEHEIHEIEH " +indentAmount);
+			int indentTop = indents.peek();
+			Token indentToken = new Token(TokenKind.indentToken);
+			Token dedentToken = new Token(TokenKind.dedentToken);
+
+			
+			//if indent amount is higher than the top element 
+			if(indentAmount > indentTop){
+				//Continue pushing elements until indent amount is reached
+				//Start on top of the stack, and stop when indent amount is reached
+				for (int i = indentTop +1; i <= indentAmount; i++){
+					indents.push(i);
+					System.out.println("indentttttt "+i);
+					curLineTokens.add(indentToken);
+				}
+				
+			}
+
+			//As long as indent amount is lower than top element on the stack,
+			//pop the indents and place a dedent token in curLineTokens
+			else if (indentAmount < indentTop){
+				for(int i = indentTop; i<= indentAmount; i--){
+					indents.pop();
+					curLineTokens.add(dedentToken);
+				}
+			}
+
 
 			// Terminate line:
 			//Hvis kommentar/erBlanke er false
 			if (!isCommentOrBlank) {
 				curLineTokens.add(new Token(newLineToken, curLineNum()));
 			}
-		}
+		} 
+
+
+		// String lastLine = null;
+		// String readLastLine;
+
+		// while (line != null) {
+		// 	lastLine = line;
+		// }
+
+		// if(lastLine != null){
+		// 	curLineTokens.add(new Token(TokenKind.eofToken));
+		// }
+
 
 		
+		// else if(line.isEmpty()){
 
+		// 	//
+		// 	// while(indents.size() > 1){
+		// 	// 	indents.pop();
+		// 	// 	curLineTokens.add(new Token(TokenKind.dedentToken));
+		// 	// }
+
+		// 	curLineTokens.add(new Token(TokenKind.eofToken));
+		// }
+		
 		
 
 		for (Token t : curLineTokens)
@@ -140,9 +187,6 @@ public class Scanner {
     
 	
 	//Omformer innledende TAB-tegn til det rikige antall blanke
-
-
-
 	private String expandLeadingTabs(String string) {
 
 		int n = 0;
@@ -152,14 +196,16 @@ public class Scanner {
 		for (char s : string.toCharArray()){
 
 			if (s == ' '){
-				newString += " ";
+				newString += ' ';
 				n++;
+				System.out.println("Maryam");
 			}
 
 			else if (s == '\t'){
 				int tabToBlank = TABDIST -(n % TABDIST);
 				newString += " ".repeat(tabToBlank);
 				n += tabToBlank;
+				System.out.println("Tooba");
 			}
 
 			else{

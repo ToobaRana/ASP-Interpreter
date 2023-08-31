@@ -4,5 +4,7 @@
    4: a = 0   # Dette er helt OK.
    5: a = 04  # Men dette to tall: 0 og 4!
    6:     	# Slikt er OK for skanneren,
+Scanner: INDENT token
+Scanner: INDENT token
    7: 	# men parseren (del 2) vil gi
    8: 	# en feilmelding.
