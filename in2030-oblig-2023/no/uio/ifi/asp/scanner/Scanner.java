@@ -98,6 +98,12 @@ public class Scanner {
 				// 	isCommentOrBlank = true;
 				// 	continue;
 				// }
+
+				expandLeadingTabs(line);
+
+				// else if (l == ' ' || l == '\t'){
+				// 	expandLeadingTabs(line);
+				// }
 	
 			}
 
@@ -132,30 +138,42 @@ public class Scanner {
 
 	//-- Must be changed in part 1:
     
-	/* 
+	
 	//Omformer innledende TAB-tegn til det rikige antall blanke
+
+
+
 	private String expandLeadingTabs(String string) {
 
 		int n = 0;
-		int tabToBlank = 4-(n % 4);
-		
-		
+		int index = 0;
+		String newString = "";
+
 		for (char s : string.toCharArray()){
-			if (s == ' ') {
+
+			if (s == ' '){
+				newString += " ";
 				n++;
 			}
-			else if (s == '\t'){
 
-				for (int i = 0; i<tabToBlank; i++){
-					s += ' ';
-				}
+			else if (s == '\t'){
+				int tabToBlank = TABDIST -(n % TABDIST);
+				newString += " ".repeat(tabToBlank);
+				n += tabToBlank;
 			}
-			break;
+
+			else{
+				newString += string.substring(index); 
+				break;
+			}
+			index++;
 		}
 
-		return string;
+		System.out.println("Antall blanke = "+ n);
+		return newString;
     } 
-	*/
+
+
 
 	private boolean isLetterAZ(char c) {
 		return ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z') || (c == '_');
@@ -198,4 +216,20 @@ public class Scanner {
 		}
 		return false;
 	}
+
+
+	public static void main(String[] args) {
+        Scanner s = new Scanner(
+			"/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp");
+        String q = "\t hvordan gpr det";
+        String endraq = s.expandLeadingTabs(q);
+        // s.checkIndentToken(q);
+        try {
+            FileWriter writer = new FileWriter("test.txt");
+            writer.write(endraq);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
