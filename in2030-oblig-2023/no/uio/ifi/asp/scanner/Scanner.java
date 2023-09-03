@@ -82,11 +82,13 @@ public class Scanner {
 		// -- Must be changed in part 1:
 
 		Boolean isCommentOrBlank = false;
+		//Boolean exitIf = false;
 		int indentAmount = 0;
 		String newLine = "";
 
 
 		//If the line contains something
+		// outerIf:
 		if(!line.isBlank()){
 			for (char l : line.toCharArray()) {
 
@@ -94,16 +96,17 @@ public class Scanner {
 				if (l == '#') {
 					isCommentOrBlank = true;
 					break;
+					// exitIf = true;
+					// break outerIf;
 				}
 				
 				else if (l == ' ' || l == '\t'){
 					newLine = expandLeadingTabs(line);
 				}
-
 			}
 
-			indentAmount = findIndent(newLine)/ TABDIST;
-			System.out.println("HEUHEUIEHEIHEIEH " +indentAmount);
+			indentAmount = findIndent(newLine);
+			System.out.println("Antall indents funnet med findIndent " +indentAmount);
 			int indentTop = indents.peek();
 			Token indentToken = new Token(TokenKind.indentToken);
 			Token dedentToken = new Token(TokenKind.dedentToken);
@@ -116,8 +119,9 @@ public class Scanner {
 				for (int i = indentTop +1; i <= indentAmount; i++){
 					indents.push(i);
 					System.out.println("indentttttt "+i);
-					curLineTokens.add(indentToken);
 				}
+
+				curLineTokens.add(indentToken);
 				
 			}
 
@@ -198,14 +202,14 @@ public class Scanner {
 			if (s == ' '){
 				newString += ' ';
 				n++;
-				System.out.println("Maryam");
+				System.out.println("Her er det en enkel blanke");
 			}
 
 			else if (s == '\t'){
 				int tabToBlank = TABDIST -(n % TABDIST);
 				newString += " ".repeat(tabToBlank);
 				n += tabToBlank;
-				System.out.println("Tooba");
+				System.out.println("Her er det en tab");
 			}
 
 			else{
@@ -215,7 +219,7 @@ public class Scanner {
 			index++;
 		}
 
-		System.out.println("Antall blanke = "+ n);
+		System.out.println("Antall blanke til slutt = "+ n);
 		return newString;
     } 
 

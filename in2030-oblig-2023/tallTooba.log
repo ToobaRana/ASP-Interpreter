@@ -5,5 +5,8 @@
    5: a = 04  # Men dette to tall: 0 og 4!
    6:     	# Slikt er OK for skanneren,
 Scanner: INDENT token
-   7: 	# men parseren (del 2) vil gi
-   8: 	# en feilmelding.
+   7:     	    # Slikt er OK for skanneren,
+Scanner: INDENT token
+   8:             #Hei
+   9: 	# men parseren (del 2) vil gi
+  10: 	# en feilmelding.
