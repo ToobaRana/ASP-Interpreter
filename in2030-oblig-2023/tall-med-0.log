@@ -2,8 +2,29 @@
    2: # selve tallet 0 er selvfølgelig et unntak.
    3: 
    4: a = 0   # Dette er helt OK.
+Scanner: name token: a
+Scanner: integer literal token on line 4: 0
    5: a = 04  # Men dette to tall: 0 og 4!
+Scanner: name token: a
+Scanner: integer literal token on line 5: 0
+Scanner: integer literal token on line 5: 0
    6:     	# Slikt er OK for skanneren,
 Scanner: INDENT token
    7: 	# men parseren (del 2) vil gi
    8: 	# en feilmelding.
+   9: 
+  10: 
+  11: a if else tooba
+Scanner: name token: a
+Scanner: name token: if
+Scanner: name token: f
+Scanner: name token: else
+Scanner: name token: lse
+Scanner: name token: se
+Scanner: name token: else
+Scanner: name token: tooba
+Scanner: name token: ooba
+Scanner: name token: ooba
+Scanner: name token: ba
+Scanner: name token: a
+Scanner: NEWLINE token on line 11

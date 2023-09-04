@@ -9,15 +9,10 @@
    9: # Denne linjen starter med en TAB:
   10: 	
   11: if 1+1 = 2:
+Scanner: if token
+Scanner: integer literal token on line 11: 0
+Scanner: integer literal token on line 11: 0
+Scanner: integer literal token on line 11: 0
 Scanner: NEWLINE token on line 11
   12: # Denne linjen starter med 2 TAB-er og 3 blanke:
   13: 		   print("Ja")
-Scanner: INDENT token
-Scanner: NEWLINE token on line 13
-  14: # Denne linjen inneholder et utplukk blanke og TAB-er:
-  15: 	 		   	
-  16: # Og det var alt.
-  17: # Siste linje mangler LF som linjeslutt, men slikt skal skanneren kunne takle.
-  18: # Skanneren skal generere et NEWLINE-symbol uansett.
-  19: x = 4
-Scanner: NEWLINE token on line 19
