@@ -1,8 +1,2 @@
-   1: # I Asp får tall ikke lov å starte med sifferet 0, men
-   2: # selve tallet 0 er selvfølgelig et unntak.
-   3: 
-   4:           # Slikt er OK for skanneren,
-Scanner: INDENT token
-   5:     a = 0
-Scanner: DEDENT token
-Scanner: NEWLINE token on line 5
+   1:             #braawdfd
+Scanner: INDENT token on line 1

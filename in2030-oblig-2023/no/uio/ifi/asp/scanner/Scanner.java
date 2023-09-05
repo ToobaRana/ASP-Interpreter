@@ -91,71 +91,92 @@ public class Scanner {
 		int indentAmount = 0;
 		String newLine = "";
 
+		Token indentToken = new Token(TokenKind.indentToken, curLineNum());
+		Token dedentToken = new Token(TokenKind.dedentToken, curLineNum());
+		Token newLineToken = new Token(TokenKind.newLineToken, curLineNum());
+		Token eofToken = new Token(TokenKind.eofToken, curLineNum());
+
 		// If the line contains something
-		if (!line.isBlank()) {
-			for (char l : line.toCharArray()) {
+		if (line != null) {
 
-				// hvis hashtag/kommentar
-				if (l == '#') {
-					isCommentOrBlank = true;
-					break;
+			if (!line.isBlank()) {
+
+				for (char l : line.toCharArray()) {
+
+					// hvis hashtag/kommentar
+					if (l == '#') {
+						isCommentOrBlank = true;
+						break;
+					}
+
+					if (l == ' ' || l == '\t') {
+						newLine = expandLeadingTabs(line);
+					}
 				}
 
-				else if (l == ' ' || l == '\t') {
-					newLine = expandLeadingTabs(line);
+				// for (char l : newLine.toCharArray()){
+				// if(l == ' '){
+
+				// continue;
+				// }
+				// else if(l == '#'){
+				// break;
+				// }
+				// }
+
+				indentAmount = findIndent(newLine) / TABDIST;
+				System.out.println("INDENT AMOUNT: " + indentAmount);
+				int indentTop = indents.peek();
+
+				// if indent amount is higher than the top element
+				if (indentAmount > indentTop) {
+					// Continue pushing elements until indent amount is reached
+					// Start on top of the stack, and stop when indent amount is reached
+					for (int i = indentTop + 1; i <= indentAmount; i++) {
+						indents.push(i);
+						System.out.println("indentttttt " + i);
+					}
+
+					curLineTokens.add(indentToken);
+
+				}
+
+				// As long as indent amount is lower than top element on the stack,
+				// pop the indents and place a dedent token in curLineTokens
+
+				Boolean ifTrue = true;
+				if (ifTrue) {
+					splitSymbols(newLine);
+				}
+
+				else if (indentAmount < indentTop) {
+					for (int i = indentTop; i > indentAmount; i--) {
+						indents.pop();
+						System.out.println("PPOPOPOPOPOPO:" + "");
+					}
+					curLineTokens.add(dedentToken);
+				}
+
+				System.out.println("Indent amount: " + indentAmount + "Indent top: " + indents.peek());
+				if (indentAmount != indents.peek()) {
+					System.out.println("Indent error on line: " + curLineNum());
+				}
+
+				System.out.println("-----------------------------------NY LINJE--------------------------------------");
+
+				// Terminate line:
+				// Hvis kommentar/erBlanke er false
+				if (!isCommentOrBlank) {
+					curLineTokens.add(newLineToken);
 				}
 			}
-
-			indentAmount = findIndent(newLine);
-			int indentTop = indents.peek();
-			Token indentToken = new Token(TokenKind.indentToken, curLineNum());
-			Token dedentToken = new Token(TokenKind.dedentToken, curLineNum());
-
-			
-
-			// if indent amount is higher than the top element
-			if (indentAmount > indentTop) {
-				// Continue pushing elements until indent amount is reached
-				// Start on top of the stack, and stop when indent amount is reached
-				for (int i = indentTop + 1; i <= indentAmount; i++) {
-					indents.push(i);
-					System.out.println("indentttttt " + i);
-				}
-
-				curLineTokens.add(indentToken);
-
-			}
-			
-			// As long as indent amount is lower than top element on the stack,
-			// pop the indents and place a dedent token in curLineTokens
-
-			Boolean ifTrue = true;
-			if(ifTrue){
-				splitSymbols(newLine);
-			}
-
-			
-			else if (indentAmount < indentTop) {
-				for (int i = indentTop; i > indentAmount; i--) {
-					indents.pop();
-					System.out.println("PPOPOPOPOPOPO:" + "");
-				}
+		} else {
+			while (indents.size() > 1) {
+				indents.pop();
 				curLineTokens.add(dedentToken);
 			}
-			
+			curLineTokens.add(eofToken);
 
-			System.out.println("Indent amount: " + indentAmount + "Indent top: " + indents.peek());
-			if (indentAmount != indents.peek()) {
-				System.out.println("Indent error on line: " + curLineNum());
-			}
-
-			System.out.println("-----------------------------------NY LINJE--------------------------------------");
-
-			// Terminate line:
-			// Hvis kommentar/erBlanke er false
-			if (!isCommentOrBlank) {
-				curLineTokens.add(new Token(newLineToken, curLineNum()));
-			}
 		}
 
 		for (Token t : curLineTokens)
@@ -168,156 +189,144 @@ public class Scanner {
 
 		EnumSet<TokenKind> getTextTokens = EnumSet.range(andToken, yieldToken);
 		EnumSet<TokenKind> getSymbolTokens = EnumSet.range(astToken, semicolonToken);
-		
 
-		String word = "";
 		Boolean sameTokenKind = false;
 
 		for (char l : lineCopy.toCharArray()) {
 
-			if (l == ' '){
+			if (l == ' ') {
 				continue;
 			}
 
-			if (l == '#'){
+			if (l == '#') {
 				break;
 			}
 
-			else if(l == '"'){
+			else if (l == '"') {
 				int startIndex = lineCopy.indexOf('"');
 				int endIndex = lineCopy.indexOf('"', startIndex + 1);
 
-
-				String stringLit = lineCopy.substring(startIndex, endIndex +1);
+				String stringLit = lineCopy.substring(startIndex, endIndex + 1);
 				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 				stringLitToken.stringLit = stringLit;
 
-				System.out.println("Startindex: "+ startIndex+ "\n EndIndex: "+ endIndex+ "\nString literal: "+ stringLit);
-				
+				System.out.println(
+						"Startindex: " + startIndex + "\n EndIndex: " + endIndex + "\nString literal: " + stringLit);
+
 				curLineTokens.add(stringLitToken);
 
 				lineCopy = lineCopy.substring(endIndex + 1);
-				System.out.println("Line copy: "+ lineCopy);
+				System.out.println("Line copy: " + lineCopy);
 			}
 
-			else if(l == '‘'){
+			else if (l == '‘') {
 				int startIndex = lineCopy.indexOf('‘');
 				int endIndex = lineCopy.indexOf('’', startIndex + 1);
 
-
-				String stringLit = lineCopy.substring(startIndex, endIndex +1);
+				String stringLit = lineCopy.substring(startIndex, endIndex + 1);
 				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 				stringLitToken.stringLit = stringLit;
-				
+
 				curLineTokens.add(stringLitToken);
 
 				lineCopy = lineCopy.substring(endIndex + 1);
 			}
 
-
-
-
-
-
-			
-			else if (isLetterAZ(l)){
-
+			else if (isLetterAZ(l)) {
+				String wordString = "";
 				int counter = lineCopy.indexOf(l);
 
-				//ask gruppelarer
-				while (counter < lineCopy.length() && (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))){
-					word += lineCopy.charAt(counter);
+				// ask gruppelarer
+				while (counter < lineCopy.length()
+						&& (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))) {
+					wordString += lineCopy.charAt(counter);
 					counter++;
 				}
 
 				for (TokenKind tokenkind : getTextTokens) {
 
-					if (tokenkind.image.equals(word)) {
+					if (tokenkind.image.equals(wordString)) {
 						Token token = new Token(tokenkind, curLineNum());
 						curLineTokens.add(token);
-						token.name = word;
+						token.name = wordString;
 						sameTokenKind = true;
-						break;	
+						break;
 					}
 				}
 
-				//If it's not in the list of TokenKind -> then it must be a name or a string literal
-				if (sameTokenKind == false){
-					Token nameToken = new Token (TokenKind.nameToken, curLineNum());
-					nameToken.name = word;
+				// If it's not in the list of TokenKind -> then it must be a name or a string
+				// literal
+				if (sameTokenKind == false) {
+					Token nameToken = new Token(TokenKind.nameToken, curLineNum());
+					nameToken.name = wordString;
 					curLineTokens.add(nameToken);
 					sameTokenKind = true;
 				}
-				word = "";
+
 			}
 
-			else if(isDigit(l)){
+			else if (isDigit(l)) {
 				int counter = lineCopy.indexOf(l);
 				int currentChar = lineCopy.charAt(counter);
+				String numberString = "";
 
-				while (counter < lineCopy.length() && (currentChar ==  '.' || isDigit(lineCopy.charAt(counter)))){
-					word += currentChar;
+				while (counter < lineCopy.length() && (l == '.' || isDigit(lineCopy.charAt(counter)))) {
+					numberString += currentChar;
 					counter++;
+					System.out.println("this is numberstring in whileloop: " + numberString);
 				}
 
-				System.out.println("WORD"+word);
+				System.out.println("NUMBERSTRING " + numberString);
 
-				if(word.contains(".")){
+				if (numberString.contains(".")) {
 					System.out.println("Gaar inn for contains");
-					try{
+					try {
 						Token floatToken = new Token(TokenKind.floatToken, curLineNum());
 						floatToken.floatLit = l - '0';
 						curLineTokens.add(floatToken);
-						
-					}
-					catch(NumberFormatException e){
+
+					} catch (NumberFormatException e) {
 						scannerError("Ikke gyldig float.");
 					}
-				} else{
-					try{
-						
+				} else {
+					try {
+
 						Token integerToken = new Token(TokenKind.integerToken, curLineNum());
 						integerToken.integerLit = l - '0';
 						curLineTokens.add(integerToken);
-					}
-					catch(NumberFormatException e){
+					} catch (NumberFormatException e) {
 						scannerError("Ikke gyldig integer.");
 					}
 				}
-				word = "";
 
 			}
 
-			else{
-
+			else {
+				String symbolString = "";
 				int counter = lineCopy.indexOf(l);
 
-				while (counter < lineCopy.length()){
-					word += lineCopy.charAt(counter);
-					
-					for (TokenKind symbolToken: getSymbolTokens){
+				while (counter < lineCopy.length()) {
+					symbolString += lineCopy.charAt(counter);
 
-						if(symbolToken.image.equals(word)){
+					for (TokenKind symbolToken : getSymbolTokens) {
+
+						if (symbolToken.image.equals(symbolString)) {
 							Token token = new Token(symbolToken, curLineNum());
 							curLineTokens.add(token);
-							token.name = word;
-							break;	
+							token.name = symbolString;
+							break;
 						}
 					}
 					counter++;
 				}
-				word = "";
-				
+				symbolString = "";
+
 			}
 		}
-
-		
 
 		System.out.println(getSymbolTokens);
 
 	}
-
-
 
 	// returnerer linjenummeret til linja man er paa
 	public int curLineNum() {
@@ -412,10 +421,8 @@ public class Scanner {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(
 				"/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp");
-		String q = "hvordan gar det";
+		String q = "     hvordan gar det";
 		String endraq = s.expandLeadingTabs(q);
-
-		
 
 		// s.checkIndentToken(q);
 		try {

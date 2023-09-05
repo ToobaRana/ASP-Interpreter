@@ -12,8 +12,11 @@
 Scanner: if token on line 11
 Scanner: integer literal token on line 11: 1
 Scanner: integer literal token on line 11: 2
+Scanner: + token on line 11
 Scanner: integer literal token on line 11: 1
+Scanner: = token on line 11
 Scanner: integer literal token on line 11: 2
+Scanner: : token on line 11
 Scanner: NEWLINE token on line 11
   12: # Denne linjen starter med 2 TAB-er og 3 blanke:
   13: 		   print(Ja)
@@ -33,3 +36,8 @@ Scanner: = token on line 19
 Scanner: integer literal token on line 19: 4
 Scanner: integer literal token on line 19: 3
 Scanner: NEWLINE token on line 19
+Scanner: DEDENT token on line 19
+Scanner: DEDENT token on line 19
+Scanner: DEDENT token
+Scanner: DEDENT token
+Scanner: E-o-f token
