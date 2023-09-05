@@ -69,7 +69,7 @@ public class Scanner {
 			if (line == null) {
 
 				for (int i = indents.peek(); i > 0; i--) {
-					curLineTokens.add(new Token(TokenKind.dedentToken));
+					curLineTokens.add(new Token(TokenKind.dedentToken, curLineNum()));
 					System.out.println("Lagt til sluttDedent");
 				}
 
@@ -108,8 +108,8 @@ public class Scanner {
 
 			indentAmount = findIndent(newLine);
 			int indentTop = indents.peek();
-			Token indentToken = new Token(TokenKind.indentToken);
-			Token dedentToken = new Token(TokenKind.dedentToken);
+			Token indentToken = new Token(TokenKind.indentToken, curLineNum());
+			Token dedentToken = new Token(TokenKind.dedentToken, curLineNum());
 
 			
 
@@ -164,12 +164,16 @@ public class Scanner {
 
 	public void splitSymbols(String line) {
 
+		String lineCopy = line;
+
 		EnumSet<TokenKind> getTextTokens = EnumSet.range(andToken, yieldToken);
+		EnumSet<TokenKind> getSymbolTokens = EnumSet.range(astToken, semicolonToken);
+		
 
 		String word = "";
 		Boolean sameTokenKind = false;
 
-		for (char l : line.toCharArray()) {
+		for (char l : lineCopy.toCharArray()) {
 
 			if (l == ' '){
 				continue;
@@ -179,81 +183,137 @@ public class Scanner {
 				break;
 			}
 
-			if(l == '"' || l == '\''){
-				int startIndex = line.indexOf(l);
-				int endIndex = line.indexOf(l, startIndex + 1);
+			else if(l == '"'){
+				int startIndex = lineCopy.indexOf('"');
+				int endIndex = lineCopy.indexOf('"', startIndex + 1);
 
 
-				String stringLit = line.substring(startIndex, endIndex +1);
+				String stringLit = lineCopy.substring(startIndex, endIndex +1);
+				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
+				stringLitToken.stringLit = stringLit;
+
+				System.out.println("Startindex: "+ startIndex+ "\n EndIndex: "+ endIndex+ "\nString literal: "+ stringLit);
+				
+				curLineTokens.add(stringLitToken);
+
+				lineCopy = lineCopy.substring(endIndex + 1);
+				System.out.println("Line copy: "+ lineCopy);
+			}
+
+			else if(l == '‘'){
+				int startIndex = lineCopy.indexOf('‘');
+				int endIndex = lineCopy.indexOf('’', startIndex + 1);
+
+
+				String stringLit = lineCopy.substring(startIndex, endIndex +1);
 				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 				stringLitToken.stringLit = stringLit;
 				
 				curLineTokens.add(stringLitToken);
 
-				line = line.substring(endIndex + 1);
+				lineCopy = lineCopy.substring(endIndex + 1);
 			}
+
+
+
+
+
 
 			
 			else if (isLetterAZ(l)){
 
-				int counter = line.indexOf(l);
+				int counter = lineCopy.indexOf(l);
 
 				//ask gruppelarer
-				while (counter < line.length() && (isLetterAZ(line.charAt(counter)) || isDigit(line.charAt(counter)))){
-					word += line.charAt(counter);
+				while (counter < lineCopy.length() && (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))){
+					word += lineCopy.charAt(counter);
 					counter++;
 				}
 
 				for (TokenKind tokenkind : getTextTokens) {
 
 					if (tokenkind.image.equals(word)) {
-						sameTokenKind = true;
-						Token token = new Token(tokenkind);
+						Token token = new Token(tokenkind, curLineNum());
 						curLineTokens.add(token);
 						token.name = word;
+						sameTokenKind = true;
 						break;	
 					}
 				}
 
 				//If it's not in the list of TokenKind -> then it must be a name or a string literal
 				if (sameTokenKind == false){
-					Token nameToken = new Token (TokenKind.nameToken);
+					Token nameToken = new Token (TokenKind.nameToken, curLineNum());
 					nameToken.name = word;
 					curLineTokens.add(nameToken);
+					sameTokenKind = true;
 				}
 				word = "";
 			}
 
 			else if(isDigit(l)){
-				int counter = line.indexOf(l);
-				int currentChar = line.charAt(counter);
+				int counter = lineCopy.indexOf(l);
+				int currentChar = lineCopy.charAt(counter);
 
-				while (counter < line.length() && (currentChar ==  '.' || isDigit(line.charAt(counter)))){
+				while (counter < lineCopy.length() && (currentChar ==  '.' || isDigit(lineCopy.charAt(counter)))){
 					word += currentChar;
 					counter++;
 				}
 
+				System.out.println("WORD"+word);
+
 				if(word.contains(".")){
+					System.out.println("Gaar inn for contains");
 					try{
-						float floatNumber = Float.parseFloat(word);
 						Token floatToken = new Token(TokenKind.floatToken, curLineNum());
+						floatToken.floatLit = l - '0';
 						curLineTokens.add(floatToken);
+						
 					}
 					catch(NumberFormatException e){
 						scannerError("Ikke gyldig float.");
 					}
 				} else{
 					try{
-						int integerNumber = Integer.parseInt(word);
+						
 						Token integerToken = new Token(TokenKind.integerToken, curLineNum());
+						integerToken.integerLit = l - '0';
 						curLineTokens.add(integerToken);
 					}
 					catch(NumberFormatException e){
 						scannerError("Ikke gyldig integer.");
 					}
 				}
+				word = "";
+
+			}
+
+			else{
+
+				int counter = lineCopy.indexOf(l);
+
+				while (counter < lineCopy.length()){
+					word += lineCopy.charAt(counter);
+					
+					for (TokenKind symbolToken: getSymbolTokens){
+
+						if(symbolToken.image.equals(word)){
+							Token token = new Token(symbolToken, curLineNum());
+							curLineTokens.add(token);
+							token.name = word;
+							break;	
+						}
+					}
+					counter++;
+				}
+				word = "";
+				
 			}
 		}
+
+		
+
+		System.out.println(getSymbolTokens);
 
 	}
 
@@ -354,7 +414,8 @@ public class Scanner {
 				"/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp");
 		String q = "hvordan gar det";
 		String endraq = s.expandLeadingTabs(q);
-		s.splitSymbols(" if else maryam og = tooba");
+
+		
 
 		// s.checkIndentToken(q);
 		try {

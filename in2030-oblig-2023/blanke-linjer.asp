@@ -8,12 +8,12 @@
     
 # Denne linjen starter med en TAB:
 	
-if 1+1 = 2:
+if 12+1 = 2:
 # Denne linjen starter med 2 TAB-er og 3 blanke:
-		   print("Ja")
+		   print(Ja)
 # Denne linjen inneholder et utplukk blanke og TAB-er:
 	 		   	
 # Og det var alt.
 # Siste linje mangler LF som linjeslutt, men slikt skal skanneren kunne takle.
 # Skanneren skal generere et NEWLINE-symbol uansett.
-x = 4
+x = 4.3

@@ -6,6 +6,4 @@ a = 04  # Men dette to tall: 0 og 4!
     	# Slikt er OK for skanneren,
 	# men parseren (del 2) vil gi
 	# en feilmelding.
-
-
-a if else if
+else
