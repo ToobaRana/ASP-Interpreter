@@ -14,5 +14,3 @@ Scanner: integer literal token on line 5: 4
 Scanner: INDENT token on line 6
    7: 	# men parseren (del 2) vil gi
    8: 	# en feilmelding.
-   9: else
-Scanner: NEWLINE token on line 9
