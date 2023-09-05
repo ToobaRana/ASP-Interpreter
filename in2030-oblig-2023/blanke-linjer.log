@@ -37,7 +37,6 @@ Scanner: integer literal token on line 19: 4
 Scanner: integer literal token on line 19: 3
 Scanner: NEWLINE token on line 19
 Scanner: DEDENT token on line 19
-Scanner: DEDENT token on line 19
 Scanner: DEDENT token
 Scanner: DEDENT token
 Scanner: E-o-f token

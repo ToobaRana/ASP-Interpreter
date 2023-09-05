@@ -124,7 +124,7 @@ public class Scanner {
 				// }
 				// }
 
-				indentAmount = findIndent(newLine) / TABDIST;
+				indentAmount = findIndent(newLine);
 				System.out.println("INDENT AMOUNT: " + indentAmount);
 				int indentTop = indents.peek();
 
@@ -132,7 +132,7 @@ public class Scanner {
 				if (indentAmount > indentTop) {
 					// Continue pushing elements until indent amount is reached
 					// Start on top of the stack, and stop when indent amount is reached
-					for (int i = indentTop + 1; i <= indentAmount; i++) {
+					for (int i = indentTop + 1; i < indentAmount/TABDIST; i++) {
 						indents.push(i);
 						System.out.println("indentttttt " + i);
 					}
@@ -150,7 +150,7 @@ public class Scanner {
 				}
 
 				else if (indentAmount < indentTop) {
-					for (int i = indentTop; i > indentAmount; i--) {
+					for (int i = indentTop; i >= indentAmount; i--) {
 						indents.pop();
 						System.out.println("PPOPOPOPOPOPO:" + "");
 					}
@@ -171,7 +171,7 @@ public class Scanner {
 				}
 			}
 		} else {
-			while (indents.size() > 1) {
+			while (indents.size() > 0) {
 				indents.pop();
 				curLineTokens.add(dedentToken);
 			}
@@ -270,7 +270,7 @@ public class Scanner {
 				int currentChar = lineCopy.charAt(counter);
 				String numberString = "";
 
-				while (counter < lineCopy.length() && (l == '.' || isDigit(lineCopy.charAt(counter)))) {
+				while (counter < lineCopy.length() &&(currentChar == '.' || isDigit(lineCopy.charAt(counter)))) {
 					numberString += currentChar;
 					counter++;
 					System.out.println("this is numberstring in whileloop: " + numberString);
@@ -280,23 +280,17 @@ public class Scanner {
 
 				if (numberString.contains(".")) {
 					System.out.println("Gaar inn for contains");
-					try {
-						Token floatToken = new Token(TokenKind.floatToken, curLineNum());
-						floatToken.floatLit = l - '0';
-						curLineTokens.add(floatToken);
 
-					} catch (NumberFormatException e) {
-						scannerError("Ikke gyldig float.");
-					}
+					Token floatToken = new Token(TokenKind.floatToken, curLineNum());
+					floatToken.floatLit = l - '0';
+					curLineTokens.add(floatToken);
+
 				} else {
-					try {
 
-						Token integerToken = new Token(TokenKind.integerToken, curLineNum());
-						integerToken.integerLit = l - '0';
-						curLineTokens.add(integerToken);
-					} catch (NumberFormatException e) {
-						scannerError("Ikke gyldig integer.");
-					}
+					Token integerToken = new Token(TokenKind.integerToken, curLineNum());
+					integerToken.integerLit = l - '0';
+					curLineTokens.add(integerToken);
+
 				}
 
 			}
