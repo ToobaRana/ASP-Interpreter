@@ -127,6 +127,7 @@ public class Scanner {
 				indentAmount = findIndent(newLine);
 				System.out.println("INDENT AMOUNT: " + indentAmount);
 				int indentTop = indents.peek();
+				System.out.println("INDENT TOP ELEMENT:"+ indentTop);
 
 				// if indent amount is higher than the top element
 				if (indentAmount > indentTop) {
