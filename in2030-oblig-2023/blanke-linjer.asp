@@ -8,7 +8,7 @@
     
 # Denne linjen starter med en TAB:
 	
-if 12+1 = 2:
+if 1+1 = 2:
 # Denne linjen starter med 2 TAB-er og 3 blanke:
 		   print("Ja")
 # Denne linjen inneholder et utplukk blanke og TAB-er:
