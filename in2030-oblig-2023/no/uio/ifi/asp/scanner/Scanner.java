@@ -127,13 +127,13 @@ public class Scanner {
 				indentAmount = findIndent(newLine);
 				System.out.println("INDENT AMOUNT: " + indentAmount);
 				int indentTop = indents.peek();
-				System.out.println("INDENT TOP ELEMENT:"+ indentTop);
+				System.out.println("INDENT TOP ELEMENT:" + indentTop);
 
 				// if indent amount is higher than the top element
 				if (indentAmount > indentTop) {
 					// Continue pushing elements until indent amount is reached
 					// Start on top of the stack, and stop when indent amount is reached
-					for (int i = indentTop + 1; i < indentAmount/TABDIST; i++) {
+					for (int i = indentTop + 1; i < indentAmount / TABDIST; i++) {
 						indents.push(i);
 						System.out.println("indentttttt " + i);
 					}
@@ -193,7 +193,9 @@ public class Scanner {
 
 		Boolean sameTokenKind = false;
 
-		for (char l : lineCopy.toCharArray()) {
+		for (int mainCounter = 0; mainCounter < lineCopy.length(); mainCounter++) {
+			char l = lineCopy.charAt(mainCounter);
+
 
 			if (l == ' ') {
 				continue;
@@ -203,34 +205,44 @@ public class Scanner {
 				break;
 			}
 
+			/*
+			 * else if (l == '"') {
+			 * int startIndex = lineCopy.indexOf('"');
+			 * int endIndex = lineCopy.indexOf('"', startIndex + 1);
+			 * 
+			 * String stringLit = lineCopy.substring(startIndex, endIndex + 1);
+			 * Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
+			 * stringLitToken.stringLit = stringLit;
+			 * 
+			 * System.out.println(
+			 * "Startindex: " + startIndex + "\n EndIndex: " + endIndex +
+			 * "\nString literal: " + stringLit);
+			 * 
+			 * curLineTokens.add(stringLitToken);
+			 * 
+			 * lineCopy = lineCopy.substring(endIndex + 1);
+			 * System.out.println("Line copy: " + lineCopy);
+			 * }
+			 */
+
 			else if (l == '"') {
-				int startIndex = lineCopy.indexOf('"');
-				int endIndex = lineCopy.indexOf('"', startIndex + 1);
+				int startIndex = lineCopy.indexOf(l);
+				int stopIndex = startIndex + 1;
 
-				String stringLit = lineCopy.substring(startIndex, endIndex + 1);
-				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
-				stringLitToken.stringLit = stringLit;
+				while (stopIndex < lineCopy.length() && (lineCopy.charAt(stopIndex) != '"')) {
+					stopIndex++;
+				}
 
-				System.out.println(
-						"Startindex: " + startIndex + "\n EndIndex: " + endIndex + "\nString literal: " + stringLit);
+				// int endIndex = lineCopy.indexOf('"', startIndex + 1);
 
-				curLineTokens.add(stringLitToken);
-
-				lineCopy = lineCopy.substring(endIndex + 1);
-				System.out.println("Line copy: " + lineCopy);
-			}
-
-			else if (l == '‘') {
-				int startIndex = lineCopy.indexOf('‘');
-				int endIndex = lineCopy.indexOf('’', startIndex + 1);
-
-				String stringLit = lineCopy.substring(startIndex, endIndex + 1);
+				String stringLit = lineCopy.substring(startIndex, stopIndex + 1);
 				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 				stringLitToken.stringLit = stringLit;
 
 				curLineTokens.add(stringLitToken);
 
-				lineCopy = lineCopy.substring(endIndex + 1);
+				//lineCopy = lineCopy.substring(stopIndex + 1);
+				mainCounter = stopIndex + 1;
 			}
 
 			else if (isLetterAZ(l)) {
@@ -264,35 +276,50 @@ public class Scanner {
 					sameTokenKind = true;
 				}
 
+				//increases the counter to next character after the processed word
+				mainCounter += wordString.length();
+
 			}
 
 			else if (isDigit(l)) {
-				int counter = lineCopy.indexOf(l);
-				int currentChar = lineCopy.charAt(counter);
+				int indexCounter = lineCopy.indexOf(l);
+				char currentChar = lineCopy.charAt(indexCounter);
 				String numberString = "";
 
-				while (counter < lineCopy.length() &&(currentChar == '.' || isDigit(lineCopy.charAt(counter)))) {
+
+				//builds up the number
+				do {
 					numberString += currentChar;
-					counter++;
-					System.out.println("this is numberstring in whileloop: " + numberString);
-				}
+					indexCounter++;
+					if (indexCounter == lineCopy.length()) {
+						break;
+					}
+					currentChar = lineCopy.charAt(indexCounter);
+				} while (indexCounter < (lineCopy.length()) && (currentChar == '.' || isDigit(currentChar)));
 
 				System.out.println("NUMBERSTRING " + numberString);
 
 				if (numberString.contains(".")) {
 					System.out.println("Gaar inn for contains");
 
+					float floatNumber = Float.parseFloat(numberString);
+
 					Token floatToken = new Token(TokenKind.floatToken, curLineNum());
-					floatToken.floatLit = l - '0';
+					floatToken.floatLit = floatNumber;
 					curLineTokens.add(floatToken);
 
 				} else {
 
+					int integerNumber = Integer.parseInt(numberString);
 					Token integerToken = new Token(TokenKind.integerToken, curLineNum());
-					integerToken.integerLit = l - '0';
+					integerToken.integerLit = integerNumber;
 					curLineTokens.add(integerToken);
 
 				}
+
+
+				//sets mainCounter to the already updated indexCounter value (do-while)
+				mainCounter = indexCounter - 1;
 
 			}
 
@@ -314,12 +341,13 @@ public class Scanner {
 					}
 					counter++;
 				}
-				symbolString = "";
+
+				mainCounter +=  symbolString.length();
 
 			}
-		}
+		}		
 
-		System.out.println(getSymbolTokens);
+		//System.out.println(getSymbolTokens);
 
 	}
 
@@ -414,15 +442,16 @@ public class Scanner {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(
-				"/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp");
-		String q = "     hvordan gar det";
-		String endraq = s.expandLeadingTabs(q);
+
+		String filePath = "/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp";
+		Scanner s = new Scanner(filePath);
+		//s.splitSymbols("if 45 = \"hei\": ");
+		s.splitSymbols("if 12+1 = 2:");
 
 		// s.checkIndentToken(q);
 		try {
 			FileWriter writer = new FileWriter("test.txt");
-			writer.write(endraq);
+			// writer.write(endraq);
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();

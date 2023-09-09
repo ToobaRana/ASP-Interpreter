@@ -9,34 +9,3 @@
    9: # Denne linjen starter med en TAB:
   10: 	
   11: if 12+1 = 2:
-Scanner: if token on line 11
-Scanner: integer literal token on line 11: 1
-Scanner: integer literal token on line 11: 2
-Scanner: + token on line 11
-Scanner: integer literal token on line 11: 1
-Scanner: = token on line 11
-Scanner: integer literal token on line 11: 2
-Scanner: : token on line 11
-Scanner: NEWLINE token on line 11
-  12: # Denne linjen starter med 2 TAB-er og 3 blanke:
-  13: 		   print(Ja)
-Scanner: INDENT token on line 13
-Scanner: name token on line 13: print
-Scanner: ( token on line 13
-Scanner: ) token on line 13
-Scanner: NEWLINE token on line 13
-  14: # Denne linjen inneholder et utplukk blanke og TAB-er:
-  15: 	 		   	
-  16: # Og det var alt.
-  17: # Siste linje mangler LF som linjeslutt, men slikt skal skanneren kunne takle.
-  18: # Skanneren skal generere et NEWLINE-symbol uansett.
-  19: x = 4.3
-Scanner: name token on line 19: x
-Scanner: = token on line 19
-Scanner: integer literal token on line 19: 4
-Scanner: integer literal token on line 19: 3
-Scanner: NEWLINE token on line 19
-Scanner: DEDENT token on line 19
-Scanner: DEDENT token
-Scanner: DEDENT token
-Scanner: E-o-f token

@@ -13,7 +13,9 @@ Scanner: integer literal token on line 5: 4
    6:     	# Slikt er OK for skanneren,
 Scanner: INDENT token on line 6
    7: 	# men parseren (del 2) vil gi
+Scanner: INDENT token on line 7
    8: 	# en feilmelding.
+Scanner: INDENT token on line 8
    9: 
   10: 
   11: a if else if
@@ -23,3 +25,7 @@ Scanner: else token on line 11
 Scanner: else token on line 11
 Scanner: if token on line 11
 Scanner: NEWLINE token on line 11
+Scanner: DEDENT token on line 11
+Scanner: DEDENT token
+Scanner: DEDENT token
+Scanner: E-o-f token
