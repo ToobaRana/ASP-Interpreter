@@ -90,6 +90,8 @@ public class Scanner {
 		// -- Must be changed in part 1:
 
 		Boolean isCommentOrBlank = false;
+		Boolean skipLine = false;
+
 		// Boolean exitIf = false;
 		int indentAmount = 0;
 		String newLine = "";
@@ -102,21 +104,13 @@ public class Scanner {
 		// If the line contains something
 		if (line != null) {
 
-			if (!line.isBlank()) {
+			if (line.trim().length() == 0 || line.trim().charAt(0) == '#') {
+				skipLine = true;
+			}
 
-				for (char l : line.toCharArray()) {
+			newLine = expandLeadingTabs(line);
 
-					// hvis hashtag/kommentar
-					if (l == '#') {
-						isCommentOrBlank = true;
-						break;
-					}
-
-					if (l == ' ' || l == '\t') {
-						newLine = expandLeadingTabs(line);
-					}
-				}
-
+			if (skipLine == false) {
 				indentAmount = findIndent(newLine);
 				System.out.println("INDENT AMOUNT: " + indentAmount);
 				int indentTop = indents.peek();
@@ -124,47 +118,44 @@ public class Scanner {
 
 				// if indent amount is higher than the top element
 				if (indentAmount > indentTop) {
-					// Continue pushing elements until indent amount is reached
-					// Start on top of the stack, and stop when indent amount is reached
-					for (int i = indentTop + 1; i < indentAmount / TABDIST; i++) {
-						indents.push(i);
-						System.out.println("indentttttt " + i);
-					}
+					indents.push(indentAmount);
 
 					curLineTokens.add(indentToken);
 
 				}
 
-				// As long as indent amount is lower than top element on the stack,
-				// pop the indents and place a dedent token in curLineTokens
-
-				Boolean ifTrue = true;
-				if (ifTrue) {
-					splitSymbols(newLine);
-				}
-
 				else if (indentAmount < indentTop) {
-					for (int i = indentTop; i >= indentAmount; i--) {
+
+					while (indentAmount < indents.peek()) {
 						indents.pop();
+						curLineTokens.add(dedentToken);
 					}
-					curLineTokens.add(dedentToken);
+
+					// for (; indentTop > indentAmount; indentTop--) {
+					// indents.pop();
+					// curLineTokens.add(dedentToken);
+					// }
 				}
 
-				System.out.println("Indent amount: " + indentAmount + "Indent top: " + indents.peek());
-				if (indentAmount != indents.peek()) {
+				// System.out.println("Indent amount: " + indentAmount + "Indent top: " +
+				// indents.peek());
+				else if (indentAmount != indents.peek()) {
 					System.out.println("Indent error on line: " + curLineNum());
 				}
 
-				System.out.println("-----------------------------------NY LINJE--------------------------------------");
+				splitSymbols(newLine);
 
-				// Terminate line:
-				// Hvis kommentar/erBlanke er false
-				if (!isCommentOrBlank) {
-					curLineTokens.add(newLineToken);
-				}
+			}
+
+			System.out.println("-----------------------------------NY LINJE--------------------------------------");
+
+			// Terminate line:
+			// Hvis kommentar/erBlanke er false
+			if (line.isEmpty() == false && skipLine == false) {
+				curLineTokens.add(newLineToken);
 			}
 		} else {
-			while (indents.size() > 0) {
+			while (indents.size() > 1) {
 				indents.pop();
 				curLineTokens.add(dedentToken);
 			}
@@ -172,8 +163,12 @@ public class Scanner {
 
 		}
 
-		for (Token t : curLineTokens)
+		skipLine = false;
+
+		for (Token t : curLineTokens) {
 			Main.log.noteToken(t);
+		}
+
 	}
 
 	public void splitSymbols(String line) {
@@ -186,7 +181,7 @@ public class Scanner {
 			char l = lineCopy.charAt(mainCounter);
 
 			if (l == ' ') {
-				
+
 				continue;
 			}
 
@@ -204,7 +199,7 @@ public class Scanner {
 
 				// int endIndex = lineCopy.indexOf('"', startIndex + 1);
 
-				String stringLit = lineCopy.substring(startIndex, stopIndex + 1);
+				String stringLit = lineCopy.substring(startIndex+1, stopIndex);
 				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 				stringLitToken.stringLit = stringLit;
 
@@ -269,17 +264,17 @@ public class Scanner {
 
 				if (numberString.contains(".")) {
 
-					float floatNumber = Float.parseFloat(numberString);
+					double floatNumber = Double.parseDouble(numberString);
 
 					Token floatToken = new Token(TokenKind.floatToken, curLineNum());
 					floatToken.floatLit = floatNumber;
 					curLineTokens.add(floatToken);
 
-				} 
-				
+				}
+
 				else {
 
-					int integerNumber = Integer.parseInt(numberString);
+					long integerNumber = Long.parseLong(numberString);
 					Token integerToken = new Token(TokenKind.integerToken, curLineNum());
 					integerToken.integerLit = integerNumber;
 					curLineTokens.add(integerToken);
@@ -287,7 +282,7 @@ public class Scanner {
 				}
 
 				// sets mainCounter to the already updated indexCounter value (do-while)
-				mainCounter = indexCounter-1;
+				mainCounter = indexCounter - 1;
 
 			}
 
@@ -295,14 +290,12 @@ public class Scanner {
 
 				String symbolString = "";
 				int symbolCounter = lineCopy.indexOf(l);
-				
 
 				char currentChar = lineCopy.charAt(symbolCounter);
 
-				do{
+				do {
 					for (TokenKind symbolToken : getSymbolTokens) {
-						symbolString 
-						= Character.toString(currentChar);
+						symbolString = Character.toString(currentChar);
 						if (symbolToken.image.equals(symbolString)) {
 							Token token = new Token(symbolToken, curLineNum());
 							curLineTokens.add(token);
@@ -317,10 +310,9 @@ public class Scanner {
 					}
 					currentChar = lineCopy.charAt(symbolCounter);
 
+				} while (symbolCounter < lineCopy.length() && isSymbol(currentChar));
 
-				}while (symbolCounter < lineCopy.length() && isSymbol(currentChar));
-
-				mainCounter ++;
+				mainCounter++;
 
 			}
 		}
@@ -332,15 +324,15 @@ public class Scanner {
 	public boolean isSymbol(char c) {
 		for (TokenKind symbolToken : getSymbolTokens) {
 			String image = symbolToken.image;
-	
-			// Check if the image is exactly one character long and it matches the character 'c'
+
+			// Check if the image is exactly one character long and it matches the character
+			// 'c'
 			if (image.length() == 1 && image.charAt(0) == c) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
 
 	// returnerer linjenummeret til linja man er paa
 	public int curLineNum() {
