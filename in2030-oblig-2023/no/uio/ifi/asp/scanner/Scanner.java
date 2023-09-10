@@ -292,35 +292,37 @@ public class Scanner {
 			}
 
 			else {
-
+				
 				String symbolString = "";
 				int symbolCounter = lineCopy.indexOf(l);
 				
 
 				char currentChar = lineCopy.charAt(symbolCounter);
+				//need to fix that if its the last character
+				char nextChar = lineCopy.charAt(symbolCounter+1);
 
-				do{
-					for (TokenKind symbolToken : getSymbolTokens) {
-						symbolString 
-						= Character.toString(currentChar);
-						if (symbolToken.image.equals(symbolString)) {
-							Token token = new Token(symbolToken, curLineNum());
-							curLineTokens.add(token);
-							token.name = symbolString;
-							break;
-						}
+				symbolString += currentChar;
+				int symbolLength = 0;
+				if (isSymbol(symbolString)) {
+					symbolLength = 1;
+					if (isSymbol(symbolString+=nextChar)) {
+						symbolString += nextChar;
+						symbolLength = 2;
 					}
-					symbolCounter++;
-
-					if (symbolCounter == lineCopy.length()) {
+				}
+			
+				for (TokenKind symbolToken : getSymbolTokens) {
+					if (symbolToken.image.equals(symbolString)) {
+						Token token = new Token(symbolToken, curLineNum());
+						curLineTokens.add(token);
+						token.name = symbolString;
 						break;
 					}
-					currentChar = lineCopy.charAt(symbolCounter);
+				}
+					
 
-
-				}while (symbolCounter < lineCopy.length() && isSymbol(currentChar));
-
-				mainCounter ++;
+				
+				mainCounter += symbolLength;
 
 			}
 		}
@@ -329,12 +331,12 @@ public class Scanner {
 
 	}
 
-	public boolean isSymbol(char c) {
+	public boolean isSymbol(String s) {
 		for (TokenKind symbolToken : getSymbolTokens) {
 			String image = symbolToken.image;
 	
 			// Check if the image is exactly one character long and it matches the character 'c'
-			if (image.length() == 1 && image.charAt(0) == c) {
+			if (s.equals(image)) {
 				return true;
 			}
 		}
@@ -434,10 +436,10 @@ public class Scanner {
 
 	public static void main(String[] args) {
 
-		String filePath = "/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp";
+		String filePath = "C:\\Users\\Marya\\OneDrive\\Documents\\3-aarbach\\IN2030\\IN2030---Prosjekt-i-programmering\\in2030-oblig-2023\\blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
 		// s.splitSymbols("if 45 = \"hei\": ");
-		s.splitSymbols("if 12 1 = 3:");
+		s.splitSymbols("if 12+1 = 3:");
 
 		// s.checkIndentToken(q);
 		try {
@@ -449,3 +451,4 @@ public class Scanner {
 		}
 	}
 }
+
