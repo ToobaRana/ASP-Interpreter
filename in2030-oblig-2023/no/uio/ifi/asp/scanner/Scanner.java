@@ -264,7 +264,7 @@ public class Scanner {
 
 				if (numberString.contains(".")) {
 
-					float floatNumber = Float.parseFloat(numberString);
+					double floatNumber = Double.parseDouble(numberString);
 
 					Token floatToken = new Token(TokenKind.floatToken, curLineNum());
 					floatToken.floatLit = floatNumber;
@@ -274,7 +274,7 @@ public class Scanner {
 
 				else {
 
-					int integerNumber = Integer.parseInt(numberString);
+					long integerNumber = Long.parseLong(numberString);
 					Token integerToken = new Token(TokenKind.integerToken, curLineNum());
 					integerToken.integerLit = integerNumber;
 					curLineTokens.add(integerToken);
