@@ -89,7 +89,6 @@ public class Scanner {
 
 		// -- Must be changed in part 1:
 
-		Boolean isCommentOrBlank = false;
 		Boolean skipLine = false;
 
 		// Boolean exitIf = false;
@@ -296,9 +295,10 @@ public class Scanner {
 				char nextChar = lineCopy.charAt(symbolCounter+1);
 
 				symbolString += currentChar;
+				String twoSymbolCheck = symbolString + nextChar;
 				int symbolLength = 0;
 				if (isSymbol(symbolString)) {
-					if (isSymbol(symbolString+=nextChar)) {
+					if (isSymbol(twoSymbolCheck)) {
 						symbolString += nextChar;
 						symbolLength = 1;
 					}
@@ -434,7 +434,7 @@ public class Scanner {
 		String filePath = "C:\\Users\\Marya\\OneDrive\\Documents\\3-aarbach\\IN2030\\IN2030---Prosjekt-i-programmering\\in2030-oblig-2023\\blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
 		// s.splitSymbols("if 45 = \"hei\": ");
-		s.splitSymbols("if 12+1 = 3:");
+		s.splitSymbols("if 1 == 1 = 3:");
 
 		// s.checkIndentToken(q);
 		try {
