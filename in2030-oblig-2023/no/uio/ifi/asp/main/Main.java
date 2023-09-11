@@ -20,8 +20,8 @@ public class Main {
         boolean testExpr = false, testParser = false, testScanner = false,
             logE = false, logP = false, logS = false, logY = false;
 
-        System.out.println("This is the IN2030 Asp interpreter (" + version + ")");
-
+        System.out.println("This is the IN2030 Asp interpreter (" + version + ") Utviklet av TR og MJ");
+        
         for (String a: arg) {
             if (a.equals("-logE")) {
                 logE = true;

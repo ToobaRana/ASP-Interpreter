@@ -157,12 +157,10 @@ public class Scanner {
 
 	public void checkCreateToken(String line) {
 
-		String lineCopy = line;
-
 		//Loops through the line
-		for (int mainCounter = 0; mainCounter < lineCopy.length(); mainCounter++) {
+		for (int mainCounter = 0; mainCounter < line.length(); mainCounter++) {
 		
-			char l = lineCopy.charAt(mainCounter); //Fetch character from current index (mainCounter)
+			char l = line.charAt(mainCounter); //Fetch character from current index (mainCounter)
 
 			if (l == ' ') {
 				continue;
@@ -178,13 +176,13 @@ public class Scanner {
 				int stopIndex = startIndex + 1;
 
 				//Loops as long as it doesn't meet \' \"
-				while (stopIndex < lineCopy.length() && (lineCopy.charAt(stopIndex) != l)) {
+				while (stopIndex < line.length() && (line.charAt(stopIndex) != l)) {
 					stopIndex++;
 				}
 
-				if (stopIndex < lineCopy.length() && lineCopy.charAt(stopIndex) == l) {
+				if (stopIndex < line.length() && line.charAt(stopIndex) == l) {
 
-					String stringLit = lineCopy.substring(startIndex + 1, stopIndex); 
+					String stringLit = line.substring(startIndex + 1, stopIndex); 
 					Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 					stringLitToken.stringLit = stringLit;
 					curLineTokens.add(stringLitToken);
@@ -201,8 +199,8 @@ public class Scanner {
 				int counter = mainCounter;
 
 				//Builds up string
-				while (counter < lineCopy.length() && (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))) {
-					wordString += lineCopy.charAt(counter);
+				while (counter < line.length() && (isLetterAZ(line.charAt(counter)) || isDigit(line.charAt(counter)))) {
+					wordString += line.charAt(counter);
 					counter++;
 				}
 
@@ -233,18 +231,18 @@ public class Scanner {
 			else if (isDigit(l)) {
 
 				int indexCounter = mainCounter;
-				char currentChar = lineCopy.charAt(indexCounter);
+				char currentChar = line.charAt(indexCounter);
 				String numberString = "";
 
 				//Builds up the number
 				do {
 					numberString += currentChar;
 					indexCounter++;
-					if (indexCounter == lineCopy.length()) {
+					if (indexCounter == line.length()) {
 						break;
 					}
-					currentChar = lineCopy.charAt(indexCounter);
-				} while (indexCounter < (lineCopy.length()) && (currentChar == '.' || isDigit(currentChar)));
+					currentChar = line.charAt(indexCounter);
+				} while (indexCounter < (line.length()) && (currentChar == '.' || isDigit(currentChar)));
 
 				//If number is float
 				if (numberString.contains(".")) {
@@ -273,11 +271,11 @@ public class Scanner {
 				String symbolString = "";
 				int symbolCounter = mainCounter;
 				char nextChar = ' ';
-				char currentChar = lineCopy.charAt(symbolCounter);
+				char currentChar = line.charAt(symbolCounter);
 
 				//If its not the last character -> get next character
-				if (symbolCounter != lineCopy.length() - 1) {
-					nextChar = lineCopy.charAt(symbolCounter + 1);
+				if (symbolCounter != line.length() - 1) {
+					nextChar = line.charAt(symbolCounter + 1);
 				}
 
 				symbolString += currentChar;
