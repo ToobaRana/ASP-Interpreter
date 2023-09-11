@@ -245,7 +245,7 @@ public class Scanner {
 			}
 
 			else if (isDigit(l)) {
-				int indexCounter = lineCopy.indexOf(l);
+				int indexCounter = mainCounter;
 				char currentChar = lineCopy.charAt(indexCounter);
 				String numberString = "";
 
@@ -282,17 +282,23 @@ public class Scanner {
 
 				// sets mainCounter to the already updated indexCounter value (do-while)
 				mainCounter = indexCounter - 1;
+				//indexCounter = 0;
 
 			}
 
 			else {
 				
 				String symbolString = "";
-				int symbolCounter = lineCopy.indexOf(l);
+				int symbolCounter = mainCounter;
+				char nextChar = ' ';
+				int linelength = lineCopy.length()-1;
 
 				char currentChar = lineCopy.charAt(symbolCounter);
 				//need to fix that if its the last character
-				char nextChar = lineCopy.charAt(symbolCounter+1);
+				if (symbolCounter != linelength){
+					nextChar = lineCopy.charAt(symbolCounter+1);
+				}
+				
 
 				symbolString += currentChar;
 				String twoSymbolCheck = symbolString + nextChar;
@@ -300,7 +306,8 @@ public class Scanner {
 				if (isSymbol(symbolString)) {
 					if (isSymbol(twoSymbolCheck)) {
 						symbolString += nextChar;
-						symbolLength = 1;
+
+						mainCounter++;
 					}
 				}
 			
@@ -434,7 +441,7 @@ public class Scanner {
 		String filePath = "C:\\Users\\Marya\\OneDrive\\Documents\\3-aarbach\\IN2030\\IN2030---Prosjekt-i-programmering\\in2030-oblig-2023\\blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
 		// s.splitSymbols("if 45 = \"hei\": ");
-		s.splitSymbols("if 1 == 1 = 3:");
+		s.splitSymbols("print(\"Resultatet etter\", ombyttinger, \"ombyttinger er\", data)");
 
 		// s.checkIndentToken(q);
 		try {
