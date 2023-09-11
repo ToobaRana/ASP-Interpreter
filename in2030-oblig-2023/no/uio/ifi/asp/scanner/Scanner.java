@@ -67,7 +67,6 @@ public class Scanner {
 
 		try {
 			line = sourceFile.readLine();
-			System.out.println(line);
 
 			if (line == null) {
 				sourceFile.close();
@@ -79,7 +78,6 @@ public class Scanner {
 			sourceFile = null;
 			scannerError("Unspecified I/O error!");
 		}
-		System.out.println("PRINT" + line);
 
 		// -- Must be changed in part 1:
 
@@ -120,23 +118,15 @@ public class Scanner {
 						curLineTokens.add(dedentToken);
 					}
 
-					// for (; indentTop > indentAmount; indentTop--) {
-					// indents.pop();
-					// curLineTokens.add(dedentToken);
-					// }
 				}
 
-				// System.out.println("Indent amount: " + indentAmount + "Indent top: " +
-				// indents.peek());
 				else if (indentAmount != indents.peek()) {
-					System.out.println("Indent error on line: " + curLineNum());
+					scannerError("Indent error on line: ");
 				}
 
 				splitSymbols(newLine);
 
 			}
-
-			System.out.println("-----------------------------------NY LINJE--------------------------------------");
 
 			// Terminate line:
 			// Hvis kommentar/erBlanke er false
@@ -164,7 +154,6 @@ public class Scanner {
 
 		String lineCopy = line;
 
-
 		for (int mainCounter = 0; mainCounter < lineCopy.length(); mainCounter++) {
 			char l = lineCopy.charAt(mainCounter);
 
@@ -177,24 +166,28 @@ public class Scanner {
 				break;
 			}
 
-			else if (l == '"') {
+			else if (l == '"' || l == '\'') {
 				int startIndex = mainCounter;
 				int stopIndex = startIndex + 1;
 
-				while (stopIndex < lineCopy.length() && (lineCopy.charAt(stopIndex) != '"')) {
+				while (stopIndex < lineCopy.length() && (lineCopy.charAt(stopIndex) != l)) {
 					stopIndex++;
 				}
 
-				// int endIndex = lineCopy.indexOf('"', startIndex + 1);
+				if (stopIndex < lineCopy.length() && lineCopy.charAt(stopIndex) == l) {
+					String stringLit = lineCopy.substring(startIndex + 1, stopIndex);
+					Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
+					stringLitToken.stringLit = stringLit;
 
-				String stringLit = lineCopy.substring(startIndex+1, stopIndex);
-				Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
-				stringLitToken.stringLit = stringLit;
+					curLineTokens.add(stringLitToken);
 
-				curLineTokens.add(stringLitToken);
+					mainCounter = stopIndex;
+				}
 
-				// lineCopy = lineCopy.substring(stopIndex + 1);
-				mainCounter = stopIndex;
+				else{
+					scannerError("Invalid string literal");
+				}
+
 			}
 
 			else if (isLetterAZ(l)) {
@@ -203,7 +196,6 @@ public class Scanner {
 				String wordString = "";
 				int counter = mainCounter;
 
-				// ask gruppelarer
 				while (counter < lineCopy.length()
 						&& (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))) {
 					wordString += lineCopy.charAt(counter);
@@ -231,7 +223,7 @@ public class Scanner {
 				}
 
 				// increases the counter to next character after the processed word
-				mainCounter += wordString.length()-1;
+				mainCounter += wordString.length() - 1;
 
 			}
 
@@ -249,8 +241,6 @@ public class Scanner {
 					}
 					currentChar = lineCopy.charAt(indexCounter);
 				} while (indexCounter < (lineCopy.length()) && (currentChar == '.' || isDigit(currentChar)));
-
-				System.out.println("NUMBERSTRING " + numberString);
 
 				if (numberString.contains(".")) {
 
@@ -273,34 +263,29 @@ public class Scanner {
 
 				// sets mainCounter to the already updated indexCounter value (do-while)
 				mainCounter = indexCounter - 1;
-				//indexCounter = 0;
 
 			}
 
-			else {
-				
+			else if (isSymbol(l + "")) {
+
 				String symbolString = "";
 				int symbolCounter = mainCounter;
 				char nextChar = ' ';
 
 				char currentChar = lineCopy.charAt(symbolCounter);
-				//need to fix that if its the last character
-				if (symbolCounter != lineCopy.length()-1){
-					nextChar = lineCopy.charAt(symbolCounter+1);
+				// need to fix that if its the last character
+				if (symbolCounter != lineCopy.length() - 1) {
+					nextChar = lineCopy.charAt(symbolCounter + 1);
 				}
-				
 
 				symbolString += currentChar;
 				String twoSymbolCheck = symbolString + nextChar;
-				int symbolLength = 0;
-				if (isSymbol(symbolString)) {
-					if (isSymbol(twoSymbolCheck)) {
-						symbolString += nextChar;
+				if (isSymbol(twoSymbolCheck)) {
+					symbolString += nextChar;
 
-						mainCounter++;
-					}
+					mainCounter++;
 				}
-			
+
 				for (TokenKind symbolToken : getSymbolTokens) {
 					if (symbolToken.image.equals(symbolString)) {
 						Token token = new Token(symbolToken, curLineNum());
@@ -309,32 +294,27 @@ public class Scanner {
 						break;
 					}
 				}
-					
-
-				
-				//mainCounter += symbolLength;
 
 			}
+
+			else {
+				scannerError("Invalid character: " + l);
+			}
 		}
-
-		System.out.println(getSymbolTokens);
-
 	}
 
 	public boolean isSymbol(String s) {
 		for (TokenKind symbolToken : getSymbolTokens) {
 			String image = symbolToken.image;
-	
+
 			// Check if the string is a symbol
 			if (s.equals(image)) {
 				return true;
 			}
-			
-			
+
 		}
 		return false;
 	}
-	
 
 	// returnerer linjenummeret til linja man er paa
 	public int curLineNum() {
@@ -364,14 +344,12 @@ public class Scanner {
 			if (s == ' ') {
 				newString += ' ';
 				n++;
-				System.out.println("Her er det en enkel blanke");
 			}
 
 			else if (s == '\t') {
 				int tabToBlank = TABDIST - (n % TABDIST);
 				newString += " ".repeat(tabToBlank);
 				n += tabToBlank;
-				System.out.println("Her er det en tab");
 			}
 
 			else {
@@ -430,10 +408,8 @@ public class Scanner {
 
 		String filePath = "/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
-		// s.splitSymbols("if 45 = \"hei\": ");
-		s.splitSymbols("$a = 0");
+		s.splitSymbols("$a == \'\'");
 
-		// s.checkIndentToken(q);
 		try {
 			FileWriter writer = new FileWriter("test.txt");
 			// writer.write(endraq);
@@ -443,4 +419,3 @@ public class Scanner {
 		}
 	}
 }
-
