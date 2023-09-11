@@ -240,7 +240,7 @@ public class Scanner {
 				}
 
 				// increases the counter to next character after the processed word
-				mainCounter += wordString.length();
+				mainCounter += wordString.length()-1;
 
 			}
 
@@ -441,7 +441,7 @@ public class Scanner {
 		String filePath = "C:\\Users\\Marya\\OneDrive\\Documents\\3-aarbach\\IN2030\\IN2030---Prosjekt-i-programmering\\in2030-oblig-2023\\blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
 		// s.splitSymbols("if 45 = \"hei\": ");
-		s.splitSymbols("print(\"Resultatet etter\", ombyttinger, \"ombyttinger er\", data)");
+		s.splitSymbols("print(\"Resultatet etter\"= ombyttinger, \"ombyttinger er\", data)");
 
 		// s.checkIndentToken(q);
 		try {
