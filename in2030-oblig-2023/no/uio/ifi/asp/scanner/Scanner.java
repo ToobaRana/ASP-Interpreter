@@ -438,7 +438,7 @@ public class Scanner {
 
 	public static void main(String[] args) {
 
-		String filePath = "C:\\Users\\Marya\\OneDrive\\Documents\\3-aarbach\\IN2030\\IN2030---Prosjekt-i-programmering\\in2030-oblig-2023\\blanke-linjer.asp";
+		String filePath = "/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
 		// s.splitSymbols("if 45 = \"hei\": ");
 		s.splitSymbols("print(\"Resultatet etter\"= ombyttinger, \"ombyttinger er\", data)");
