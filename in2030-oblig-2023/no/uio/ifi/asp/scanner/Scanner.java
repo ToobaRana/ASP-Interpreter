@@ -70,12 +70,6 @@ public class Scanner {
 			System.out.println(line);
 
 			if (line == null) {
-
-				for (int i = indents.peek(); i > 0; i--) {
-					curLineTokens.add(new Token(TokenKind.dedentToken, curLineNum()));
-					System.out.println("Lagt til sluttDedent");
-				}
-
 				sourceFile.close();
 				sourceFile = null;
 			} else {
@@ -93,8 +87,6 @@ public class Scanner {
 
 		// Boolean exitIf = false;
 		int indentAmount = 0;
-		String newLine = "";
-
 		Token indentToken = new Token(TokenKind.indentToken, curLineNum());
 		Token dedentToken = new Token(TokenKind.dedentToken, curLineNum());
 		Token newLineToken = new Token(TokenKind.newLineToken, curLineNum());
@@ -107,13 +99,11 @@ public class Scanner {
 				skipLine = true;
 			}
 
-			newLine = expandLeadingTabs(line);
+			String newLine = expandLeadingTabs(line);
 
-			if (skipLine == false) {
+			if (!skipLine) {
 				indentAmount = findIndent(newLine);
-				System.out.println("INDENT AMOUNT: " + indentAmount);
 				int indentTop = indents.peek();
-				System.out.println("INDENT TOP ELEMENT:" + indentTop);
 
 				// if indent amount is higher than the top element
 				if (indentAmount > indentTop) {
@@ -150,7 +140,7 @@ public class Scanner {
 
 			// Terminate line:
 			// Hvis kommentar/erBlanke er false
-			if (line.isEmpty() == false && skipLine == false) {
+			if (!line.isEmpty() && !skipLine) {
 				curLineTokens.add(newLineToken);
 			}
 		} else {
@@ -174,7 +164,6 @@ public class Scanner {
 
 		String lineCopy = line;
 
-		Boolean sameTokenKind = false;
 
 		for (int mainCounter = 0; mainCounter < lineCopy.length(); mainCounter++) {
 			char l = lineCopy.charAt(mainCounter);
@@ -189,7 +178,7 @@ public class Scanner {
 			}
 
 			else if (l == '"') {
-				int startIndex = lineCopy.indexOf(l);
+				int startIndex = mainCounter;
 				int stopIndex = startIndex + 1;
 
 				while (stopIndex < lineCopy.length() && (lineCopy.charAt(stopIndex) != '"')) {
@@ -205,12 +194,14 @@ public class Scanner {
 				curLineTokens.add(stringLitToken);
 
 				// lineCopy = lineCopy.substring(stopIndex + 1);
-				mainCounter = stopIndex + 1;
+				mainCounter = stopIndex;
 			}
 
 			else if (isLetterAZ(l)) {
+
+				Boolean sameTokenKind = false;
 				String wordString = "";
-				int counter = lineCopy.indexOf(l);
+				int counter = mainCounter;
 
 				// ask gruppelarer
 				while (counter < lineCopy.length()
@@ -291,11 +282,10 @@ public class Scanner {
 				String symbolString = "";
 				int symbolCounter = mainCounter;
 				char nextChar = ' ';
-				int linelength = lineCopy.length()-1;
 
 				char currentChar = lineCopy.charAt(symbolCounter);
 				//need to fix that if its the last character
-				if (symbolCounter != linelength){
+				if (symbolCounter != lineCopy.length()-1){
 					nextChar = lineCopy.charAt(symbolCounter+1);
 				}
 				
@@ -322,7 +312,7 @@ public class Scanner {
 					
 
 				
-				mainCounter += symbolLength;
+				//mainCounter += symbolLength;
 
 			}
 		}
@@ -441,7 +431,7 @@ public class Scanner {
 		String filePath = "/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp";
 		Scanner s = new Scanner(filePath);
 		// s.splitSymbols("if 45 = \"hei\": ");
-		s.splitSymbols("print(\"Resultatet etter\"= ombyttinger, \"ombyttinger er\", data)");
+		s.splitSymbols("$a = 0");
 
 		// s.checkIndentToken(q);
 		try {

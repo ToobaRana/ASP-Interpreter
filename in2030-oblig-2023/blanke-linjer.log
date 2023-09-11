@@ -21,7 +21,9 @@ Scanner: NEWLINE token on line 11
   13: 		   print("Ja")
 Scanner: INDENT token on line 13
 Scanner: name token on line 13: print
+Scanner: ( token on line 13
 Scanner: string literal token on line 13: "Ja"
+Scanner: ) token on line 13
 Scanner: NEWLINE token on line 13
   14: # Denne linjen inneholder et utplukk blanke og TAB-er:
   15: 	 		   	
