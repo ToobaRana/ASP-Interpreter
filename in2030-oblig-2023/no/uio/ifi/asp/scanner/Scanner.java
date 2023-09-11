@@ -15,6 +15,7 @@ public class Scanner {
 	private Stack<Integer> indents = new Stack<>();
 	private final int TABDIST = 4;
 
+	// Puts token kinds in an EnumSet for a given range
 	EnumSet<TokenKind> getTextTokens = EnumSet.range(andToken, yieldToken);
 	EnumSet<TokenKind> getSymbolTokens = EnumSet.range(astToken, semicolonToken);
 
@@ -41,9 +42,9 @@ public class Scanner {
 		Main.error(m);
 	}
 
-	// Henter naavaerende symbol, som alltid er forste symbol i curLineTokens.
-	// Fjerner ikke symbolet
-	// Om nodvendig, kaller paa readNextLine for aa faa leste flere linjer
+	// Retrieves the current symbol, which is always the first symbol in curLineTokens.
+	// Does not remove the symbol.
+	// If necessary, calls readNextLine to read more lines.
 	public Token curToken() {
 		while (curLineTokens.isEmpty()) {
 			readNextLine();
@@ -51,14 +52,15 @@ public class Scanner {
 		return curLineTokens.get(0);
 	}
 
-	// Fjerner naavaerede symbol, som er forste symbol i curLineTokens
+	//Removes the current symbol, which is the first symbol in 
+	//curLineTokens.
 	public void readNextToken() {
 		if (!curLineTokens.isEmpty())
 			curLineTokens.remove(0);
 	}
 
-	// Leser neste linje og deler den opp i symbolene og legger
-	// symbolene til i curLineToken
+	//Reads the next line, splits it into symbols, and adds
+	//the symbols to curLineToken.
 	private void readNextLine() {
 		curLineTokens.clear();
 
@@ -80,66 +82,70 @@ public class Scanner {
 		}
 
 		// -- Must be changed in part 1:
-
 		Boolean skipLine = false;
-
-		// Boolean exitIf = false;
 		int indentAmount = 0;
+
 		Token indentToken = new Token(TokenKind.indentToken, curLineNum());
 		Token dedentToken = new Token(TokenKind.dedentToken, curLineNum());
 		Token newLineToken = new Token(TokenKind.newLineToken, curLineNum());
 		Token eofToken = new Token(TokenKind.eofToken, curLineNum());
 
-		// If the line contains something
+		//If the line contains something
 		if (line != null) {
 
+			//If the line has a comment or indents with a comment("#")
+			//Then it skips the line
 			if (line.trim().length() == 0 || line.trim().charAt(0) == '#') {
 				skipLine = true;
 			}
 
+			//Make a new line with white-spaces only (no tabs)
 			String newLine = expandLeadingTabs(line);
 
-			if (!skipLine) {
+
+			if (skipLine == false) {
 				indentAmount = findIndent(newLine);
 				int indentTop = indents.peek();
 
-				// if indent amount is higher than the top element
+				//If indent amount is higher than the top element
+				//Then it pushes indentAmount to indents-stack
 				if (indentAmount > indentTop) {
 					indents.push(indentAmount);
-
 					curLineTokens.add(indentToken);
-
 				}
 
+				//Pop indents if indentAmount is less than indentTop
 				else if (indentAmount < indentTop) {
-
 					while (indentAmount < indents.peek()) {
 						indents.pop();
 						curLineTokens.add(dedentToken);
 					}
-
 				}
 
 				else if (indentAmount != indents.peek()) {
 					scannerError("Indent error on line: ");
 				}
 
-				splitSymbols(newLine);
-
+				//Checks, creates and adds tokens to curLineTokens
+				checkCreateToken(newLine);
 			}
 
-			// Terminate line:
-			// Hvis kommentar/erBlanke er false
-			if (!line.isEmpty() && !skipLine) {
+			//Terminate line:
+			//If the line has not been skipped and is not empty
+			if (line.isEmpty() == false && skipLine == false) {
 				curLineTokens.add(newLineToken);
 			}
-		} else {
+		}
+		
+		//After the last line is read
+		//As long as the indents-stack size is greater than 1
+		//add a DEDENT-token to curLineTokens
+		else {
 			while (indents.size() > 1) {
 				indents.pop();
 				curLineTokens.add(dedentToken);
 			}
 			curLineTokens.add(eofToken);
-
 		}
 
 		skipLine = false;
@@ -147,18 +153,18 @@ public class Scanner {
 		for (Token t : curLineTokens) {
 			Main.log.noteToken(t);
 		}
-
 	}
 
-	public void splitSymbols(String line) {
+	public void checkCreateToken(String line) {
 
 		String lineCopy = line;
 
+		//Loops through the line
 		for (int mainCounter = 0; mainCounter < lineCopy.length(); mainCounter++) {
-			char l = lineCopy.charAt(mainCounter);
+		
+			char l = lineCopy.charAt(mainCounter); //Fetch character from current index (mainCounter)
 
 			if (l == ' ') {
-
 				continue;
 			}
 
@@ -166,44 +172,41 @@ public class Scanner {
 				break;
 			}
 
+			//Checks for string literal
 			else if (l == '"' || l == '\'') {
 				int startIndex = mainCounter;
 				int stopIndex = startIndex + 1;
 
+				//Loops as long as it doesn't meet \' \"
 				while (stopIndex < lineCopy.length() && (lineCopy.charAt(stopIndex) != l)) {
 					stopIndex++;
 				}
 
 				if (stopIndex < lineCopy.length() && lineCopy.charAt(stopIndex) == l) {
-					String stringLit = lineCopy.substring(startIndex + 1, stopIndex);
+
+					String stringLit = lineCopy.substring(startIndex + 1, stopIndex); 
 					Token stringLitToken = new Token(TokenKind.stringToken, curLineNum());
 					stringLitToken.stringLit = stringLit;
-
 					curLineTokens.add(stringLitToken);
 
 					mainCounter = stopIndex;
 				}
-
-				else{
-					scannerError("Invalid string literal");
-				}
-
 			}
 
+			//Checks for name-token and text-token
 			else if (isLetterAZ(l)) {
 
 				Boolean sameTokenKind = false;
 				String wordString = "";
 				int counter = mainCounter;
 
-				while (counter < lineCopy.length()
-						&& (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))) {
+				//Builds up string
+				while (counter < lineCopy.length() && (isLetterAZ(lineCopy.charAt(counter)) || isDigit(lineCopy.charAt(counter)))) {
 					wordString += lineCopy.charAt(counter);
 					counter++;
 				}
 
 				for (TokenKind tokenkind : getTextTokens) {
-
 					if (tokenkind.image.equals(wordString)) {
 						Token token = new Token(tokenkind, curLineNum());
 						curLineTokens.add(token);
@@ -213,8 +216,7 @@ public class Scanner {
 					}
 				}
 
-				// If it's not in the list of TokenKind -> then it must be a name or a string
-				// literal
+				//If it's not in the list of TokenKind -> then it must be a name-token
 				if (sameTokenKind == false) {
 					Token nameToken = new Token(TokenKind.nameToken, curLineNum());
 					nameToken.name = wordString;
@@ -222,17 +224,19 @@ public class Scanner {
 					sameTokenKind = true;
 				}
 
-				// increases the counter to next character after the processed word
+				//Increases the counter to next character after the processed word
 				mainCounter += wordString.length() - 1;
 
 			}
 
+			//Checks for int and float
 			else if (isDigit(l)) {
+
 				int indexCounter = mainCounter;
 				char currentChar = lineCopy.charAt(indexCounter);
 				String numberString = "";
 
-				// builds up the number
+				//Builds up the number
 				do {
 					numberString += currentChar;
 					indexCounter++;
@@ -242,47 +246,46 @@ public class Scanner {
 					currentChar = lineCopy.charAt(indexCounter);
 				} while (indexCounter < (lineCopy.length()) && (currentChar == '.' || isDigit(currentChar)));
 
+				//If number is float
 				if (numberString.contains(".")) {
-
 					double floatNumber = Double.parseDouble(numberString);
-
 					Token floatToken = new Token(TokenKind.floatToken, curLineNum());
 					floatToken.floatLit = floatNumber;
 					curLineTokens.add(floatToken);
-
 				}
 
+				//If number is integer
 				else {
-
 					long integerNumber = Long.parseLong(numberString);
 					Token integerToken = new Token(TokenKind.integerToken, curLineNum());
 					integerToken.integerLit = integerNumber;
 					curLineTokens.add(integerToken);
-
 				}
 
-				// sets mainCounter to the already updated indexCounter value (do-while)
+				//Sets mainCounter to the already updated indexCounter value (do-while)
 				mainCounter = indexCounter - 1;
 
 			}
 
+			//Checks for symbol-token
 			else if (isSymbol(l + "")) {
-
+				
 				String symbolString = "";
 				int symbolCounter = mainCounter;
 				char nextChar = ' ';
-
 				char currentChar = lineCopy.charAt(symbolCounter);
-				// need to fix that if its the last character
+
+				//If its not the last character -> get next character
 				if (symbolCounter != lineCopy.length() - 1) {
 					nextChar = lineCopy.charAt(symbolCounter + 1);
 				}
 
 				symbolString += currentChar;
 				String twoSymbolCheck = symbolString + nextChar;
+
+				//Checks if the symbols is a double symbol
 				if (isSymbol(twoSymbolCheck)) {
 					symbolString += nextChar;
-
 					mainCounter++;
 				}
 
@@ -294,7 +297,6 @@ public class Scanner {
 						break;
 					}
 				}
-
 			}
 
 			else {
@@ -303,25 +305,22 @@ public class Scanner {
 		}
 	}
 
+	//Checks if it's a symbol
 	public boolean isSymbol(String s) {
 		for (TokenKind symbolToken : getSymbolTokens) {
-			String image = symbolToken.image;
-
-			// Check if the string is a symbol
-			if (s.equals(image)) {
+			if (s.equals(symbolToken.image)) {
 				return true;
 			}
-
 		}
 		return false;
 	}
 
-	// returnerer linjenummeret til linja man er paa
+	//Returns the line number of the current line
 	public int curLineNum() {
 		return sourceFile != null ? sourceFile.getLineNumber() : 0;
 	}
 
-	// Teller antall blanke i starten av den naavaerende linjen
+	//Counts the number of leading white-spaces in the current line
 	private int findIndent(String s) {
 		int indent = 0;
 
@@ -331,8 +330,7 @@ public class Scanner {
 	}
 
 	// -- Must be changed in part 1:
-
-	// Omformer innledende TAB-tegn til det rikige antall blanke
+	//Converts initial TAB characters to the correct number of white-spaces
 	private String expandLeadingTabs(String string) {
 
 		int n = 0;
@@ -340,7 +338,6 @@ public class Scanner {
 		String newString = "";
 
 		for (char s : string.toCharArray()) {
-
 			if (s == ' ') {
 				newString += ' ';
 				n++;
@@ -358,7 +355,6 @@ public class Scanner {
 			}
 			index++;
 		}
-
 		return newString;
 	}
 
@@ -402,20 +398,5 @@ public class Scanner {
 				return false;
 		}
 		return false;
-	}
-
-	public static void main(String[] args) {
-
-		String filePath = "/Users/toobarana/Documents/Semester5/IN2030/Prosjektoppgave/in2030-oblig-2023/blanke-linjer.asp";
-		Scanner s = new Scanner(filePath);
-		s.splitSymbols("$a == \'\'");
-
-		try {
-			FileWriter writer = new FileWriter("test.txt");
-			// writer.write(endraq);
-			writer.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 }
