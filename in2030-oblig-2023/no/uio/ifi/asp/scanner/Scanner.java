@@ -123,7 +123,7 @@ public class Scanner {
 				}
 
 				else if (indentAmount != indents.peek()) {
-					scannerError("Indent error on line: ");
+					scannerError("Indent error");
 				}
 
 				//Checks, creates and adds tokens to curLineTokens

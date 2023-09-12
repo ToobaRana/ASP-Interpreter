@@ -25,19 +25,22 @@ public abstract class AspSyntax {
         Main.error(m);
     }
 
+    // Throws parser if the current token kind is not
+    // equal to the sent in token kind
     public static void test(Scanner s, TokenKind tk) {
         if (s.curToken().kind != tk)
             parserError("Expected " + tk + " but found " +
                     s.curToken().kind + "!", s.curLineNum());
     }
 
+    // Throws parser error and checks for two token kinds
     public static void test(Scanner s, TokenKind tk1, TokenKind tk2) {
         if (s.curToken().kind != tk1 && s.curToken().kind != tk2)
             parserError("Expected " + tk1 + " or " + tk2 + " but found " +
                     s.curToken().kind + "!", s.curLineNum());
     }
 
-    // check and skip
+    // If the given token is the same as current token -> read next token
     public static void skip(Scanner s, TokenKind tk) {
         test(s, tk);
         s.readNextToken();
