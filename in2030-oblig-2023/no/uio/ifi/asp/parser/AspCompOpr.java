@@ -1,23 +1,24 @@
-package no.uio.ifi.asp.parser.ASPfiler;
+package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.parser.AspSyntax;
 import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
 
-public class AspNotTest extends AspSyntax {
+public class AspCompOpr extends AspSyntax {
 
-    protected AspNotTest(int n) {
+    protected AspCompOpr(int n) {
         super(n);
     }
 
-    static AspNotTest parse(Scanner s) {
-        enterParser("and test");
+    static AspCompOpr parse(Scanner s){
+        enterParser("comp opr");
 
+        AspCompOpr co = new AspCompOpr(s.curLineNum());
+        skip(s, s.curToken().kind);
 
-        leaveParser("and test");
+        leaveParser("comp opr");
+        return co;
     }
 
     @Override

@@ -21,7 +21,7 @@ abstract class AspAtom extends AspSyntax {
             case falseToken:
 
             case trueToken:
-            aa =  AspBooleanLiteral.parse(s);
+                aa =  AspBooleanLiteral.parse(s);
                 break;
 
             case floatToken:

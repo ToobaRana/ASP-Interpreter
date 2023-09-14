@@ -1,24 +1,26 @@
-package no.uio.ifi.asp.parser.ASPfiler;
+package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.parser.AspSyntax;
 import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
 
-public class AspNotTest extends AspSyntax {
+public class AspTermOpr extends AspSyntax {
 
-    protected AspNotTest(int n) {
+    protected AspTermOpr(int n) {
         super(n);
     }
 
-    static AspNotTest parse(Scanner s) {
-        enterParser("and test");
+    static AspTermOpr parse(Scanner s){
+        enterParser("term opr");
+        AspTermOpr to = new AspTermOpr(s.curLineNum());
 
+        skip(s, s.curToken().kind);
 
-        leaveParser("and test");
+        leaveParser("term opr");
+        return to;
     }
+
 
     @Override
     void prettyPrint() {
