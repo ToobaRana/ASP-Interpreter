@@ -7,23 +7,32 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFactor extends AspSyntax {
 
-    // ArrayList<AspFactorPrefix> prefixes = new ArrayList<>();
-    // ArrayList<AspPrimary> primaries = new ArrayList<>();
-    // ArrayList<AspFactorOpr> factorOprs = new ArrayList<>();
-
+    ArrayList<AspFactorPrefix> prefixes = new ArrayList<>();
+    ArrayList<AspPrimary> primaries = new ArrayList<>();
+    ArrayList<AspFactorOpr> factorOprs = new ArrayList<>();
 
     protected AspFactor(int n) {
         super(n);
     }
 
-
-
-    static AspFactor parse(Scanner s){
+    static AspFactor parse(Scanner s) {
 
         enterParser("factor");
         AspFactor f = new AspFactor(s.curLineNum());
 
-        
+        while (true) {
+            if (s.isFactorPrefix()) {
+                f.prefixes.add(AspFactorPrefix.parse(s));
+            }
+
+            f.primaries.add(AspPrimary.parse(s));
+
+            if (!s.isFactorOpr()) {
+                break;
+            }
+
+            f.factorOprs.add(AspFactorOpr.parse(s));
+        }
 
         leaveParser("factor");
         return f;

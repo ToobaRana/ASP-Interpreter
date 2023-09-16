@@ -4,7 +4,12 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
+import java.util.ArrayList;
+
 public class AspAssignment extends AspSmallStmt {
+    AspName name;
+    ArrayList<AspSubscription> subscriptions = new ArrayList<>();
+    AspExpr expr;
 
     AspAssignment(int n) {
         super(n);
@@ -12,7 +17,18 @@ public class AspAssignment extends AspSmallStmt {
 
     static AspAssignment parse(Scanner s){
         enterParser("assignment");
+
         AspAssignment a = new AspAssignment(s.curLineNum());
+        a.name = AspName.parse(s);
+
+
+        while (!s.anyEqualToken()) {
+            a.subscriptions.add(AspSubscription.parse(s));
+        }
+
+        skip(s, equalToken);
+        a.expr = AspExpr.parse(s);
+
         leaveParser("assignment");
         return a;
     }

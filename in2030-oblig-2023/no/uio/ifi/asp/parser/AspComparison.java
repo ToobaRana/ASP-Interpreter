@@ -22,13 +22,13 @@ public class AspComparison extends AspSyntax {
         c.terms.add(AspTerm.parse(s));
 
         //The while-loop needs to be modified
-        while(true){
+        while(s.isCompOpr()){
             c.compOprs.add(AspCompOpr.parse(s));
             c.terms.add(AspTerm.parse(s));
         }
 
-        //leaveParser("comparison");
-        //return c;
+        leaveParser("comparison");
+        return c;
     }
 
     @Override

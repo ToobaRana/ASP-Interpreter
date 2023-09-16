@@ -21,7 +21,7 @@ public class AspTerm extends AspSyntax {
         AspTerm t = new AspTerm(s.curLineNum());
         t.factors.add(AspFactor.parse(s));
         
-        while (s.curToken().kind == plusToken || s.curToken().kind == minusToken){
+        while (s.isTermOpr()){
             t.termOprs.add(AspTermOpr.parse(s));
             t.factors.add(AspFactor.parse(s));
         }
