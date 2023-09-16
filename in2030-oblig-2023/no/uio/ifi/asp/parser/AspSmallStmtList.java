@@ -2,12 +2,9 @@ package no.uio.ifi.asp.parser;
 
 
 import java.util.ArrayList;
-
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspSmallStmtList extends AspStmt {
     ArrayList<AspSmallStmtList> smallStmtList = new ArrayList<>();
@@ -23,17 +20,17 @@ public class AspSmallStmtList extends AspStmt {
 
         while (true) {
             ssl.smallStmtList.add(AspSmallStmtList.parse(s));
-            if (s.curToken().kind != TokenKind.semicolonToken) {
+            if (s.curToken().kind != semicolonToken) {
                 break;
             }
-            skip(s, TokenKind.semicolonToken);
+            skip(s, semicolonToken);
         }
 
-        if (s.curToken().kind == TokenKind.semicolonToken) {
-            skip(s, TokenKind.semicolonToken);
+        if (s.curToken().kind == semicolonToken) {
+            skip(s, semicolonToken);
         }
 
-        skip(s, TokenKind.newLineToken);
+        skip(s, newLineToken);
 
 
         leaveParser("small stmt list");
@@ -42,8 +39,6 @@ public class AspSmallStmtList extends AspStmt {
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

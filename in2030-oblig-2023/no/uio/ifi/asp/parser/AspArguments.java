@@ -1,12 +1,9 @@
 package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
-
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspArguments extends AspPrimarySuffix{
     ArrayList<AspExpr> exprList = new ArrayList<>();
@@ -20,20 +17,20 @@ public class AspArguments extends AspPrimarySuffix{
 
         AspArguments a = new AspArguments(s.curLineNum());
 
-        skip(s, TokenKind.leftParToken);
+        skip(s, leftParToken);
         
-        if(s.curToken().kind != TokenKind.rightParToken){
+        if(s.curToken().kind != rightParToken){
             while(true){
                 a.exprList.add(AspExpr.parse(s));
 
-                if(s.curToken().kind != TokenKind.commaToken){
+                if(s.curToken().kind != commaToken){
                     break;
                 }
-                skip(s, TokenKind.commaToken);
+                skip(s, commaToken);
             }
         }
 
-        skip(s, TokenKind.rightParToken);
+        skip(s, rightParToken);
 
         leaveParser("argument");
         return a;
@@ -41,8 +38,6 @@ public class AspArguments extends AspPrimarySuffix{
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

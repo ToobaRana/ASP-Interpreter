@@ -2,12 +2,9 @@ package no.uio.ifi.asp.parser;
 
 
 import java.util.ArrayList;
-
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspTerm extends AspSyntax {
     ArrayList<AspFactor> factors = new ArrayList<>();
@@ -24,7 +21,7 @@ public class AspTerm extends AspSyntax {
         AspTerm t = new AspTerm(s.curLineNum());
         t.factors.add(AspFactor.parse(s));
         
-        while (s.curToken().kind == TokenKind.plusToken || s.curToken().kind == TokenKind.minusToken){
+        while (s.curToken().kind == plusToken || s.curToken().kind == minusToken){
             t.termOprs.add(AspTermOpr.parse(s));
             t.factors.add(AspFactor.parse(s));
         }

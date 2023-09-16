@@ -1,12 +1,9 @@
 package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
-
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspListDisplay extends AspAtom{
     ArrayList<AspExpr> exprs = new ArrayList<>();
@@ -20,21 +17,21 @@ public class AspListDisplay extends AspAtom{
 
         AspListDisplay ld = new AspListDisplay(s.curLineNum());
 
-        skip(s, TokenKind.leftBracketToken);
+        skip(s, leftBracketToken);
 
-        if (s.curToken().kind != TokenKind.rightBracketToken) {
+        if (s.curToken().kind != rightBracketToken) {
             while (true) {
                 ld.exprs.add(AspExpr.parse(s));
 
-                if (s.curToken().kind != TokenKind.commaToken) {
+                if (s.curToken().kind != commaToken) {
                     break;
                 }
 
-                skip(s, TokenKind.commaToken);
+                skip(s, commaToken);
             }
         }
 
-        skip(s, TokenKind.rightBracketToken);
+        skip(s, rightBracketToken);
 
 
         leaveParser("list display");
@@ -43,8 +40,6 @@ public class AspListDisplay extends AspAtom{
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

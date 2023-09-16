@@ -2,8 +2,9 @@ package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
 
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFuncDef extends AspCompoundStmt {
     AspName name;
@@ -20,31 +21,41 @@ public class AspFuncDef extends AspCompoundStmt {
 
         AspFuncDef fd = new AspFuncDef(s.curLineNum());
         
-        skip(s, TokenKind.defToken);
+        skip(s, defToken);
         fd.name = AspName.parse(s);
-        skip(s, TokenKind.leftParToken);
+        skip(s, leftParToken);
 
-        if (s.curToken().kind != TokenKind.rightParToken) {
+        if (s.curToken().kind != rightParToken) {
             while (true) {
                 fd.names.add(AspName.parse(s));
 
-                if (s.curToken().kind != TokenKind.commaToken) {
+                if (s.curToken().kind != commaToken) {
                     break;
                 }
                 
-                skip(s, TokenKind.commaToken);
+                skip(s, commaToken);
 
             }
         }
 
-        skip(s, TokenKind.rightParToken);
-        skip(s, TokenKind.colonToken);
+        skip(s, rightParToken);
+        skip(s, colonToken);
 
         fd.suite = AspSuite.parse(s);
 
 
         leaveParser("func def");
         return fd;
+    }
+
+    @Override
+    void prettyPrint() {
+    }
+
+    @Override
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eval'");
     }
 
     

@@ -2,8 +2,9 @@ package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
 
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspIfStmt extends AspCompoundStmt {
     ArrayList<AspExpr> exprList = new ArrayList<>();
@@ -20,27 +21,36 @@ public class AspIfStmt extends AspCompoundStmt {
 
         AspIfStmt is = new AspIfStmt(s.curLineNum());
 
-        skip(s, TokenKind.ifToken);
+        skip(s, ifToken);
 
         while(true){
             is.exprList.add(AspExpr.parse(s));
-            skip(s, TokenKind.colonToken);
+            skip(s, colonToken);
             is.suiteList.add(AspSuite.parse(s));
 
-            if (s.curToken().kind != TokenKind.elifToken) {
+            if (s.curToken().kind != elifToken) {
                 break;
             }
-            skip(s, TokenKind.elifToken);
+            skip(s, elifToken);
         }
 
-        if (s.curToken().kind == TokenKind.elseToken) {
-            skip(s, TokenKind.elseToken);
-            skip(s, TokenKind.colonToken);
+        if (s.curToken().kind == elseToken) {
+            skip(s, elseToken);
+            skip(s, colonToken);
             is.suite = AspSuite.parse(s);
         }
 
         leaveParser("if stmt");
         return is;
+    }
+
+    @Override
+    void prettyPrint() {
+    }
+
+    @Override
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        return null;
     }
     
 }

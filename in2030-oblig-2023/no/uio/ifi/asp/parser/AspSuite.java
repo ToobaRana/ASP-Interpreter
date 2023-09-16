@@ -1,23 +1,22 @@
 package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.parser.AspSyntax;
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspSuite extends AspSyntax {
 
     protected AspSuite(int n) {
         super(n);
-        // TODO Auto-generated constructor stub
     }
 
     static AspSuite parse(Scanner s){
-        enterParser("");
-        AspSuite t = new AspSuite(s.curLineNum());
-        leaveParser("");
-        return null;
+        enterParser("suite");
+
+        AspSuite st = new AspSuite(s.curLineNum());
+
+        leaveParser("suite");
+        return st;
     }
 
 

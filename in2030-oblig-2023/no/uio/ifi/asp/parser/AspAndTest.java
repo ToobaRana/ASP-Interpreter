@@ -1,14 +1,9 @@
 package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
-
-import no.uio.ifi.asp.main.*;
-import no.uio.ifi.asp.parser.AspNotTest;
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.TokenKind;
-import no.uio.ifi.asp.scanner.Scanner;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspAndTest extends AspSyntax {
 
@@ -24,10 +19,10 @@ public class AspAndTest extends AspSyntax {
         AspAndTest aat = new AspAndTest(s.curLineNum());
         while (true) {
             aat.notTests.add(AspNotTest.parse(s));
-            if (s.curToken().kind != TokenKind.andToken) {
+            if (s.curToken().kind != andToken) {
                 break;
             }
-            skip(s, TokenKind.andToken);
+            skip(s, andToken);
         }
 
         leaveParser("and test");

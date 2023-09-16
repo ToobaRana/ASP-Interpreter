@@ -1,11 +1,9 @@
 package no.uio.ifi.asp.parser;
 
 
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspInnerExpr extends AspAtom{
     AspExpr expr;
@@ -17,16 +15,15 @@ public class AspInnerExpr extends AspAtom{
     static AspInnerExpr parse(Scanner s){
         enterParser("inner expr");
         AspInnerExpr ie = new AspInnerExpr(s.curLineNum());
-        skip(s, TokenKind.leftParToken);
+        skip(s, leftParToken);
         ie.expr = AspExpr.parse(s);
-        skip(s, TokenKind.rightParToken);
+        skip(s, rightParToken);
         leaveParser("inner expr");
         return ie;
     }
 
     @Override
     void prettyPrint() {
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

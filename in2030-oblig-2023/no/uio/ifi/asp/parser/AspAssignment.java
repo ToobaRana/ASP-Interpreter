@@ -1,20 +1,24 @@
 package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspAssignment extends AspSmallStmt {
 
     AspAssignment(int n) {
         super(n);
-        //TODO Auto-generated constructor stub
+    }
+
+    static AspAssignment parse(Scanner s){
+        enterParser("assignment");
+        AspAssignment a = new AspAssignment(s.curLineNum());
+        leaveParser("assignment");
+        return a;
     }
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

@@ -2,11 +2,9 @@ package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
 
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspGlobalStmt extends AspSmallStmt {
 
@@ -20,14 +18,14 @@ public class AspGlobalStmt extends AspSmallStmt {
         enterParser("global stmt");
 
         AspGlobalStmt gs = new AspGlobalStmt(s.curLineNum());
-        skip(s, TokenKind.globalToken);
+        skip(s, globalToken);
 
         while (true) {
             gs.names.add(AspName.parse(s));
-            if (s.curToken().kind != TokenKind.commaToken) {
+            if (s.curToken().kind != commaToken) {
                 break;
             }
-            skip(s, TokenKind.commaToken);
+            skip(s, commaToken);
         }
 
         leaveParser("global stmt");
@@ -36,8 +34,6 @@ public class AspGlobalStmt extends AspSmallStmt {
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

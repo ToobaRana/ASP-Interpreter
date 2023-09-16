@@ -1,10 +1,8 @@
 package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspPassStmt extends AspSmallStmt {
 
@@ -16,7 +14,7 @@ public class AspPassStmt extends AspSmallStmt {
         enterParser("pass stmt");
 
         AspPassStmt ps = new AspPassStmt(s.curLineNum());
-        skip(s, TokenKind.passToken);
+        skip(s, passToken);
         leaveParser("pass stmt");
 
         return ps;
@@ -24,8 +22,6 @@ public class AspPassStmt extends AspSmallStmt {
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override

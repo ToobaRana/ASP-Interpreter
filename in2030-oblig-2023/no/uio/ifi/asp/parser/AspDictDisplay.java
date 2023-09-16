@@ -1,12 +1,9 @@
 package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
-
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
+import no.uio.ifi.asp.runtime.*;
+import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspDictDisplay extends AspAtom{
 
@@ -22,23 +19,23 @@ public class AspDictDisplay extends AspAtom{
         enterParser("dict display");
 
         AspDictDisplay dd = new AspDictDisplay(s.curLineNum());
-        skip(s, TokenKind.leftBraceToken);
+        skip(s, leftBraceToken);
 
-        if(s.curToken().kind != TokenKind.rightBraceToken){
+        if(s.curToken().kind != rightBraceToken){
 
             while(true){
                 dd.stringLitList.add(AspStringLiteral.parse(s));
-                skip(s, TokenKind.colonToken);
+                skip(s, colonToken);
                 dd.exprList.add(AspExpr.parse(s));
 
-                if(s.curToken().kind != TokenKind.commaToken){
+                if(s.curToken().kind != commaToken){
                     break;
                 }
-                skip(s, TokenKind.commaToken);
+                skip(s, commaToken);
             }
         }
 
-        skip(s, TokenKind.rightBraceToken);
+        skip(s, rightBraceToken);
 
 
         leaveParser("dict display");
@@ -49,8 +46,6 @@ public class AspDictDisplay extends AspAtom{
 
     @Override
     void prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 
     @Override
