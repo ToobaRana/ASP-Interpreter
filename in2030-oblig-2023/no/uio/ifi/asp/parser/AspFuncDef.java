@@ -19,6 +19,7 @@ public class AspFuncDef extends AspCompoundStmt {
         enterParser("func def");
 
         AspFuncDef fd = new AspFuncDef(s.curLineNum());
+        
         skip(s, TokenKind.defToken);
         fd.name = AspName.parse(s);
         skip(s, TokenKind.leftParToken);
@@ -26,11 +27,14 @@ public class AspFuncDef extends AspCompoundStmt {
         if (s.curToken().kind != TokenKind.rightParToken) {
             while (true) {
                 fd.names.add(AspName.parse(s));
+
                 if (s.curToken().kind != TokenKind.commaToken) {
                     break;
                 }
+                
+                skip(s, TokenKind.commaToken);
+
             }
-            skip(s, TokenKind.commaToken);
         }
 
         skip(s, TokenKind.rightParToken);

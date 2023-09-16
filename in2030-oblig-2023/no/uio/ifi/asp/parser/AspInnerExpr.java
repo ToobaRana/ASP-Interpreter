@@ -7,7 +7,7 @@ import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
 
-public class AspInnerExpr extends AspPrimarySuffix{
+public class AspInnerExpr extends AspAtom{
     AspExpr expr;
 
     AspInnerExpr(int n) {

@@ -1,11 +1,9 @@
 package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.parser.AspSyntax;
 import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
 
 public class AspNotTest extends AspSyntax {
 
@@ -13,12 +11,19 @@ public class AspNotTest extends AspSyntax {
         super(n);
     }
 
-    static AspNotTest parse(Scanner s) {
-        enterParser("and test");
+    static AspNotTest parse(Scanner s){
 
+        enterParser("not test");
 
-        leaveParser("and test");
+        AspNotTest nt = new AspNotTest(s.curLineNum());
+
+        
+
+        leaveParser("not test");
+        return nt;
     }
+
+
 
     @Override
     void prettyPrint() {
