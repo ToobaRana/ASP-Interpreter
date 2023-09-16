@@ -4,20 +4,12 @@ import no.uio.ifi.asp.parser.AspSyntax;
 import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
-import no.uio.ifi.asp.scanner.Scanner;
-import no.uio.ifi.asp.scanner.TokenKind;
 
-public class AspNotTest extends AspSyntax {
+public class AspPrimary extends AspSyntax {
 
-    protected AspNotTest(int n) {
+    protected AspPrimary(int n) {
         super(n);
-    }
-
-    static AspNotTest parse(Scanner s) {
-        enterParser("and test");
-
-
-        leaveParser("and test");
+        // TODO Auto-generated constructor stub
     }
 
     @Override
