@@ -52,6 +52,10 @@ public class Scanner {
 		return curLineTokens.get(0);
 	}
 
+	public Token getNextToken() {
+		return curLineTokens.get(1);
+	}
+
 	//Removes the current symbol, which is the first symbol in 
 	//curLineTokens.
 	public void readNextToken() {
