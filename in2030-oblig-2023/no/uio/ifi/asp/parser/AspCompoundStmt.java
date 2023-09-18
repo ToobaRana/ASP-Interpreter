@@ -1,7 +1,7 @@
 package no.uio.ifi.asp.parser;
 
 
-import no.uio.ifi.asp.runtime.*;
+//import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
 public abstract class AspCompoundStmt extends AspStmt {
@@ -41,14 +41,5 @@ public abstract class AspCompoundStmt extends AspStmt {
         return cs;
     }
 
-    @Override
-    void prettyPrint() {
-    }
-
-    @Override
-    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
-    }
-    
+   
 }

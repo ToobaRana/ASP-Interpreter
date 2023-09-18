@@ -2,7 +2,7 @@
 
 package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.main.*;
+//import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
@@ -34,9 +34,6 @@ abstract class AspStmt extends AspSyntax {
         return stmt;
     }
 
-    @Override
-    void prettyPrint() {
-    }
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {

@@ -1,5 +1,5 @@
 <program>
-   1: i = 0;
+   1: i = 0
   <stmt>
     <small stmt list>
       <small stmt>

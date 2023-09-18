@@ -4,7 +4,11 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
+import java.util.ArrayList;
+
 public class AspPrimary extends AspSyntax {
+    AspAtom atom;
+    ArrayList<AspPrimarySuffix> primarySuffixes = new ArrayList<>();
 
     protected AspPrimary(int n) {
         super(n);
@@ -12,7 +16,15 @@ public class AspPrimary extends AspSyntax {
 
     static AspPrimary parse(Scanner s){
         enterParser("primary");
+
+        TokenKind cur = s.curToken().kind;
         AspPrimary p = new AspPrimary(s.curLineNum());
+        p.atom = AspAtom.parse(s);
+
+        while (cur == leftParToken || cur == leftBracketToken){
+            p.primarySuffixes.add(AspPrimarySuffix.parse(s));
+        }
+
         leaveParser("primary");
         return p;
     }
