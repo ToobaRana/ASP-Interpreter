@@ -23,18 +23,15 @@ public class AspSmallStmtList extends AspStmt {
             ssl.smallStmts.add(AspSmallStmt.parse(s));
 
             if (s.curToken().kind != semicolonToken) {
-                System.out.println("first if");
                 break;
             }
 
             if (s.curToken().kind == semicolonToken) {
-                System.out.println("second if");
 
                 skip(s, semicolonToken);
             }
 
             if (s.curToken().kind == newLineToken){
-                System.out.println("third if");
 
                 break;
             }

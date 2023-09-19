@@ -24,12 +24,8 @@ public class AspAssignment extends AspSmallStmt {
         while (s.curToken().kind != equalToken) {
             a.subscriptions.add(AspSubscription.parse(s));
         }
-        System.out.println("maryam");
-
-        System.out.println("MT: "+s.curToken());
 
         skip(s, equalToken);
-        System.out.println("TooBA");
 
         a.expr = AspExpr.parse(s);
 

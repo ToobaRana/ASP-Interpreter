@@ -18,13 +18,11 @@ public class AspAndTest extends AspSyntax {
 
         AspAndTest aat = new AspAndTest(s.curLineNum());
 
-        System.out.println("AND faEJFNWEAFN");
         while (true) {
             aat.notTests.add(AspNotTest.parse(s));
             if (s.curToken().kind != andToken) {
                 break;
             }
-            System.out.println("AND MT");
             skip(s, andToken);
         }
 

@@ -22,7 +22,6 @@ public class AspPrimary extends AspSyntax {
         p.atom = AspAtom.parse(s);
 
         while (s.curToken().kind== leftParToken || s.curToken().kind == leftBracketToken){
-            System.out.println("inne i primary while");
             p.primarySuffixes.add(AspPrimarySuffix.parse(s));
         }
 
