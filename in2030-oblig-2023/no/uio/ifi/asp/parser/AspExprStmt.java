@@ -4,8 +4,8 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
 public class AspExprStmt extends AspSmallStmt {
-    AspExpr expr;
 
+    AspExpr expr;
 
     AspExprStmt(int n) {
         super(n);
@@ -28,8 +28,7 @@ public class AspExprStmt extends AspSmallStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }

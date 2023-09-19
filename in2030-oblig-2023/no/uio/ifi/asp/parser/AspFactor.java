@@ -3,7 +3,6 @@ package no.uio.ifi.asp.parser;
 import java.util.ArrayList;
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFactor extends AspSyntax {
 
@@ -18,6 +17,7 @@ public class AspFactor extends AspSyntax {
     static AspFactor parse(Scanner s) {
 
         enterParser("factor");
+
         AspFactor f = new AspFactor(s.curLineNum());
 
         while (true) {

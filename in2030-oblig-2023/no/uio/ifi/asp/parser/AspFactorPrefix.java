@@ -2,15 +2,17 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFactorPrefix extends AspSyntax {
+
     TokenKind fpVal;
+
     protected AspFactorPrefix(int n) {
         super(n);
     }
 
     static AspFactorPrefix parse(Scanner s){
+        
         enterParser("factor prefix");
 
         AspFactorPrefix fp = new AspFactorPrefix(s.curLineNum());

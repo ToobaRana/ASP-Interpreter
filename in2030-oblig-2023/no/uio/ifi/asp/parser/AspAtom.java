@@ -5,13 +5,16 @@ package no.uio.ifi.asp.parser;
 import no.uio.ifi.asp.scanner.*;
 
 abstract class AspAtom extends AspSyntax {
+    
     AspAtom(int n) {
         super(n);
     }
 
     static AspAtom parse(Scanner s) {
+
         // -- Must be changed in part 2:
         enterParser("atom");
+
         AspAtom aa = null;
 
         switch (s.curToken().kind) {

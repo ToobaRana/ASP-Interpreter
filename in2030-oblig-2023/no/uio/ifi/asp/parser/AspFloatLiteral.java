@@ -5,6 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFloatLiteral extends AspAtom{
+
     double floatNum;
 
     AspFloatLiteral(int n) {
@@ -12,6 +13,7 @@ public class AspFloatLiteral extends AspAtom{
     }
 
     static AspFloatLiteral parse(Scanner s){
+
         enterParser("float literal");
 
         AspFloatLiteral fl = new AspFloatLiteral(s.curLineNum());
@@ -29,8 +31,7 @@ public class AspFloatLiteral extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }
 

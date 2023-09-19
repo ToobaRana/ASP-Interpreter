@@ -15,9 +15,11 @@ public class AspGlobalStmt extends AspSmallStmt {
     }
 
     static AspGlobalStmt parse(Scanner s){
+
         enterParser("global stmt");
 
         AspGlobalStmt gs = new AspGlobalStmt(s.curLineNum());
+
         skip(s, globalToken);
 
         while (true) {
@@ -38,8 +40,7 @@ public class AspGlobalStmt extends AspSmallStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }

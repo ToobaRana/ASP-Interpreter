@@ -5,6 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspNotTest extends AspSyntax {
+    
     AspComparison comparison;
 
     protected AspNotTest(int n) {

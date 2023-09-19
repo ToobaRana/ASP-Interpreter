@@ -5,6 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspName extends AspAtom{
+
     String name;
 
     AspName(int n) {
@@ -12,6 +13,7 @@ public class AspName extends AspAtom{
     }
 
     static AspName parse(Scanner s){
+
         enterParser("name");
 
         AspName n = new AspName(s.curLineNum());
@@ -28,7 +30,6 @@ public class AspName extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }

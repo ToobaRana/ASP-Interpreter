@@ -7,6 +7,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
 public abstract class AspSyntax {
+    
     public int lineNum;
 
     protected AspSyntax(int n) {

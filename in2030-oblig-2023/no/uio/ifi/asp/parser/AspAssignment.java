@@ -7,6 +7,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 import java.util.ArrayList;
 
 public class AspAssignment extends AspSmallStmt {
+
     AspName name;
     ArrayList<AspSubscription> subscriptions = new ArrayList<>();
     AspExpr expr;
@@ -39,8 +40,7 @@ public class AspAssignment extends AspSmallStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }

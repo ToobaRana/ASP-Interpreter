@@ -5,6 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspSubscription extends AspPrimarySuffix{
+
     AspExpr expr;
 
     AspSubscription(int n) {
@@ -12,6 +13,7 @@ public class AspSubscription extends AspPrimarySuffix{
     }
 
     static AspSubscription parse(Scanner s){
+
         enterParser("subscription");
 
         AspSubscription as = new AspSubscription(s.curLineNum());
@@ -30,8 +32,7 @@ public class AspSubscription extends AspPrimarySuffix{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }

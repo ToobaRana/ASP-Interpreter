@@ -1,8 +1,0 @@
-static Asp parse(Scanner s){
-        enterParser("");
-        Asp t = new Asp(s.curLineNum());
-        leaveParser("");
-        return null;
-    }
-
-  

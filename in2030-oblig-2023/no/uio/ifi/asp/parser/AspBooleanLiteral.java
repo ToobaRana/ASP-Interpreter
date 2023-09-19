@@ -2,15 +2,17 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspBooleanLiteral extends AspAtom{
+
     TokenKind booleanVal;
+
     AspBooleanLiteral(int n) {
         super(n);
     }
 
     static AspBooleanLiteral parse(Scanner s){
+
         enterParser("boolean literal");
 
         AspBooleanLiteral bl = new AspBooleanLiteral(s.curLineNum());
@@ -27,7 +29,6 @@ public class AspBooleanLiteral extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }

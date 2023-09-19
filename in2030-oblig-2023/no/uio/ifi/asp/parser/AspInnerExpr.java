@@ -6,6 +6,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspInnerExpr extends AspAtom{
+
     AspExpr expr;
 
     AspInnerExpr(int n) {
@@ -13,6 +14,7 @@ public class AspInnerExpr extends AspAtom{
     }
 
     static AspInnerExpr parse(Scanner s){
+
         enterParser("inner expr");
 
         AspInnerExpr ie = new AspInnerExpr(s.curLineNum());
@@ -31,8 +33,7 @@ public class AspInnerExpr extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }

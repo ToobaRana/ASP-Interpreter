@@ -1,7 +1,5 @@
 package no.uio.ifi.asp.parser;
 
-
-//import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
 public abstract class AspCompoundStmt extends AspStmt {
@@ -11,6 +9,7 @@ public abstract class AspCompoundStmt extends AspStmt {
     }
 
     static AspCompoundStmt parse(Scanner s){
+
         enterParser("compound stmt");
 
         AspCompoundStmt cs = null;
@@ -40,6 +39,4 @@ public abstract class AspCompoundStmt extends AspStmt {
         leaveParser("compound stmt");
         return cs;
     }
-
-   
 }

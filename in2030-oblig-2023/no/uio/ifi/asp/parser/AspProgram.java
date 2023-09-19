@@ -8,6 +8,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspProgram extends AspSyntax {
+
     ArrayList<AspStmt> stmts = new ArrayList<>();
 
     AspProgram(int n) {
@@ -15,9 +16,11 @@ public class AspProgram extends AspSyntax {
     }
 
     public static AspProgram parse(Scanner s) {
+
         enterParser("program");
 
         AspProgram ap = new AspProgram(s.curLineNum());
+        
         while (s.curToken().kind != eofToken) {
             ap.stmts.add(AspStmt.parse(s));
         }

@@ -14,12 +14,13 @@ public class AspSmallStmtList extends AspStmt {
     }
 
     static AspSmallStmtList parse(Scanner s) {
+
         enterParser("small stmt list");
-        //TokenKind cur = s.curToken().kind;
 
         AspSmallStmtList ssl = new AspSmallStmtList(s.curLineNum());
 
         while (true) {
+
             ssl.smallStmts.add(AspSmallStmt.parse(s));
 
             if (s.curToken().kind != semicolonToken) {
@@ -27,16 +28,13 @@ public class AspSmallStmtList extends AspStmt {
             }
 
             if (s.curToken().kind == semicolonToken) {
-
                 skip(s, semicolonToken);
             }
 
             if (s.curToken().kind == newLineToken){
-
                 break;
             }
         }
-
         skip(s, newLineToken);
 
         leaveParser("small stmt list");
@@ -49,8 +47,7 @@ public class AspSmallStmtList extends AspStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 
 }

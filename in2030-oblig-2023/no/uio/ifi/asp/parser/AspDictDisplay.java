@@ -10,15 +10,16 @@ public class AspDictDisplay extends AspAtom{
     ArrayList<AspStringLiteral> stringLitList = new ArrayList<>();
     ArrayList<AspExpr> exprList = new ArrayList<>();
 
-
     AspDictDisplay(int n) {
         super(n);
     }
 
     static AspDictDisplay parse(Scanner s){
+
         enterParser("dict display");
 
         AspDictDisplay dd = new AspDictDisplay(s.curLineNum());
+
         skip(s, leftBraceToken);
 
         if(s.curToken().kind != rightBraceToken){
@@ -50,7 +51,6 @@ public class AspDictDisplay extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }

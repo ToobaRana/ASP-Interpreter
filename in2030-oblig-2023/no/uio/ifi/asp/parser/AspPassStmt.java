@@ -11,6 +11,7 @@ public class AspPassStmt extends AspSmallStmt {
     }
 
     static AspPassStmt parse(Scanner s){
+
         enterParser("pass stmt");
 
         AspPassStmt ps = new AspPassStmt(s.curLineNum());
@@ -26,8 +27,7 @@ public class AspPassStmt extends AspSmallStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }

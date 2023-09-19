@@ -5,6 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspStringLiteral extends AspAtom{
+
     String stringlit;
 
     AspStringLiteral(int n) {
@@ -12,6 +13,7 @@ public class AspStringLiteral extends AspAtom{
     }
 
     static AspStringLiteral parse(Scanner s){
+
         enterParser("string literal");
 
         AspStringLiteral sl = new AspStringLiteral(s.curLineNum());
@@ -28,7 +30,6 @@ public class AspStringLiteral extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }

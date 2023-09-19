@@ -6,6 +6,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspListDisplay extends AspAtom{
+
     ArrayList<AspExpr> exprs = new ArrayList<>();
 
     AspListDisplay(int n) {
@@ -13,6 +14,7 @@ public class AspListDisplay extends AspAtom{
     }
 
     static AspListDisplay parse(Scanner s){
+
         enterParser("list display");
 
         AspListDisplay ld = new AspListDisplay(s.curLineNum());
@@ -20,6 +22,7 @@ public class AspListDisplay extends AspAtom{
         skip(s, leftBracketToken);
 
         if (s.curToken().kind != rightBracketToken) {
+
             while (true) {
                 ld.exprs.add(AspExpr.parse(s));
 
@@ -33,7 +36,6 @@ public class AspListDisplay extends AspAtom{
 
         skip(s, rightBracketToken);
 
-
         leaveParser("list display");
         return ld;
     }
@@ -44,7 +46,6 @@ public class AspListDisplay extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }

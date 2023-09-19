@@ -2,15 +2,17 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspCompOpr extends AspSyntax {
+
     TokenKind coVal;
+
     protected AspCompOpr(int n) {
         super(n);
     }
 
     static AspCompOpr parse(Scanner s){
+        
         enterParser("comp opr");
 
         AspCompOpr co = new AspCompOpr(s.curLineNum());

@@ -3,7 +3,6 @@ package no.uio.ifi.asp.parser;
 import java.util.ArrayList;
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspComparison extends AspSyntax {
 
@@ -16,12 +15,12 @@ public class AspComparison extends AspSyntax {
     }
 
     static AspComparison parse(Scanner s){
+
         enterParser("comparison");
 
         AspComparison c = new AspComparison(s.curLineNum());
         c.terms.add(AspTerm.parse(s));
 
-        //The while-loop needs to be modified
         while(s.isCompOpr()){
             c.compOprs.add(AspCompOpr.parse(s));
             c.terms.add(AspTerm.parse(s));

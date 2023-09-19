@@ -11,6 +11,7 @@ public class AspNoneLiteral extends AspAtom{
     }
 
     static AspNoneLiteral parse(Scanner s){
+
         enterParser("none literal");
 
         AspNoneLiteral bl = new AspNoneLiteral(s.curLineNum());
@@ -28,7 +29,6 @@ public class AspNoneLiteral extends AspAtom{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
 }

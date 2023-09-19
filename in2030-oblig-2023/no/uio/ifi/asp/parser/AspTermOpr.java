@@ -2,17 +2,21 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspTermOpr extends AspSyntax {
+
     TokenKind toVal;
+
     protected AspTermOpr(int n) {
         super(n);
     }
 
     static AspTermOpr parse(Scanner s){
+
         enterParser("term opr");
+
         AspTermOpr to = new AspTermOpr(s.curLineNum());
+        
         to.toVal = s.curToken().kind;
         skip(s, to.toVal);
 

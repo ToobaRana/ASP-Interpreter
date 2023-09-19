@@ -15,9 +15,11 @@ public class AspForStmt extends AspCompoundStmt {
     }
 
     static AspForStmt parse(Scanner s) {
+
         enterParser("for stmt");
 
         AspForStmt fs = new AspForStmt(s.curLineNum());
+        
         skip(s, forToken);
         fs.name = AspName.parse(s);
         skip(s, inToken);

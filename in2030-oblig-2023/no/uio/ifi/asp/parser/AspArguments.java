@@ -6,6 +6,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspArguments extends AspPrimarySuffix{
+    
     ArrayList<AspExpr> exprList = new ArrayList<>();
 
     AspArguments(int n) {
@@ -13,6 +14,7 @@ public class AspArguments extends AspPrimarySuffix{
     }
 
     static AspArguments parse(Scanner s){
+
         enterParser("arguments");
 
         AspArguments a = new AspArguments(s.curLineNum());
@@ -42,8 +44,7 @@ public class AspArguments extends AspPrimarySuffix{
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eval'");
+        return null;
     }
     
 }
