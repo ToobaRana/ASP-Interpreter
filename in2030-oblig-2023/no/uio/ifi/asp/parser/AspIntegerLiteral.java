@@ -2,7 +2,7 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspIntegerLiteral extends AspAtom{
     long integer;
@@ -16,7 +16,7 @@ public class AspIntegerLiteral extends AspAtom{
 
         AspIntegerLiteral il = new AspIntegerLiteral(s.curLineNum());
         il.integer = s.curToken().integerLit;
-        s.readNextToken();
+        skip(s, integerToken);
 
         leaveParser("integer literal");
         return il;

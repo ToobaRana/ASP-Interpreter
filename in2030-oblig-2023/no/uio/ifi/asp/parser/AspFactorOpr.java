@@ -5,7 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 //import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFactorOpr extends AspSyntax {
-
+    TokenKind foVal;
     protected AspFactorOpr(int n) {
         super(n);
     }
@@ -14,7 +14,8 @@ public class AspFactorOpr extends AspSyntax {
         enterParser("factor opr");
 
         AspFactorOpr fo = new AspFactorOpr(s.curLineNum());
-        skip(s, s.curToken().kind);
+        fo.foVal = s.curToken().kind;
+        skip(s, fo.foVal);
 
         leaveParser("factor opr");
         return fo;

@@ -2,7 +2,7 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-//import static no.uio.ifi.asp.scanner.TokenKind.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFloatLiteral extends AspAtom{
     double floatNum;
@@ -16,7 +16,7 @@ public class AspFloatLiteral extends AspAtom{
 
         AspFloatLiteral fl = new AspFloatLiteral(s.curLineNum());
         fl.floatNum = s.curToken().floatLit;
-        s.readNextToken();
+        skip(s, floatToken);
 
         leaveParser("float literal");
         return fl;

@@ -21,7 +21,6 @@ public class AspAssignment extends AspSmallStmt {
         AspAssignment a = new AspAssignment(s.curLineNum());
         a.name = AspName.parse(s);
 
-        //eller !s.anyEqualToken()
         while (s.curToken().kind != equalToken) {
             a.subscriptions.add(AspSubscription.parse(s));
         }

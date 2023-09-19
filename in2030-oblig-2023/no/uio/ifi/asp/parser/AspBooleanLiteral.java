@@ -5,7 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 //import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspBooleanLiteral extends AspAtom{
-
+    TokenKind booleanVal;
     AspBooleanLiteral(int n) {
         super(n);
     }
@@ -14,7 +14,8 @@ public class AspBooleanLiteral extends AspAtom{
         enterParser("boolean literal");
 
         AspBooleanLiteral bl = new AspBooleanLiteral(s.curLineNum());
-        skip(s, s.curToken().kind);
+        bl.booleanVal = s.curToken().kind;
+        skip(s, bl.booleanVal);
 
         leaveParser("boolean literal");
         return bl;
