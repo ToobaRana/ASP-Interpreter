@@ -16,6 +16,7 @@ public class AspBooleanLiteral extends AspAtom{
         enterParser("boolean literal");
 
         AspBooleanLiteral bl = new AspBooleanLiteral(s.curLineNum());
+        
         bl.booleanVal = s.curToken().kind;
         skip(s, bl.booleanVal);
 
@@ -25,6 +26,7 @@ public class AspBooleanLiteral extends AspAtom{
 
     @Override
     void prettyPrint() {
+        prettyWrite(" " + booleanVal + " ");
     }
 
     @Override

@@ -14,17 +14,16 @@ public class AspNoneLiteral extends AspAtom{
 
         enterParser("none literal");
 
-        AspNoneLiteral bl = new AspNoneLiteral(s.curLineNum());
+        AspNoneLiteral nl = new AspNoneLiteral(s.curLineNum());
         skip(s, noneToken);
 
         leaveParser("none literal");
-        return bl;
+        return nl;
     }
-
-
 
     @Override
     void prettyPrint() {
+        prettyWrite(" none ");
     }
 
     @Override

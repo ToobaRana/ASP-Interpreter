@@ -27,6 +27,7 @@ public class AspIntegerLiteral extends AspAtom{
 
     @Override
     void prettyPrint() {
+        prettyWrite(" " + integer + " ");
     }
 
     @Override

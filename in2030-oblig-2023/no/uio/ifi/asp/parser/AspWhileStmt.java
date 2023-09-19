@@ -30,6 +30,10 @@ public class AspWhileStmt extends AspCompoundStmt {
 
     @Override
     void prettyPrint() {
+        prettyWrite(" while ");
+        expr.prettyPrint();
+        prettyWrite(" : ");
+        suite.prettyPrint();
     }
 
     @Override
