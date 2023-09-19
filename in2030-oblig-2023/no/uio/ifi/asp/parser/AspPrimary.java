@@ -17,11 +17,12 @@ public class AspPrimary extends AspSyntax {
     static AspPrimary parse(Scanner s){
         enterParser("primary");
 
-        TokenKind cur = s.curToken().kind;
+        //TokenKind cur = s.curToken().kind;
         AspPrimary p = new AspPrimary(s.curLineNum());
         p.atom = AspAtom.parse(s);
 
-        while (cur == leftParToken || cur == leftBracketToken){
+        while (s.curToken().kind== leftParToken || s.curToken().kind == leftBracketToken){
+            System.out.println("inne i primary while");
             p.primarySuffixes.add(AspPrimarySuffix.parse(s));
         }
 

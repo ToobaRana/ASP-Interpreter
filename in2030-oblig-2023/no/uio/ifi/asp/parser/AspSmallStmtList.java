@@ -15,22 +15,27 @@ public class AspSmallStmtList extends AspStmt {
 
     static AspSmallStmtList parse(Scanner s) {
         enterParser("small stmt list");
-        TokenKind cur = s.curToken().kind;
+        //TokenKind cur = s.curToken().kind;
 
         AspSmallStmtList ssl = new AspSmallStmtList(s.curLineNum());
 
         while (true) {
             ssl.smallStmts.add(AspSmallStmt.parse(s));
 
-            if (cur != semicolonToken) {
+            if (s.curToken().kind != semicolonToken) {
+                System.out.println("first if");
                 break;
             }
 
-            if (cur == semicolonToken) {
+            if (s.curToken().kind == semicolonToken) {
+                System.out.println("second if");
+
                 skip(s, semicolonToken);
             }
 
-            if (cur == newLineToken){
+            if (s.curToken().kind == newLineToken){
+                System.out.println("third if");
+
                 break;
             }
         }

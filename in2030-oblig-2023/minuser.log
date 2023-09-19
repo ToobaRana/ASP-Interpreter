@@ -132,6 +132,28 @@
                           <name>
                           </name>
                         </atom>
+                        <primary suffix>
+                          <arguments>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </arguments>
+                        </primary suffix>
                       </primary>
                     </factor>
                   </term>
@@ -141,4 +163,164 @@
           </expr>
         </expr stmt>
       </small stmt>
-Asp parser error on line 8: Expected NEWLINE but found (!
+    </small stmt list>
+  </stmt>
+   9: w = (-a)-(-b)-(-1)
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <assignment>
+          <name>
+          </name>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <inner expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <factor prefix>
+                                        </factor prefix>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </inner expr>
+                        </atom>
+                      </primary>
+                    </factor>
+                    <term opr>
+                    </term opr>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <inner expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <factor prefix>
+                                        </factor prefix>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </inner expr>
+                        </atom>
+                      </primary>
+                    </factor>
+                    <term opr>
+                    </term opr>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <inner expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <factor prefix>
+                                        </factor prefix>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </inner expr>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </assignment>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+  10: print(w)
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <expr stmt>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <name>
+                          </name>
+                        </atom>
+                        <primary suffix>
+                          <arguments>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </arguments>
+                        </primary suffix>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </expr stmt>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+</program>
