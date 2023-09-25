@@ -5,7 +5,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspDictDisplay extends AspAtom{
+public class AspDictDisplay extends AspAtom {
 
     ArrayList<AspStringLiteral> stringLitList = new ArrayList<>();
     ArrayList<AspExpr> exprList = new ArrayList<>();
@@ -14,7 +14,7 @@ public class AspDictDisplay extends AspAtom{
         super(n);
     }
 
-    static AspDictDisplay parse(Scanner s){
+    static AspDictDisplay parse(Scanner s) {
 
         enterParser("dict display");
 
@@ -22,14 +22,14 @@ public class AspDictDisplay extends AspAtom{
 
         skip(s, leftBraceToken);
 
-        if(s.curToken().kind != rightBraceToken){
+        if (s.curToken().kind != rightBraceToken) {
 
-            while(true){
+            while (true) {
                 dd.stringLitList.add(AspStringLiteral.parse(s));
                 skip(s, colonToken);
                 dd.exprList.add(AspExpr.parse(s));
 
-                if(s.curToken().kind != commaToken){
+                if (s.curToken().kind != commaToken) {
                     break;
                 }
                 skip(s, commaToken);
@@ -38,15 +38,31 @@ public class AspDictDisplay extends AspAtom{
 
         skip(s, rightBraceToken);
 
-
         leaveParser("dict display");
         return dd;
     }
 
-  
-
     @Override
     void prettyPrint() {
+
+        prettyWrite(" { ");
+
+        int nPrinted = 0;
+
+        for (int i = 0; i < stringLitList.size(); i++) {
+
+            if (nPrinted > 0) {
+                prettyWrite(" , ");
+            }
+
+            stringLitList.get(i).prettyPrint();
+            prettyWrite(" : ");
+            exprList.get(i).prettyPrint();
+
+            ++nPrinted;
+        }
+
+        prettyWrite(" } ");
     }
 
     @Override

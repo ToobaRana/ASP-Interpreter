@@ -12,12 +12,11 @@ public class AspIfStmt extends AspCompoundStmt {
     ArrayList<AspSuite> suiteList = new ArrayList<>();
     AspSuite suite;
 
-
     AspIfStmt(int n) {
         super(n);
     }
 
-    static AspIfStmt parse(Scanner s){
+    static AspIfStmt parse(Scanner s) {
 
         enterParser("if stmt");
 
@@ -25,7 +24,7 @@ public class AspIfStmt extends AspCompoundStmt {
 
         skip(s, ifToken);
 
-        while(true){
+        while (true) {
 
             is.exprList.add(AspExpr.parse(s));
             skip(s, colonToken);
@@ -39,7 +38,7 @@ public class AspIfStmt extends AspCompoundStmt {
         }
 
         if (s.curToken().kind == elseToken) {
-            
+
             skip(s, elseToken);
             skip(s, colonToken);
             is.suite = AspSuite.parse(s);
@@ -51,11 +50,33 @@ public class AspIfStmt extends AspCompoundStmt {
 
     @Override
     void prettyPrint() {
+
+        int nPrinted = 0;
+        prettyWrite(" if ");
+
+        for (int i = 0; i < exprList.size(); i++) {
+
+            if (nPrinted > 0){
+                prettyWrite(" elif ");
+            }
+
+            exprList.get(i).prettyPrint();
+            prettyWrite(" : ");
+            suiteList.get(i).prettyPrint();
+
+            ++nPrinted;
+        }
+
+        if (suite != null) {
+            prettyWrite(" else ");
+            prettyWrite(" : ");
+            suite.prettyPrint();
+        }
     }
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
+
 }

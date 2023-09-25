@@ -32,6 +32,12 @@ public class AspProgram extends AspSyntax {
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
+
+        for (AspStmt as: stmts){
+            as.prettyPrint();
+        }
+
+        prettyWriteLn();
     }
 
     @Override

@@ -5,7 +5,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspListDisplay extends AspAtom{
+public class AspListDisplay extends AspAtom {
 
     ArrayList<AspExpr> exprs = new ArrayList<>();
 
@@ -13,7 +13,7 @@ public class AspListDisplay extends AspAtom{
         super(n);
     }
 
-    static AspListDisplay parse(Scanner s){
+    static AspListDisplay parse(Scanner s) {
 
         enterParser("list display");
 
@@ -42,6 +42,22 @@ public class AspListDisplay extends AspAtom{
 
     @Override
     void prettyPrint() {
+
+        prettyWrite(" [ ");
+
+        int nPrinted = 0;
+
+        for (AspExpr ae : exprs) {
+
+            if (nPrinted > 0) {
+                prettyWrite(" , ");
+            }
+            
+            ae.prettyPrint();
+            ++nPrinted;
+        }
+
+        prettyWrite(" ] ");
     }
 
     @Override

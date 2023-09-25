@@ -40,6 +40,22 @@ public class AspArguments extends AspPrimarySuffix{
 
     @Override
     void prettyPrint() {
+
+        prettyWrite(" ( ");
+
+        int nPrinted = 0;
+
+        for (AspExpr ae : exprList) {
+
+            if (nPrinted > 0) {
+                prettyWrite(" , ");
+            }
+            
+            ae.prettyPrint();
+            ++nPrinted;
+        }
+
+        prettyWrite(" ) ");
     }
 
     @Override
