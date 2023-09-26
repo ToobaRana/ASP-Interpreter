@@ -52,24 +52,24 @@ public class AspIfStmt extends AspCompoundStmt {
     void prettyPrint() {
 
         int nPrinted = 0;
-        prettyWrite(" if ");
+        prettyWrite("if ");
 
         for (int i = 0; i < exprList.size(); i++) {
 
             if (nPrinted > 0){
-                prettyWrite(" elif ");
+                prettyWrite("elif ");
             }
 
             exprList.get(i).prettyPrint();
-            prettyWrite(" : ");
+            prettyWrite(": ");
             suiteList.get(i).prettyPrint();
 
             ++nPrinted;
         }
 
         if (suite != null) {
-            prettyWrite(" else ");
-            prettyWrite(" : ");
+            prettyWrite("else");
+            prettyWrite(": ");
             suite.prettyPrint();
         }
     }

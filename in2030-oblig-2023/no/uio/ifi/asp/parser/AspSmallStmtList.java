@@ -19,6 +19,7 @@ public class AspSmallStmtList extends AspStmt {
 
         AspSmallStmtList ssl = new AspSmallStmtList(s.curLineNum());
 
+        //Loops until it meets a newline token
         while (true) {
 
             ssl.smallStmts.add(AspSmallStmt.parse(s));
@@ -48,7 +49,7 @@ public class AspSmallStmtList extends AspStmt {
 
         for (AspSmallStmt ass: smallStmts){
             if (nPrinted > 0){
-                prettyWrite(" ; ");
+                prettyWrite("; ");
             }
             ass.prettyPrint();
             ++nPrinted;

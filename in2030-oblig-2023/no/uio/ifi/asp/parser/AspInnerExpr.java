@@ -29,9 +29,9 @@ public class AspInnerExpr extends AspAtom{
 
     @Override
     void prettyPrint() {
-        prettyWrite(" ( ");
+        prettyWrite("(");
         expr.prettyPrint();
-        prettyWrite(" ) ");
+        prettyWrite(")");
     }
 
     @Override

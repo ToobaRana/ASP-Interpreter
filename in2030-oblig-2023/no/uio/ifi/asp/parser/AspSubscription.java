@@ -28,14 +28,13 @@ public class AspSubscription extends AspPrimarySuffix{
 
     @Override
     void prettyPrint() {
-        prettyWrite(" [ ");
+        prettyWrite("[");
         expr.prettyPrint();
-        prettyWrite(" ] ");
+        prettyWrite("]");
     }
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
 }

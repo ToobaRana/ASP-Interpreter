@@ -21,6 +21,8 @@ public class AspComparison extends AspSyntax {
         AspComparison c = new AspComparison(s.curLineNum());
         c.terms.add(AspTerm.parse(s));
 
+
+        //As long as currentoken is a compOpr
         while(s.isCompOpr()){
             c.compOprs.add(AspCompOpr.parse(s));
             c.terms.add(AspTerm.parse(s));
@@ -36,7 +38,7 @@ public class AspComparison extends AspSyntax {
         for (int i = 0; i < terms.size(); i++){
             terms.get(i).prettyPrint();
 
-            if (compOprs != null){
+            if (i <= compOprs.size()-1){
                 compOprs.get(i).prettyPrint();
             }
         }

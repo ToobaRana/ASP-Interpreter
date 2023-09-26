@@ -21,6 +21,7 @@ public class AspSuite extends AspSyntax {
         AspSuite st = new AspSuite(s.curLineNum());
 
         if (s.curToken().kind == newLineToken) {
+            
             skip(s, newLineToken);
             skip(s, indentToken);
             

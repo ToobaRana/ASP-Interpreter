@@ -12,7 +12,7 @@ abstract class AspPrimarySuffix extends AspSyntax {
     }
 
     static AspPrimarySuffix parse(Scanner s) {
-        
+
         // -- Must be changed in part 2:
         enterParser("primary suffix");
 
@@ -27,7 +27,7 @@ abstract class AspPrimarySuffix extends AspSyntax {
             ps = AspSubscription.parse(s);
         }
 
-        else{
+        else {
             parserError("Expected ( or [ token but found" + cur, s.curLineNum());
         }
 

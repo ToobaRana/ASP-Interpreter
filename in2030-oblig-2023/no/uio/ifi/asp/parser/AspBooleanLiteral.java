@@ -26,7 +26,7 @@ public class AspBooleanLiteral extends AspAtom{
 
     @Override
     void prettyPrint() {
-        prettyWrite(" " + booleanVal + " ");
+        prettyWrite(booleanVal.toString());
     }
 
     @Override

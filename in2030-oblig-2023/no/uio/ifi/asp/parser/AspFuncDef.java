@@ -49,26 +49,27 @@ public class AspFuncDef extends AspCompoundStmt {
     @Override
     void prettyPrint() {
 
-        prettyWrite(" def ");
+        prettyWrite("def ");
         name.prettyPrint();
-        prettyWrite(" ( ");
+        prettyWrite(" (");
 
-        if(names != null){
+        if(!names.isEmpty()){
 
             int nPrinted = 0;
 
             for (AspName name: names){
                 if (nPrinted > 0){
-                    prettyWrite(" , ");
+                    prettyWrite(", ");
                 }
                 name.prettyPrint();
                 ++nPrinted;
             }
         }
 
-        prettyWrite(" ) ");
-        prettyWrite(" : ");
+        prettyWrite(")");
+        prettyWrite(": ");
         suite.prettyPrint();
+        prettyWriteLn();
     }
 
     @Override

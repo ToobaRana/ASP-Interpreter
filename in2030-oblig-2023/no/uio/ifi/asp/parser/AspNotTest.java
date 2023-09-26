@@ -35,9 +35,9 @@ public class AspNotTest extends AspSyntax {
     void prettyPrint() {
 
         if(not){
-            prettyWrite(" not ");
+            prettyWrite("not ");
         }
-
+        
         comparison.prettyPrint();
     }
 

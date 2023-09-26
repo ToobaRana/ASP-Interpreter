@@ -27,7 +27,7 @@ public class AspReturnStmt extends AspSmallStmt {
 
     @Override
     void prettyPrint() {
-        prettyWrite(" return ");
+        prettyWrite("return ");
         expr.prettyPrint();
     }
 

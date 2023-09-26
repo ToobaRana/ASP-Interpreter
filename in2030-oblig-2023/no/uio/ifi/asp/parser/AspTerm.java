@@ -32,16 +32,17 @@ public class AspTerm extends AspSyntax {
 
     @Override
     void prettyPrint() {
-
+        
         for (int i = 0; i < factors.size(); i++){
             factors.get(i).prettyPrint();
 
-            if (termOprs != null){
+            if (i <= termOprs.size()-1){
                 termOprs.get(i).prettyPrint();
             }
         }
     }
 
+    
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;

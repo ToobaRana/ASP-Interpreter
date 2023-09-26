@@ -25,7 +25,7 @@ public class AspFactorPrefix extends AspSyntax {
 
     @Override
     void prettyPrint() {
-        prettyWrite(" " + fpVal + " ");
+        prettyWrite("" + fpVal + " ");
     }
 
     @Override

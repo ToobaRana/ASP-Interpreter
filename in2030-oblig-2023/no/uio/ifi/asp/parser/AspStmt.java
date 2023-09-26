@@ -37,5 +37,4 @@ abstract class AspStmt extends AspSyntax {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-
 }

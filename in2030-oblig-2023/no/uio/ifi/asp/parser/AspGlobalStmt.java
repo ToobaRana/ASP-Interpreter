@@ -39,11 +39,11 @@ public class AspGlobalStmt extends AspSmallStmt {
 
         int nPrinted = 0;
 
-        prettyWrite(" global ");
+        prettyWrite("global ");
 
         for (AspName an: names){
             if (nPrinted > 0){
-                prettyWrite(" , ");
+                prettyWrite(", ");
             }
             an.prettyPrint();
             ++nPrinted;
