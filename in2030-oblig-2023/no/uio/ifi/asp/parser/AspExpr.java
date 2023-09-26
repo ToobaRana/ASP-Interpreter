@@ -17,7 +17,7 @@ public class AspExpr extends AspSyntax {
     }
 
     public static AspExpr parse(Scanner s) {
-        
+
         enterParser("expr");
 
         // -- Must be changed in part 2:
@@ -40,8 +40,8 @@ public class AspExpr extends AspSyntax {
         // -- Must be changed in part 2:
         int nPrinted = 0;
 
-        for (AspAndTest aat: andTests){
-            if (nPrinted > 0){
+        for (AspAndTest aat : andTests) {
+            if (nPrinted > 0) {
                 prettyWrite(" or ");
             }
             aat.prettyPrint();

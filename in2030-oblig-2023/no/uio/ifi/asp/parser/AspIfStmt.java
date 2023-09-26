@@ -56,7 +56,7 @@ public class AspIfStmt extends AspCompoundStmt {
 
         for (int i = 0; i < exprList.size(); i++) {
 
-            if (nPrinted > 0){
+            if (nPrinted > 0) {
                 prettyWrite("elif ");
             }
 

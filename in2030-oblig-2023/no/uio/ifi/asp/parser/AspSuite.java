@@ -14,24 +14,24 @@ public class AspSuite extends AspSyntax {
         super(n);
     }
 
-    static AspSuite parse(Scanner s){
+    static AspSuite parse(Scanner s) {
 
         enterParser("suite");
 
         AspSuite st = new AspSuite(s.curLineNum());
 
         if (s.curToken().kind == newLineToken) {
-            
+
             skip(s, newLineToken);
             skip(s, indentToken);
-            
-            while(s.curToken().kind != dedentToken){
+
+            while (s.curToken().kind != dedentToken) {
                 st.stmts.add(AspStmt.parse(s));
             }
 
             skip(s, dedentToken);
-        } 
-        
+        }
+
         else {
             st.smallStmtList = AspSmallStmtList.parse(s);
         }
@@ -40,19 +40,18 @@ public class AspSuite extends AspSyntax {
         return st;
     }
 
-
     @Override
     void prettyPrint() {
 
-        if (smallStmtList != null){
+        if (smallStmtList != null) {
             smallStmtList.prettyPrint();
         }
 
-        else{
+        else {
             prettyWriteLn();
             prettyIndent();
 
-            for (AspStmt stmt : stmts){
+            for (AspStmt stmt : stmts) {
                 stmt.prettyPrint();
             }
 

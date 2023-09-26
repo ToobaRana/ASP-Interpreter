@@ -1,11 +1,10 @@
 package no.uio.ifi.asp.parser;
 
-
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspInnerExpr extends AspAtom{
+public class AspInnerExpr extends AspAtom {
 
     AspExpr expr;
 
@@ -13,7 +12,7 @@ public class AspInnerExpr extends AspAtom{
         super(n);
     }
 
-    static AspInnerExpr parse(Scanner s){
+    static AspInnerExpr parse(Scanner s) {
 
         enterParser("inner expr");
 
@@ -22,7 +21,7 @@ public class AspInnerExpr extends AspAtom{
         skip(s, leftParToken);
         ie.expr = AspExpr.parse(s);
         skip(s, rightParToken);
-        
+
         leaveParser("inner expr");
         return ie;
     }
@@ -38,5 +37,5 @@ public class AspInnerExpr extends AspAtom{
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
+
 }

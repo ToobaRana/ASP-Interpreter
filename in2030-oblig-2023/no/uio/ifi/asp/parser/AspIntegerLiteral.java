@@ -4,7 +4,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspIntegerLiteral extends AspAtom{
+public class AspIntegerLiteral extends AspAtom {
 
     long integer;
 
@@ -12,7 +12,7 @@ public class AspIntegerLiteral extends AspAtom{
         super(n);
     }
 
-    static AspIntegerLiteral parse(Scanner s){
+    static AspIntegerLiteral parse(Scanner s) {
 
         enterParser("integer literal");
 
@@ -24,7 +24,6 @@ public class AspIntegerLiteral extends AspAtom{
         return il;
     }
 
-
     @Override
     void prettyPrint() {
         prettyWrite("" + integer + "");
@@ -35,4 +34,3 @@ public class AspIntegerLiteral extends AspAtom{
         return null;
     }
 }
-

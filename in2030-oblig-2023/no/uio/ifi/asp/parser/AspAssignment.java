@@ -16,7 +16,7 @@ public class AspAssignment extends AspSmallStmt {
         super(n);
     }
 
-    static AspAssignment parse(Scanner s){
+    static AspAssignment parse(Scanner s) {
         enterParser("assignment");
 
         AspAssignment a = new AspAssignment(s.curLineNum());
@@ -39,7 +39,7 @@ public class AspAssignment extends AspSmallStmt {
 
         name.prettyPrint();
 
-        for(AspSubscription as: subscriptions){
+        for (AspSubscription as : subscriptions) {
             as.prettyPrint();
         }
 
@@ -51,5 +51,5 @@ public class AspAssignment extends AspSmallStmt {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
+
 }

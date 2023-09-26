@@ -4,13 +4,13 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspNoneLiteral extends AspAtom{
+public class AspNoneLiteral extends AspAtom {
 
     AspNoneLiteral(int n) {
         super(n);
     }
 
-    static AspNoneLiteral parse(Scanner s){
+    static AspNoneLiteral parse(Scanner s) {
 
         enterParser("none literal");
 

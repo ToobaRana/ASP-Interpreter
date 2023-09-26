@@ -11,19 +11,18 @@ public class AspTermOpr extends AspSyntax {
         super(n);
     }
 
-    static AspTermOpr parse(Scanner s){
+    static AspTermOpr parse(Scanner s) {
 
         enterParser("term opr");
 
         AspTermOpr to = new AspTermOpr(s.curLineNum());
-        
+
         to.toVal = s.curToken().kind;
         skip(s, to.toVal);
 
         leaveParser("term opr");
         return to;
     }
-
 
     @Override
     void prettyPrint() {

@@ -11,8 +11,8 @@ public class AspFactorOpr extends AspSyntax {
         super(n);
     }
 
-    static AspFactorOpr parse(Scanner s){
-        
+    static AspFactorOpr parse(Scanner s) {
+
         enterParser("factor opr");
 
         AspFactorOpr fo = new AspFactorOpr(s.curLineNum());

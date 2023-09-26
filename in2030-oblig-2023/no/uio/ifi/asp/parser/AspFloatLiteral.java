@@ -4,7 +4,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspFloatLiteral extends AspAtom{
+public class AspFloatLiteral extends AspAtom {
 
     double floatNum;
 
@@ -12,7 +12,7 @@ public class AspFloatLiteral extends AspAtom{
         super(n);
     }
 
-    static AspFloatLiteral parse(Scanner s){
+    static AspFloatLiteral parse(Scanner s) {
 
         enterParser("float literal");
 
@@ -24,7 +24,6 @@ public class AspFloatLiteral extends AspAtom{
         return fl;
     }
 
-
     @Override
     void prettyPrint() {
         prettyWrite("" + floatNum + "");
@@ -35,4 +34,3 @@ public class AspFloatLiteral extends AspAtom{
         return null;
     }
 }
-

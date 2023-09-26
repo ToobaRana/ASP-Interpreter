@@ -4,7 +4,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspName extends AspAtom{
+public class AspName extends AspAtom {
 
     String name;
 
@@ -12,7 +12,7 @@ public class AspName extends AspAtom{
         super(n);
     }
 
-    static AspName parse(Scanner s){
+    static AspName parse(Scanner s) {
 
         enterParser("name");
 

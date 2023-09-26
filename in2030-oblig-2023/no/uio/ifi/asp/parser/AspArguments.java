@@ -5,27 +5,27 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspArguments extends AspPrimarySuffix{
-    
+public class AspArguments extends AspPrimarySuffix {
+
     ArrayList<AspExpr> exprList = new ArrayList<>();
 
     AspArguments(int n) {
         super(n);
     }
 
-    static AspArguments parse(Scanner s){
+    static AspArguments parse(Scanner s) {
 
         enterParser("arguments");
 
         AspArguments a = new AspArguments(s.curLineNum());
 
         skip(s, leftParToken);
-        
-        if(s.curToken().kind != rightParToken){
-            while(true){
+
+        if (s.curToken().kind != rightParToken) {
+            while (true) {
                 a.exprList.add(AspExpr.parse(s));
 
-                if(s.curToken().kind != commaToken){
+                if (s.curToken().kind != commaToken) {
                     break;
                 }
                 skip(s, commaToken);
@@ -50,7 +50,7 @@ public class AspArguments extends AspPrimarySuffix{
             if (nPrinted > 0) {
                 prettyWrite(", ");
             }
-            
+
             ae.prettyPrint();
             ++nPrinted;
         }
@@ -62,5 +62,5 @@ public class AspArguments extends AspPrimarySuffix{
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
+
 }

@@ -9,21 +9,19 @@ public class AspComparison extends AspSyntax {
     ArrayList<AspTerm> terms = new ArrayList<>();
     ArrayList<AspCompOpr> compOprs = new ArrayList<>();
 
-
     protected AspComparison(int n) {
         super(n);
     }
 
-    static AspComparison parse(Scanner s){
+    static AspComparison parse(Scanner s) {
 
         enterParser("comparison");
 
         AspComparison c = new AspComparison(s.curLineNum());
         c.terms.add(AspTerm.parse(s));
 
-
-        //As long as currentoken is a compOpr
-        while(s.isCompOpr()){
+        // As long as currentoken is a compOpr
+        while (s.isCompOpr()) {
             c.compOprs.add(AspCompOpr.parse(s));
             c.terms.add(AspTerm.parse(s));
         }
@@ -35,10 +33,10 @@ public class AspComparison extends AspSyntax {
     @Override
     void prettyPrint() {
 
-        for (int i = 0; i < terms.size(); i++){
+        for (int i = 0; i < terms.size(); i++) {
             terms.get(i).prettyPrint();
 
-            if (i <= compOprs.size()-1){
+            if (i <= compOprs.size() - 1) {
                 compOprs.get(i).prettyPrint();
             }
         }

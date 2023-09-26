@@ -10,8 +10,6 @@ public class AspFactor extends AspSyntax {
     ArrayList<AspPrimary> primaries = new ArrayList<>();
     ArrayList<AspFactorOpr> factorOprs = new ArrayList<>();
     ArrayList<Boolean> prefixBeforeList = new ArrayList<>();
-    
-
 
     protected AspFactor(int n) {
         super(n);
@@ -31,14 +29,13 @@ public class AspFactor extends AspSyntax {
                 f.prefixBeforeList.add(true);
             }
 
-            
             f.primaries.add(AspPrimary.parse(s));
 
             if (!prefixBefore) {
                 f.prefixBeforeList.add(false);
             }
 
-            //break if curToken is not a factorOpr
+            // break if curToken is not a factorOpr
             if (!s.isFactorOpr()) {
                 break;
             }
@@ -55,19 +52,18 @@ public class AspFactor extends AspSyntax {
     void prettyPrint() {
 
         for (int i = 0; i < primaries.size(); i++) {
-            
+
             if (prefixBeforeList.get(i) == true) {
                 prefixes.get(i).prettyPrint();
             }
 
             primaries.get(i).prettyPrint();
 
-            if (i<= factorOprs.size()-1) {
+            if (i <= factorOprs.size() - 1) {
                 factorOprs.get(i).prettyPrint();
             }
         }
     }
-
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {

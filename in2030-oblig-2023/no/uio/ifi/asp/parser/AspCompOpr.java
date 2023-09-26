@@ -11,8 +11,8 @@ public class AspCompOpr extends AspSyntax {
         super(n);
     }
 
-    static AspCompOpr parse(Scanner s){
-        
+    static AspCompOpr parse(Scanner s) {
+
         enterParser("comp opr");
 
         AspCompOpr co = new AspCompOpr(s.curLineNum());

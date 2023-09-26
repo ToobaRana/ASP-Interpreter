@@ -20,7 +20,7 @@ public class AspProgram extends AspSyntax {
         enterParser("program");
 
         AspProgram ap = new AspProgram(s.curLineNum());
-        
+
         while (s.curToken().kind != eofToken) {
             ap.stmts.add(AspStmt.parse(s));
         }
@@ -32,7 +32,7 @@ public class AspProgram extends AspSyntax {
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
-        for (AspStmt as: stmts){
+        for (AspStmt as : stmts) {
             as.prettyPrint();
         }
     }

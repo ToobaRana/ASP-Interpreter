@@ -11,10 +11,10 @@ public class AspExprStmt extends AspSmallStmt {
         super(n);
     }
 
-    static AspExprStmt parse(Scanner s){
+    static AspExprStmt parse(Scanner s) {
 
         enterParser("expr stmt");
-        
+
         AspExprStmt es = new AspExprStmt(s.curLineNum());
         es.expr = AspExpr.parse(s);
 
@@ -31,5 +31,5 @@ public class AspExprStmt extends AspSmallStmt {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
+
 }

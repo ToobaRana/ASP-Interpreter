@@ -4,7 +4,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspSubscription extends AspPrimarySuffix{
+public class AspSubscription extends AspPrimarySuffix {
 
     AspExpr expr;
 
@@ -12,7 +12,7 @@ public class AspSubscription extends AspPrimarySuffix{
         super(n);
     }
 
-    static AspSubscription parse(Scanner s){
+    static AspSubscription parse(Scanner s) {
 
         enterParser("subscription");
 
@@ -21,7 +21,7 @@ public class AspSubscription extends AspPrimarySuffix{
         skip(s, leftBracketToken);
         as.expr = AspExpr.parse(s);
         skip(s, rightBracketToken);
-        
+
         leaveParser("subscription");
         return as;
     }

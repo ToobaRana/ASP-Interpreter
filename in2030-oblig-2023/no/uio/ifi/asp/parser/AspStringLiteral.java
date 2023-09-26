@@ -4,7 +4,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspStringLiteral extends AspAtom{
+public class AspStringLiteral extends AspAtom {
 
     String stringlit;
 
@@ -12,14 +12,14 @@ public class AspStringLiteral extends AspAtom{
         super(n);
     }
 
-    static AspStringLiteral parse(Scanner s){
+    static AspStringLiteral parse(Scanner s) {
 
         enterParser("string literal");
 
         AspStringLiteral sl = new AspStringLiteral(s.curLineNum());
         sl.stringlit = s.curToken().stringLit;
         skip(s, stringToken);
-        
+
         leaveParser("string literal");
         return sl;
     }

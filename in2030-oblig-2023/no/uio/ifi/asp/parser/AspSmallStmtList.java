@@ -19,7 +19,7 @@ public class AspSmallStmtList extends AspStmt {
 
         AspSmallStmtList ssl = new AspSmallStmtList(s.curLineNum());
 
-        //Loops until it meets a newline token
+        // Loops until it meets a newline token
         while (true) {
 
             ssl.smallStmts.add(AspSmallStmt.parse(s));
@@ -32,7 +32,7 @@ public class AspSmallStmtList extends AspStmt {
                 skip(s, semicolonToken);
             }
 
-            if (s.curToken().kind == newLineToken){
+            if (s.curToken().kind == newLineToken) {
                 break;
             }
         }
@@ -47,8 +47,8 @@ public class AspSmallStmtList extends AspStmt {
 
         int nPrinted = 0;
 
-        for (AspSmallStmt ass: smallStmts){
-            if (nPrinted > 0){
+        for (AspSmallStmt ass : smallStmts) {
+            if (nPrinted > 0) {
                 prettyWrite("; ");
             }
             ass.prettyPrint();
@@ -62,5 +62,4 @@ public class AspSmallStmtList extends AspStmt {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-
 }

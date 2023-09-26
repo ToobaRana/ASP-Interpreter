@@ -18,20 +18,19 @@ abstract class AspStmt extends AspSyntax {
         enterParser("stmt");
 
         AspStmt stmt = null;
-        TokenKind cur =  s.curToken().kind;
+        TokenKind cur = s.curToken().kind;
 
         if (cur == forToken || cur == ifToken || cur == whileToken || cur == defToken) {
             stmt = AspCompoundStmt.parse(s);
         }
 
-        else{
+        else {
             stmt = AspSmallStmtList.parse(s);
         }
 
         leaveParser("stmt");
         return stmt;
     }
-
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {

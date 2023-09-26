@@ -17,25 +17,25 @@ abstract class AspSmallStmt extends AspSyntax {
         enterParser("small stmt");
 
         AspSmallStmt ss = null;
-        TokenKind cur =  s.curToken().kind;
+        TokenKind cur = s.curToken().kind;
 
-        if (cur ==  globalToken){
-            ss =  AspGlobalStmt.parse(s);
+        if (cur == globalToken) {
+            ss = AspGlobalStmt.parse(s);
         }
 
         else if (cur == passToken) {
             ss = AspPassStmt.parse(s);
         }
 
-        else if(cur == returnToken){
+        else if (cur == returnToken) {
             ss = AspReturnStmt.parse(s);
         }
 
-        else if (cur  == nameToken && s.anyEqualToken()) {
+        else if (cur == nameToken && s.anyEqualToken()) {
             ss = AspAssignment.parse(s);
         }
 
-        else{
+        else {
             ss = AspExprStmt.parse(s);
         }
 
@@ -43,4 +43,3 @@ abstract class AspSmallStmt extends AspSyntax {
         return ss;
     }
 }
-

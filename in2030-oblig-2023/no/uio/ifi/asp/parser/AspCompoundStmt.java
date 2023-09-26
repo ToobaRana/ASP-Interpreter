@@ -8,7 +8,7 @@ public abstract class AspCompoundStmt extends AspStmt {
         super(n);
     }
 
-    static AspCompoundStmt parse(Scanner s){
+    static AspCompoundStmt parse(Scanner s) {
 
         enterParser("compound stmt");
 

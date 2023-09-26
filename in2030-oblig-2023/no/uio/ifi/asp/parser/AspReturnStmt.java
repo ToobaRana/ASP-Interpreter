@@ -12,7 +12,7 @@ public class AspReturnStmt extends AspSmallStmt {
         super(n);
     }
 
-    static AspReturnStmt parse(Scanner s){
+    static AspReturnStmt parse(Scanner s) {
 
         enterParser("return stmt");
 
@@ -35,5 +35,4 @@ public class AspReturnStmt extends AspSmallStmt {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
 }

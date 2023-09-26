@@ -10,7 +10,7 @@ public class AspPassStmt extends AspSmallStmt {
         super(n);
     }
 
-    static AspPassStmt parse(Scanner s){
+    static AspPassStmt parse(Scanner s) {
 
         enterParser("pass stmt");
 
@@ -30,5 +30,5 @@ public class AspPassStmt extends AspSmallStmt {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
-    
+
 }

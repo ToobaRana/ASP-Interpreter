@@ -14,7 +14,7 @@ public class AspAndTest extends AspSyntax {
     }
 
     static AspAndTest parse(Scanner s) {
-        
+
         enterParser("and test");
 
         AspAndTest aat = new AspAndTest(s.curLineNum());
@@ -35,8 +35,8 @@ public class AspAndTest extends AspSyntax {
     void prettyPrint() {
         int nPrinted = 0;
 
-        for (AspNotTest ant: notTests){
-            if (nPrinted > 0){
+        for (AspNotTest ant : notTests) {
+            if (nPrinted > 0) {
                 prettyWrite(" and ");
             }
             ant.prettyPrint();

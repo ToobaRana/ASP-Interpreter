@@ -5,7 +5,7 @@ package no.uio.ifi.asp.parser;
 import no.uio.ifi.asp.scanner.*;
 
 abstract class AspAtom extends AspSyntax {
-    
+
     AspAtom(int n) {
         super(n);
     }
@@ -22,7 +22,7 @@ abstract class AspAtom extends AspSyntax {
             case falseToken:
 
             case trueToken:
-                aa =  AspBooleanLiteral.parse(s);
+                aa = AspBooleanLiteral.parse(s);
                 break;
 
             case floatToken:
@@ -32,11 +32,11 @@ abstract class AspAtom extends AspSyntax {
             case integerToken:
                 aa = AspIntegerLiteral.parse(s);
                 break;
-            
+
             case leftBraceToken:
                 aa = AspDictDisplay.parse(s);
                 break;
-            
+
             case leftBracketToken:
                 aa = AspListDisplay.parse(s);
                 break;

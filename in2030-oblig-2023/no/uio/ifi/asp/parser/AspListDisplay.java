@@ -52,7 +52,7 @@ public class AspListDisplay extends AspAtom {
             if (nPrinted > 0) {
                 prettyWrite(", ");
             }
-            
+
             ae.prettyPrint();
             ++nPrinted;
         }
