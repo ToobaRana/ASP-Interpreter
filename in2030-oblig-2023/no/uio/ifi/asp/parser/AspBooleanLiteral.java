@@ -2,10 +2,12 @@ package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspBooleanLiteral extends AspAtom {
 
     TokenKind booleanVal;
+    boolean value;
 
     AspBooleanLiteral(int n) {
         super(n);
@@ -18,6 +20,15 @@ public class AspBooleanLiteral extends AspAtom {
         AspBooleanLiteral bl = new AspBooleanLiteral(s.curLineNum());
 
         bl.booleanVal = s.curToken().kind;
+
+        if (bl.booleanVal == trueToken) {
+            bl.value = true;
+        } 
+        
+        else {
+            bl.value = false;
+        }
+
         skip(s, bl.booleanVal);
 
         leaveParser("boolean literal");
@@ -31,6 +42,6 @@ public class AspBooleanLiteral extends AspAtom {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+        return new RuntimeBoolValue(value);
     }
 }

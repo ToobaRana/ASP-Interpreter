@@ -5,6 +5,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspNoneLiteral extends AspAtom {
+    
 
     AspNoneLiteral(int n) {
         super(n);
@@ -28,6 +29,6 @@ public class AspNoneLiteral extends AspAtom {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+        return new RuntimeNoneValue();
     }
 }

@@ -8,6 +8,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 public class AspArguments extends AspPrimarySuffix {
 
     ArrayList<AspExpr> exprList = new ArrayList<>();
+    Boolean metExpr = false;
 
     AspArguments(int n) {
         super(n);
@@ -22,6 +23,7 @@ public class AspArguments extends AspPrimarySuffix {
         skip(s, leftParToken);
 
         if (s.curToken().kind != rightParToken) {
+            a.metExpr = true;
             while (true) {
                 a.exprList.add(AspExpr.parse(s));
 
@@ -60,6 +62,19 @@ public class AspArguments extends AspPrimarySuffix {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+
+        if (metExpr) {
+
+            RuntimeValue v = exprList.get(0).eval(curScope);
+
+            for (int i = 1; i < exprList.size(); ++i) {
+                if (!v.getBoolValue(", operand", this)) {
+                    return v;
+                }
+                v = exprList.get(i).eval(curScope);
+            }
+            return v;
+        }
         return null;
     }
 

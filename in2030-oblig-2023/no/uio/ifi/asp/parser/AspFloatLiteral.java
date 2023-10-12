@@ -31,6 +31,6 @@ public class AspFloatLiteral extends AspAtom {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+        return new RuntimeFloatValue(floatNum);
     }
 }
