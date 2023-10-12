@@ -9,6 +9,7 @@ public class AspDictDisplay extends AspAtom {
 
     ArrayList<AspStringLiteral> stringLitList = new ArrayList<>();
     ArrayList<AspExpr> exprList = new ArrayList<>();
+    Boolean metString = false;
 
     AspDictDisplay(int n) {
         super(n);
@@ -23,6 +24,7 @@ public class AspDictDisplay extends AspAtom {
         skip(s, leftBraceToken);
 
         if (s.curToken().kind != rightBraceToken) {
+            dd.metString = true;
 
             while (true) {
                 dd.stringLitList.add(AspStringLiteral.parse(s));
@@ -67,6 +69,23 @@ public class AspDictDisplay extends AspAtom {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        if (metString) {// need to be fixed
+
+            RuntimeValue v1 = stringLitList.get(0).eval(curScope);
+            RuntimeValue v2 = exprList.get(0).eval(curScope);
+             
+
+            for (int i = 1; i < exprList.size(); ++i) {
+                v1 = stringLitList.get(i).eval(curScope);
+
+                if (!v2.getBoolValue(", operand", this)) {
+                    return v2;
+                }
+
+                v2 = exprList.get(i).eval(curScope);
+            }
+            return v2;
+        }
         return null;
     }
 }

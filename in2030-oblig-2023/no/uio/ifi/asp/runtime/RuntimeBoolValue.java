@@ -14,7 +14,7 @@ public class RuntimeBoolValue extends RuntimeValue {
 
     @Override
     String typeName() {
-        return "boolean";
+        return "Boolean";
     }
 
     @Override
@@ -29,6 +29,7 @@ public class RuntimeBoolValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
+        //any == none
         if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(false);
         }
@@ -43,6 +44,7 @@ public class RuntimeBoolValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
+        //any != none
         if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(true);
         }
