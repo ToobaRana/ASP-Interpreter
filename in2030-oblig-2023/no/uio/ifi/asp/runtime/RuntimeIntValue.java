@@ -16,6 +16,16 @@ public class RuntimeIntValue extends RuntimeValue {
     }
 
     @Override
+    public String showInfo(){
+        return toString();
+    }
+
+    @Override
+    public String toString() {
+        return "" + intValue;
+    }
+
+    @Override
     public RuntimeValue evalNot(AspSyntax where) {
         return new RuntimeBoolValue(!getBoolValue("not operand", where));// need to be fixed
     }

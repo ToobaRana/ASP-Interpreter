@@ -12,6 +12,11 @@ public class RuntimeNoneValue extends RuntimeValue {
     }
 
     @Override
+    public String showInfo(){
+        return toString();
+    }
+    
+    @Override
     public String toString() {
         return "None";
     }

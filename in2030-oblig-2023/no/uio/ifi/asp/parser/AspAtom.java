@@ -2,9 +2,15 @@
 
 package no.uio.ifi.asp.parser;
 
+import no.uio.ifi.asp.runtime.RuntimeBoolValue;
+import no.uio.ifi.asp.runtime.RuntimeReturnValue;
+import no.uio.ifi.asp.runtime.RuntimeScope;
+import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.*;
 
 abstract class AspAtom extends AspSyntax {
+
+    static AspAtom aa;
 
     AspAtom(int n) {
         super(n);
@@ -14,8 +20,6 @@ abstract class AspAtom extends AspSyntax {
 
         // -- Must be changed in part 2:
         enterParser("atom");
-
-        AspAtom aa = null;
 
         switch (s.curToken().kind) {
 
@@ -65,4 +69,11 @@ abstract class AspAtom extends AspSyntax {
 
         return aa;
     }
+
+    @Override
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        return aa.eval(curScope);
+    }
+
+    
 }

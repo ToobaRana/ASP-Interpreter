@@ -24,9 +24,14 @@ public class RuntimeStringValue extends RuntimeValue {
     }
 
     @Override
+    public String toString() {
+        return strValue;
+    }
+
+    @Override
     public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
 
-        //string * int
+        // string * int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeStringValue(strValue.repeat((int) v.getIntValue("* operand", where)));
         }
@@ -46,7 +51,7 @@ public class RuntimeStringValue extends RuntimeValue {
             }
         }
 
-        //any == none
+        // any == none
         else if (v instanceof RuntimeNoneValue) {
 
         }
@@ -58,7 +63,7 @@ public class RuntimeStringValue extends RuntimeValue {
     @Override
     public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
 
-        //string != string
+        // string != string
         if (v instanceof RuntimeStringValue) {
             if (strValue != v.getStringValue("!= operand", where)) {
                 return new RuntimeBoolValue(true);
@@ -67,7 +72,7 @@ public class RuntimeStringValue extends RuntimeValue {
             }
         }
 
-        //any != none
+        // any != none
         else if (v instanceof RuntimeNoneValue) {
 
         }
@@ -79,7 +84,7 @@ public class RuntimeStringValue extends RuntimeValue {
     @Override
     public RuntimeValue evalLess(RuntimeValue v, AspSyntax where) {
 
-        //string < string
+        // string < string
         if (v instanceof RuntimeStringValue) {
             if (strValue.length() < v.getStringValue("< operand", where).length()) {
                 return new RuntimeBoolValue(true);
@@ -95,7 +100,7 @@ public class RuntimeStringValue extends RuntimeValue {
     @Override
     public RuntimeValue evalLessEqual(RuntimeValue v, AspSyntax where) {
 
-        //string <= string
+        // string <= string
         if (v instanceof RuntimeStringValue) {
             if (strValue.length() <= v.getStringValue("<= operand", where).length()) {
                 return new RuntimeBoolValue(true);
@@ -111,7 +116,7 @@ public class RuntimeStringValue extends RuntimeValue {
     @Override
     public RuntimeValue evalGreater(RuntimeValue v, AspSyntax where) {
 
-        //string > string
+        // string > string
         if (v instanceof RuntimeStringValue) {
             if (strValue.length() > v.getStringValue("> operand", where).length()) {
                 return new RuntimeBoolValue(true);
@@ -127,7 +132,7 @@ public class RuntimeStringValue extends RuntimeValue {
     @Override
     public RuntimeValue evalGreaterEqual(RuntimeValue v, AspSyntax where) {
 
-        //string >= string
+        // string >= string
         if (v instanceof RuntimeStringValue) {
             if (strValue.length() >= v.getStringValue(">= operand", where).length()) {
                 return new RuntimeBoolValue(true);
@@ -146,12 +151,22 @@ public class RuntimeStringValue extends RuntimeValue {
     }
 
     @Override
-    public String getStringValue(String what, AspSyntax where) {
-        return strValue;
+    public RuntimeValue evalLen(AspSyntax where) {
+        return new RuntimeIntValue(strValue.length());
     }
 
     @Override
-    public String toString() {
+    public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
+        if (v instanceof RuntimeIntValue) {
+            String s = "" + strValue.charAt((int) v.getIntValue(strValue, where));
+            return new RuntimeStringValue(s);
+        }
+
+        return null;
+    }
+
+    @Override
+    public String getStringValue(String what, AspSyntax where) {
         return strValue;
     }
 

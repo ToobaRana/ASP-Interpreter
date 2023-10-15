@@ -30,6 +30,6 @@ public class AspFactorOpr extends AspSyntax {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+        return null; // Only terminals -> Returns null
     }
 }

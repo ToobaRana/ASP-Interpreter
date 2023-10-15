@@ -18,6 +18,16 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
+    public String showInfo(){
+        return toString();
+    }
+
+    @Override
+    public String toString() {
+        return listValue.toString();
+    }
+
+    @Override
     public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
 
         //list * int (int copies of list)
@@ -53,6 +63,18 @@ public class RuntimeListValue extends RuntimeValue {
     @Override
     public RuntimeValue evalNot(AspSyntax where) {
         return new RuntimeBoolValue(!getBoolValue("not operand", where));// need to be fixed
+    }
+
+    @Override
+    public RuntimeValue evalLen(AspSyntax where){
+        return new RuntimeIntValue(listValue.size());
+    }
+
+    public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
+        if (!listValue.isEmpty() && v instanceof RuntimeIntValue) {
+            return listValue.get((int) v.getIntValue("subscription", where));
+        }
+        return null; // Required by the compiler!
     }
 
     // Needs to be changed

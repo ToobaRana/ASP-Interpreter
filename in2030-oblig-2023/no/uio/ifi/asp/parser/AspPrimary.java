@@ -10,6 +10,7 @@ public class AspPrimary extends AspSyntax {
 
     AspAtom atom;
     ArrayList<AspPrimarySuffix> primarySuffixes = new ArrayList<>();
+    Boolean metPrimarySuffix = false;
 
     protected AspPrimary(int n) {
         super(n);
@@ -22,6 +23,7 @@ public class AspPrimary extends AspSyntax {
         p.atom = AspAtom.parse(s);
 
         while (s.curToken().kind == leftParToken || s.curToken().kind == leftBracketToken) {
+            p.metPrimarySuffix = true;
             p.primarySuffixes.add(AspPrimarySuffix.parse(s));
         }
 
@@ -41,6 +43,17 @@ public class AspPrimary extends AspSyntax {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+        RuntimeValue v1 =  atom.eval(curScope);
+
+        if(metPrimarySuffix){
+
+            RuntimeValue v2 = primarySuffixes.get(0).eval(curScope);
+
+            for (int i = 1; i < primarySuffixes.size(); ++i) {
+                v2 = primarySuffixes.get(i).eval(curScope);
+            }
+            return v2;
+        }
+        return v1;
     }
 }
