@@ -8,9 +8,8 @@ import java.util.ArrayList;
 
 public class AspPrimary extends AspSyntax {
 
-    AspAtom atom;
+    AspAtom atom; //change name
     ArrayList<AspPrimarySuffix> primarySuffixes = new ArrayList<>();
-    Boolean metPrimarySuffix = false;
 
     protected AspPrimary(int n) {
         super(n);
@@ -23,7 +22,6 @@ public class AspPrimary extends AspSyntax {
         p.atom = AspAtom.parse(s);
 
         while (s.curToken().kind == leftParToken || s.curToken().kind == leftBracketToken) {
-            p.metPrimarySuffix = true;
             p.primarySuffixes.add(AspPrimarySuffix.parse(s));
         }
 
@@ -43,17 +41,18 @@ public class AspPrimary extends AspSyntax {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        RuntimeValue v1 =  atom.eval(curScope);
+        RuntimeValue v = atom.eval(curScope);
 
-        if(metPrimarySuffix){
-
-            RuntimeValue v2 = primarySuffixes.get(0).eval(curScope);
-
-            for (int i = 1; i < primarySuffixes.size(); ++i) {
-                v2 = primarySuffixes.get(i).eval(curScope);
+        for (AspPrimarySuffix suffix : primarySuffixes) {
+            if (v instanceof RuntimeStringValue || v instanceof RuntimeListValue || v instanceof RuntimeDictValue) {
+                v = v.evalSubscription(suffix.eval(curScope), this);
             }
-            return v2;
+
+            else if(suffix instanceof AspArguments){
+                v = suffix.eval(curScope);
+            }
         }
-        return v1;
+
+        return v;
     }
 }

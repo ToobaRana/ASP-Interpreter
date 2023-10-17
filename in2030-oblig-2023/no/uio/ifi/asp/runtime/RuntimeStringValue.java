@@ -53,7 +53,7 @@ public class RuntimeStringValue extends RuntimeValue {
 
         // any == none
         else if (v instanceof RuntimeNoneValue) {
-
+            return new RuntimeBoolValue(v.getBoolValue("== operand", where));
         }
 
         runtimeError("Type error for ==.", where);
@@ -74,7 +74,7 @@ public class RuntimeStringValue extends RuntimeValue {
 
         // any != none
         else if (v instanceof RuntimeNoneValue) {
-
+            return new RuntimeBoolValue(!v.getBoolValue("!= operand", where));
         }
 
         runtimeError("Type error for !=.", where);

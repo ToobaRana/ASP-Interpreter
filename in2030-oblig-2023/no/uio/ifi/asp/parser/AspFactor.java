@@ -1,6 +1,8 @@
 package no.uio.ifi.asp.parser;
 
 import java.util.ArrayList;
+
+import no.uio.ifi.asp.main.Main;
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
@@ -67,6 +69,60 @@ public class AspFactor extends AspSyntax {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+
+        RuntimeValue v = null;
+        int trueCounter = 0;
+
+        for (int i = 0; i < prefixBeforeList.size(); i++) {
+            // ArrayList<Object> list = prefixBeforeList.get(i) ? prefixes : primaries;
+
+            if (i > 0) {
+                TokenKind k = factorOprs.get(i - 1).foVal;
+
+                switch (k) {
+                    case astToken:
+                        v = v.evalMultiply(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    case slashToken:
+                        v = v.evalDivide(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    case percentToken:
+                        v = v.evalModulo(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    case doubleSlashToken:
+                        v = v.evalIntDivide(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    default:
+                        Main.panic("Illegal term operator: " + k + "!");
+                }
+            }
+
+            if (prefixBeforeList.get(i) == true) {
+                // RuntimeValue p = prefixes.get(counter).eval(curScope);
+                TokenKind k = prefixes.get(trueCounter).fpVal;
+
+                switch (k) {
+                    case plusToken:
+                        v = v.evalPositive(this);
+                        break;
+
+                    case minusToken:
+                        v = v.evalNegate(this);
+                        break;
+
+                    default:
+                        Main.panic("Illegal term operator: " + k + "!");
+                }
+                trueCounter++;
+            }
+
+            v = primaries.get(i).eval(curScope);
+
+        }
+        return v;
     }
 }

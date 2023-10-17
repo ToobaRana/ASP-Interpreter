@@ -16,7 +16,7 @@ public class RuntimeIntValue extends RuntimeValue {
     }
 
     @Override
-    public String showInfo(){
+    public String showInfo() {
         return toString();
     }
 
@@ -33,13 +33,13 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where) {
 
-        //int + int
+        // int + int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeIntValue(intValue +
                     v.getIntValue("+ operand", where));
         }
 
-        //int + float
+        // int + float
         else if (v instanceof RuntimeFloatValue) {
             return new RuntimeFloatValue(intValue +
                     v.getFloatValue("+ operand", where));
@@ -51,13 +51,13 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public RuntimeValue evalSubtract(RuntimeValue v, AspSyntax where) {
 
-        //int - int
+        // int - int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeIntValue(intValue -
                     v.getIntValue("- operand", where));
         }
 
-        //int - float
+        // int - float
         else if (v instanceof RuntimeFloatValue) {
             return new RuntimeFloatValue(intValue -
                     v.getFloatValue("- operand", where));
@@ -69,13 +69,13 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public RuntimeValue evalDivide(RuntimeValue v, AspSyntax where) {
 
-        //int / int
+        // int / int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeFloatValue(intValue /
                     v.getIntValue("/ operand", where));
         }
 
-        //int / float
+        // int / float
         else if (v instanceof RuntimeFloatValue) {
             return new RuntimeFloatValue(intValue /
                     v.getFloatValue("/ operand", where));
@@ -87,12 +87,12 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
 
-        //int // int
+        // int // int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeIntValue(Math.floorDiv(intValue, v.getIntValue("// operand", where)));
         }
 
-        //int // float
+        // int // float
         else if (v instanceof RuntimeFloatValue) {
             return new RuntimeFloatValue(Math.floor(intValue / v.getFloatValue("// operand", where)));
         }
@@ -103,13 +103,13 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
 
-        //int * int
+        // int * int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeIntValue(intValue *
                     v.getIntValue("* operand", where));
         }
 
-        //int * float
+        // int * float
         else if (v instanceof RuntimeFloatValue) {
             return new RuntimeFloatValue(intValue *
                     v.getFloatValue("* operand", where));
@@ -121,12 +121,12 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public RuntimeValue evalModulo(RuntimeValue v, AspSyntax where) {
 
-        //int % int
+        // int % int
         if (v instanceof RuntimeIntValue) {
             return new RuntimeIntValue(Math.floorMod(intValue, v.getIntValue("% operand", where)));
         }
 
-        //int % float
+        // int % float
         else if (v instanceof RuntimeFloatValue) {
             return new RuntimeFloatValue(intValue
                     - v.getFloatValue("% operand", where)
@@ -151,26 +151,25 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int == int
         if (v instanceof RuntimeIntValue) {
-            if(intValue == v.getIntValue("== operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (intValue == v.getIntValue("== operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //int == float (Converted int to float)
+        // int == float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if(this.getFloatValue("== operand", where) == v.getFloatValue("== operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (this.getFloatValue("== operand", where) == v.getFloatValue("== operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //any == none
+        // any == none
         else if (v instanceof RuntimeNoneValue) {
+            return new RuntimeBoolValue(v.getBoolValue("== operand", where));
 
         }
 
@@ -183,27 +182,25 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int != int
         if (v instanceof RuntimeIntValue) {
-            if(intValue != v.getIntValue("!= operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (intValue != v.getIntValue("!= operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //int != float (Converted int to float)
+        // int != float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if(this.getFloatValue("!= operand", where) != v.getFloatValue("!= operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (this.getFloatValue("!= operand", where) != v.getFloatValue("!= operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //any != none
+        // any != none
         else if (v instanceof RuntimeNoneValue) {
-
+            return new RuntimeBoolValue(!v.getBoolValue("!= operand", where));
         }
 
         runtimeError("Type error for !=.", where);
@@ -215,20 +212,18 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int < int
         if (v instanceof RuntimeIntValue) {
-            if(intValue < v.getIntValue("< operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (intValue < v.getIntValue("< operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //int < float (Converted int to float)
+        // int < float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if(this.getFloatValue("< operand", where) < v.getFloatValue("< operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (this.getFloatValue("< operand", where) < v.getFloatValue("< operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
@@ -242,20 +237,18 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int > int
         if (v instanceof RuntimeIntValue) {
-            if(intValue > v.getIntValue("> operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (intValue > v.getIntValue("> operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //int > float (Converted int to float)
+        // int > float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if(this.getFloatValue("> operand", where) > v.getFloatValue("> operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (this.getFloatValue("> operand", where) > v.getFloatValue("> operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
@@ -269,20 +262,18 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int >= int
         if (v instanceof RuntimeIntValue) {
-            if(intValue >= v.getIntValue(">= operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (intValue >= v.getIntValue(">= operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //int >= float (Converted int to float)
+        // int >= float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if(this.getFloatValue(">= operand", where) >= v.getFloatValue(">= operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (this.getFloatValue(">= operand", where) >= v.getFloatValue(">= operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
@@ -296,20 +287,18 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int <= int
         if (v instanceof RuntimeIntValue) {
-            if(intValue <= v.getIntValue("<= operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (intValue <= v.getIntValue("<= operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
 
-        //int <= float (Converted int to float)
+        // int <= float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if(this.getFloatValue("<= operand", where) <= v.getFloatValue("<= operand", where)){
-                return new RuntimeBoolValue(true); 
-            }
-            else{
+            if (this.getFloatValue("<= operand", where) <= v.getFloatValue("<= operand", where)) {
+                return new RuntimeBoolValue(true);
+            } else {
                 return new RuntimeBoolValue(false);
             }
         }
