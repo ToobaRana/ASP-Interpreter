@@ -76,42 +76,18 @@ public class AspFactor extends AspSyntax {
         for (int i = 0; i < prefixBeforeList.size(); i++) {
             // ArrayList<Object> list = prefixBeforeList.get(i) ? prefixes : primaries;
 
-            if (i > 0) {
-                TokenKind k = factorOprs.get(i - 1).foVal;
-
-                switch (k) {
-                    case astToken:
-                        v = v.evalMultiply(primaries.get(i).eval(curScope), this);
-                        break;
-
-                    case slashToken:
-                        v = v.evalDivide(primaries.get(i).eval(curScope), this);
-                        break;
-
-                    case percentToken:
-                        v = v.evalModulo(primaries.get(i).eval(curScope), this);
-                        break;
-
-                    case doubleSlashToken:
-                        v = v.evalIntDivide(primaries.get(i).eval(curScope), this);
-                        break;
-
-                    default:
-                        Main.panic("Illegal term operator: " + k + "!");
-                }
-            }
 
             if (prefixBeforeList.get(i) == true) {
-                // RuntimeValue p = prefixes.get(counter).eval(curScope);
+                RuntimeValue p = primaries.get(i).eval(curScope);
                 TokenKind k = prefixes.get(trueCounter).fpVal;
 
                 switch (k) {
                     case plusToken:
-                        v = v.evalPositive(this);
+                        v = p.evalPositive(this);
                         break;
 
                     case minusToken:
-                        v = v.evalNegate(this);
+                        v = p.evalNegate(this);
                         break;
 
                     default:
@@ -120,7 +96,43 @@ public class AspFactor extends AspSyntax {
                 trueCounter++;
             }
 
-            v = primaries.get(i).eval(curScope);
+            if (prefixBeforeList.get(i) == false) {
+                System.out.println("bllllll");
+                v = primaries.get(i).eval(curScope);
+            }
+
+            if (i > 0) {
+                System.out.println("blah");
+                TokenKind k = factorOprs.get(i - 1).foVal;
+
+                switch (k) {
+                    case astToken:
+                        System.out.println("we in asttoken");
+                        v = v.evalMultiply(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    case slashToken:
+                        System.out.println("we in slashToken");
+
+                        v = v.evalDivide(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    case percentToken:
+                        System.out.println("we in percentToken");
+
+                        v = v.evalModulo(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    case doubleSlashToken:
+                        System.out.println("we in doubleSlashToken");
+
+                        v = v.evalIntDivide(primaries.get(i).eval(curScope), this);
+                        break;
+
+                    default:
+                        Main.panic("Illegal term operator: " + k + "!");
+                }
+            }
 
         }
         return v;

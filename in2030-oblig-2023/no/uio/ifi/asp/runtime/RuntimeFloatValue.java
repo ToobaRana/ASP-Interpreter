@@ -104,6 +104,7 @@ public class RuntimeFloatValue extends RuntimeValue {
 
         // float * float
         if (v instanceof RuntimeFloatValue) {
+            System.out.println("we are inside float-evalMultiply");
             return new RuntimeFloatValue(floatValue *
                     v.getFloatValue("* operand", where));
         }

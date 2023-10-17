@@ -296,7 +296,7 @@ public class RuntimeIntValue extends RuntimeValue {
 
         // int <= float (Converted int to float)
         else if (v instanceof RuntimeFloatValue) {
-            if (this.getFloatValue("<= operand", where) <= v.getFloatValue("<= operand", where)) {
+            if (intValue <= v.getFloatValue("<= operand", where)) {
                 return new RuntimeBoolValue(true);
             } else {
                 return new RuntimeBoolValue(false);

@@ -29,11 +29,22 @@ public class RuntimeStringValue extends RuntimeValue {
     }
 
     @Override
+    public RuntimeValue evalAdd(RuntimeValue v, AspSyntax where) {
+        // string + string
+        if (v instanceof RuntimeStringValue) {
+            return new RuntimeStringValue(strValue + v.getStringValue("+ operand", where));
+        }
+
+        runtimeError("Type error for +.", where);
+        return null; // Required by the compiler.
+    }
+
+    @Override
     public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
 
         // string * int
         if (v instanceof RuntimeIntValue) {
-            return new RuntimeStringValue(strValue.repeat((int) v.getIntValue("* operand", where)));
+            return new RuntimeStringValue(strValue.repeat((int)v.getIntValue("* operand", where)));
         }
         runtimeError("Type error for *.", where);
         return null;
