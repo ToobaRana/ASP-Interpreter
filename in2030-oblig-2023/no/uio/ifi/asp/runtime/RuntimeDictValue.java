@@ -53,6 +53,17 @@ public class RuntimeDictValue extends RuntimeValue {
     }
 
     @Override
+    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
+        // any != none
+        if (v instanceof RuntimeNoneValue) {
+            return new RuntimeBoolValue(true);
+        }
+
+        runtimeError("Type error for !=.", where);
+        return null; // Required by the compiler.
+    }
+
+    @Override
     public RuntimeValue evalNot(AspSyntax where) {
         return new RuntimeBoolValue(!getBoolValue("not operand", where));
     }
@@ -64,7 +75,7 @@ public class RuntimeDictValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-        if (dictValue.containsKey(v.getStringValue("subscription", where)) && v instanceof RuntimeStringValue) {
+        if (dictValue.containsKey(v.getStringValue("subscription", where)) ) {
             return dictValue.get(v.getStringValue("subscription", where));
         }
         return null; // Required by the compiler!

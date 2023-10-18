@@ -36,13 +36,13 @@ public class AspNotTest extends AspSyntax {
         if (not) {
             prettyWrite("not ");
         }
-
         comparison.prettyPrint();
     }
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         RuntimeValue v = comparison.eval(curScope);
+        
         if (not) {
             v = v.evalNot(this);
         }

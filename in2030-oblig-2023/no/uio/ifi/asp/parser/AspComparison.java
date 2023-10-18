@@ -70,8 +70,6 @@ public class AspComparison extends AspSyntax {
 
                 case lessEqualToken:
                     v = v.evalLessEqual(terms.get(i).eval(curScope), this);
-                    System.out.println("termerrr " + terms.get(i).eval(curScope));
-                    System.out.println("fdujyheyhoiu4r5ugto " + v);
                     break;
 
                 case notEqualToken:
@@ -82,13 +80,13 @@ public class AspComparison extends AspSyntax {
                     Main.panic("Illegal term operator: " + k + "!");
             }
 
+            // If false -> returns false
+            // If true -> skips test and continues evaluating (loop)
             if (v.getBoolValue("comparison", this) == false) {
-                System.out.println("inside iff: " + v);
                 return v;
             }
-
         }
-        System.out.println("end return" + v);
+        // Returns true -> each of the conditions are true
         return v;
     }
 }

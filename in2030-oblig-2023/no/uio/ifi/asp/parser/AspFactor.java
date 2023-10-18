@@ -72,11 +72,11 @@ public class AspFactor extends AspSyntax {
 
         RuntimeValue v = null;
         RuntimeValue primaryValue = primaries.get(0).eval(curScope);
-
         int trueCounter = 0;
 
         for (int i = 0; i < prefixBeforeList.size(); i++) {
 
+            // If there is a prefix before primary
             if (prefixBeforeList.get(i) == true) {
                 RuntimeValue p = primaries.get(i).eval(curScope);
                 TokenKind k = prefixes.get(trueCounter).fpVal;
@@ -96,60 +96,43 @@ public class AspFactor extends AspSyntax {
                 trueCounter++;
             }
 
+            // If there is no prefix before primary
             if (prefixBeforeList.get(i) == false) {
-                System.out.println("bllllll");
                 primaryValue = primaries.get(i).eval(curScope);
-                System.out.println(i);
-                System.out.println(primaryValue);
             }
 
+            // Handles factor opr after the first loop
             if (i > 0) {
-                System.out.println("blah");
                 TokenKind k = factorOprs.get(i - 1).foVal;
-                // if (v == null) {
-                //     System.out.println(primaryValue);
-                //     v = primaries.get(0).eval(curScope);
-                // }
 
                 switch (k) {
                     case astToken:
-                        // System.out.println("we in asttoken");
                         v = v.evalMultiply(primaryValue, this);
-                        // System.out.println(v);
                         break;
 
                     case slashToken:
-                        System.out.println("we in slashToken");
-
                         v = v.evalDivide(primaryValue, this);
                         break;
 
                     case percentToken:
-                        System.out.println("we in percentToken");
-
                         v = v.evalModulo(primaryValue, this);
                         break;
 
                     case doubleSlashToken:
-                        System.out.println("we in doubleSlashToken");
-
                         v = v.evalIntDivide(primaryValue, this);
                         break;
 
                     default:
                         Main.panic("Illegal term operator: " + k + "!");
                 }
-
-                // primaryValue = v;
             }
 
+            // For the first loop
+            // If there is no factor prefix, set v
             if (i == 0 && trueCounter == 0) {
                 v = primaries.get(0).eval(curScope);
-
             }
-
         }
-        System.out.println(v);
         return v;
     }
 }

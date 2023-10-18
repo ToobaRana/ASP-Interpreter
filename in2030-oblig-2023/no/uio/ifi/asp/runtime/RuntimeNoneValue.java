@@ -12,18 +12,13 @@ public class RuntimeNoneValue extends RuntimeValue {
     }
 
     @Override
-    public String showInfo(){
+    public String showInfo() {
         return toString();
-    }
-    
-    @Override
-    public String toString() {
-        return "None";
     }
 
     @Override
-    public boolean getBoolValue(String what, AspSyntax where) {
-        return false; 
+    public String toString() {
+        return "None";
     }
 
     @Override
@@ -32,12 +27,17 @@ public class RuntimeNoneValue extends RuntimeValue {
     }
 
     @Override
+    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
+        return new RuntimeBoolValue(!(v instanceof RuntimeNoneValue));
+    }
+
+    @Override
     public RuntimeValue evalNot(AspSyntax where) {
         return new RuntimeBoolValue(true);
     }
 
     @Override
-    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
-        return new RuntimeBoolValue(!(v instanceof RuntimeNoneValue));
+    public boolean getBoolValue(String what, AspSyntax where) {
+        return false;
     }
 }

@@ -10,7 +10,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 public class AspExpr extends AspSyntax {
 
     // -- Must be changed in part 2:
-    ArrayList<AspAndTest> andTests = new ArrayList<>(); 
+    ArrayList<AspAndTest> andTests = new ArrayList<>();
 
     AspExpr(int n) {
         super(n);
@@ -54,8 +54,8 @@ public class AspExpr extends AspSyntax {
         // -- Must be changed in part 3:
         RuntimeValue v = andTests.get(0).eval(curScope);
 
-        for(int i = 1; i < andTests.size(); ++i){
-            if(v.getBoolValue("or operand", this)){
+        for (int i = 1; i < andTests.size(); ++i) {
+            if (v.getBoolValue("or operand", this)) {
                 return v;
             }
             v = andTests.get(i).eval(curScope);

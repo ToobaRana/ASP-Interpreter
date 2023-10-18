@@ -1,7 +1,6 @@
 package no.uio.ifi.asp.runtime;
 
 import java.util.ArrayList;
-
 import no.uio.ifi.asp.parser.AspSyntax;
 
 public class RuntimeListValue extends RuntimeValue {
@@ -18,7 +17,7 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
-    public String showInfo(){
+    public String showInfo() {
         return toString();
     }
 
@@ -29,8 +28,7 @@ public class RuntimeListValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
-
-        //list * int (int copies of list)
+        // list * int (int copies of list)
         if (v instanceof RuntimeIntValue) {
             int repetition = (int) v.getIntValue(" * operand", where);
             ArrayList<RuntimeValue> resultList = new ArrayList<>();
@@ -40,7 +38,6 @@ public class RuntimeListValue extends RuntimeValue {
             }
 
             listValue = resultList;
-
             return new RuntimeListValue(listValue);
         }
 
@@ -49,9 +46,8 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
-    public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where){
-        
-        //any == none
+    public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
+        // any == none
         if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(false);
         }
@@ -61,15 +57,27 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
-    public RuntimeValue evalNot(AspSyntax where) {
-        return new RuntimeBoolValue(!getBoolValue("not operand", where));// need to be fixed
+    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
+        // any != none
+        if (v instanceof RuntimeNoneValue) {
+            return new RuntimeBoolValue(true);
+        }
+
+        runtimeError("Type error for !=.", where);
+        return null; // Required by the compiler.
     }
 
     @Override
-    public RuntimeValue evalLen(AspSyntax where){
+    public RuntimeValue evalNot(AspSyntax where) {
+        return new RuntimeBoolValue(!getBoolValue("not operand", where));
+    }
+
+    @Override
+    public RuntimeValue evalLen(AspSyntax where) {
         return new RuntimeIntValue(listValue.size());
     }
 
+    @Override
     public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
         if (!listValue.isEmpty() && v instanceof RuntimeIntValue) {
             return listValue.get((int) v.getIntValue("subscription", where));
@@ -77,10 +85,8 @@ public class RuntimeListValue extends RuntimeValue {
         return null; // Required by the compiler!
     }
 
-    // Needs to be changed
     @Override
     public boolean getBoolValue(String what, AspSyntax where) {
         return (listValue.size() != 0);
     }
-
 }

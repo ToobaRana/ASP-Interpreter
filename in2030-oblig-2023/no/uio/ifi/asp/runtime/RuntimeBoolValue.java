@@ -18,7 +18,7 @@ public class RuntimeBoolValue extends RuntimeValue {
     }
 
     @Override
-    public String showInfo(){
+    public String showInfo() {
         return toString();
     }
 
@@ -28,17 +28,22 @@ public class RuntimeBoolValue extends RuntimeValue {
     }
 
     @Override
-    public boolean getBoolValue(String what, AspSyntax where) {
-        return boolValue;
-    }
-
-    @Override
     public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
-        //any == none
+        // any == none
         if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(false);
         }
         runtimeError("Type error for ==.", where);
+        return null; // Required by the compiler
+    }
+
+    @Override
+    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
+        // any != none
+        if (v instanceof RuntimeNoneValue) {
+            return new RuntimeBoolValue(true);
+        }
+        runtimeError("Type error for !=.", where);
         return null; // Required by the compiler
     }
 
@@ -48,12 +53,7 @@ public class RuntimeBoolValue extends RuntimeValue {
     }
 
     @Override
-    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
-        //any != none
-        if (v instanceof RuntimeNoneValue) {
-            return new RuntimeBoolValue(true);
-        }
-        runtimeError("Type error for !=.", where);
-        return null; // Required by the compiler
+    public boolean getBoolValue(String what, AspSyntax where) {
+        return boolValue;
     }
 }

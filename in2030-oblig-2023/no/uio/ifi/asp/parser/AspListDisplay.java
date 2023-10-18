@@ -64,10 +64,9 @@ public class AspListDisplay extends AspAtom {
 
         ArrayList<RuntimeValue> list = new ArrayList<>();
 
-        for (AspExpr e: exprs){
+        for (AspExpr e : exprs) {
             list.add(e.eval(curScope));
         }
-        
         return new RuntimeListValue(list);
     }
 }

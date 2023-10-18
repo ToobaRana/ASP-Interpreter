@@ -37,5 +37,4 @@ public class AspInnerExpr extends AspAtom {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return expr.eval(curScope);
     }
-
 }

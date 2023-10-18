@@ -23,8 +23,8 @@ public class AspBooleanLiteral extends AspAtom {
 
         if (bl.booleanVal == trueToken) {
             bl.value = true;
-        } 
-        
+        }
+
         else {
             bl.value = false;
         }

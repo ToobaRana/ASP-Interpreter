@@ -5,7 +5,6 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspNoneLiteral extends AspAtom {
-    
 
     AspNoneLiteral(int n) {
         super(n);

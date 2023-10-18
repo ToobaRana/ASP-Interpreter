@@ -7,6 +7,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
 public class AspTerm extends AspSyntax {
+    
     ArrayList<AspFactor> factors = new ArrayList<>();
     ArrayList<AspTermOpr> termOprs = new ArrayList<>();
 
@@ -44,9 +45,12 @@ public class AspTerm extends AspSyntax {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+
         RuntimeValue v = factors.get(0).eval(curScope);
+        
         for (int i = 1; i < factors.size(); ++i) {
             TokenKind k = termOprs.get(i - 1).toVal;
+
             switch (k) {
                 case minusToken:
                     v = v.evalSubtract(factors.get(i).eval(curScope), this);

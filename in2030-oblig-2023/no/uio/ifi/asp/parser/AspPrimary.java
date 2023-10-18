@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class AspPrimary extends AspSyntax {
 
-    AspAtom atom; //change name
+    AspAtom atomType;
     ArrayList<AspPrimarySuffix> primarySuffixes = new ArrayList<>();
 
     protected AspPrimary(int n) {
@@ -19,7 +19,7 @@ public class AspPrimary extends AspSyntax {
         enterParser("primary");
 
         AspPrimary p = new AspPrimary(s.curLineNum());
-        p.atom = AspAtom.parse(s);
+        p.atomType = AspAtom.parse(s);
 
         while (s.curToken().kind == leftParToken || s.curToken().kind == leftBracketToken) {
             p.primarySuffixes.add(AspPrimarySuffix.parse(s));
@@ -32,7 +32,7 @@ public class AspPrimary extends AspSyntax {
     @Override
     void prettyPrint() {
 
-        atom.prettyPrint();
+        atomType.prettyPrint();
 
         for (AspPrimarySuffix aps : primarySuffixes) {
             aps.prettyPrint();
@@ -41,7 +41,8 @@ public class AspPrimary extends AspSyntax {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        RuntimeValue v = atom.eval(curScope);
+
+        RuntimeValue v = atomType.eval(curScope);
 
         for (AspPrimarySuffix suffix : primarySuffixes) {
             if (v instanceof RuntimeStringValue || v instanceof RuntimeListValue || v instanceof RuntimeDictValue) {
@@ -52,7 +53,6 @@ public class AspPrimary extends AspSyntax {
                 v = suffix.eval(curScope);
             }
         }
-
         return v;
     }
 }
