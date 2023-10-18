@@ -76,8 +76,7 @@ public class AspFactor extends AspSyntax {
         int trueCounter = 0;
 
         for (int i = 0; i < prefixBeforeList.size(); i++) {
-            // ArrayList<Object> list = prefixBeforeList.get(i) ? prefixes : primaries;
-
+            
             if (prefixBeforeList.get(i) == true) {
                 RuntimeValue p = primaries.get(i).eval(curScope);
                 TokenKind k = prefixes.get(trueCounter).fpVal;
@@ -100,39 +99,50 @@ public class AspFactor extends AspSyntax {
             if (prefixBeforeList.get(i) == false) {
                 System.out.println("bllllll");
                 primaryValue = primaries.get(i).eval(curScope);
+
+                if (v == null) {
+                    System.out.println(primaryValue);
+                    v = primaries.get(i-1).eval(curScope);
             }
+            }
+
+            
 
             if (i > 0) {
                 System.out.println("blah");
                 TokenKind k = factorOprs.get(i - 1).foVal;
+                
 
                 switch (k) {
                     case astToken:
-                        System.out.println("we in asttoken");
-                        v = primaryValue.evalMultiply(primaries.get(i - 1).eval(curScope), this);
+                        //System.out.println("we in asttoken");
+                        v = v.evalMultiply(primaryValue, this);
+                        //System.out.println(v);
                         break;
 
                     case slashToken:
                         System.out.println("we in slashToken");
 
-                        v = primaryValue.evalDivide(primaries.get(i - 1).eval(curScope), this);
+                        v = v.evalDivide(primaryValue, this);
                         break;
 
                     case percentToken:
                         System.out.println("we in percentToken");
 
-                        v = primaryValue.evalModulo(primaries.get(i - 1).eval(curScope), this);
+                        v = v.evalModulo(primaryValue, this);
                         break;
 
                     case doubleSlashToken:
                         System.out.println("we in doubleSlashToken");
 
-                        v = primaryValue.evalIntDivide(primaries.get(i).eval(curScope), this);
+                        v = v.evalIntDivide(primaryValue, this);
                         break;
 
                     default:
                         Main.panic("Illegal term operator: " + k + "!");
                 }
+
+                //primaryValue = v;
             }
 
         }
