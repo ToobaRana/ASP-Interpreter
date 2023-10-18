@@ -99,19 +99,15 @@ public class AspFactor extends AspSyntax {
             if (prefixBeforeList.get(i) == false) {
                 System.out.println("bllllll");
                 primaryValue = primaries.get(i).eval(curScope);
-
-                if (v == null) {
-                    System.out.println(primaryValue);
-                    v = primaries.get(i-1).eval(curScope);
             }
-            }
-
-            
 
             if (i > 0) {
                 System.out.println("blah");
                 TokenKind k = factorOprs.get(i - 1).foVal;
-                
+                if (v == null) {
+                    System.out.println(primaryValue);
+                    v = primaries.get(i-1).eval(curScope);
+                }
 
                 switch (k) {
                     case astToken:
