@@ -71,11 +71,12 @@ public class AspFactor extends AspSyntax {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 
         RuntimeValue v = null;
+        RuntimeValue primaryValue = primaries.get(0).eval(curScope);
+
         int trueCounter = 0;
 
         for (int i = 0; i < prefixBeforeList.size(); i++) {
             // ArrayList<Object> list = prefixBeforeList.get(i) ? prefixes : primaries;
-
 
             if (prefixBeforeList.get(i) == true) {
                 RuntimeValue p = primaries.get(i).eval(curScope);
@@ -98,7 +99,7 @@ public class AspFactor extends AspSyntax {
 
             if (prefixBeforeList.get(i) == false) {
                 System.out.println("bllllll");
-                v = primaries.get(i).eval(curScope);
+                primaryValue = primaries.get(i).eval(curScope);
             }
 
             if (i > 0) {
@@ -108,25 +109,25 @@ public class AspFactor extends AspSyntax {
                 switch (k) {
                     case astToken:
                         System.out.println("we in asttoken");
-                        v = v.evalMultiply(primaries.get(i).eval(curScope), this);
+                        v = primaryValue.evalMultiply(primaries.get(i - 1).eval(curScope), this);
                         break;
 
                     case slashToken:
                         System.out.println("we in slashToken");
 
-                        v = v.evalDivide(primaries.get(i).eval(curScope), this);
+                        v = primaryValue.evalDivide(primaries.get(i - 1).eval(curScope), this);
                         break;
 
                     case percentToken:
                         System.out.println("we in percentToken");
 
-                        v = v.evalModulo(primaries.get(i).eval(curScope), this);
+                        v = primaryValue.evalModulo(primaries.get(i - 1).eval(curScope), this);
                         break;
 
                     case doubleSlashToken:
                         System.out.println("we in doubleSlashToken");
 
-                        v = v.evalIntDivide(primaries.get(i).eval(curScope), this);
+                        v = primaryValue.evalIntDivide(primaries.get(i).eval(curScope), this);
                         break;
 
                     default:
