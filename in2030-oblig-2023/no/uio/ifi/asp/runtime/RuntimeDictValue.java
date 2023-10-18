@@ -7,9 +7,9 @@ import no.uio.ifi.asp.parser.AspSyntax;
 
 public class RuntimeDictValue extends RuntimeValue {
 
-    HashMap<RuntimeStringValue, RuntimeValue> dictValue = new HashMap<>();
+    HashMap<String, RuntimeValue> dictValue = new HashMap<>();
 
-    public RuntimeDictValue(HashMap<RuntimeStringValue, RuntimeValue> v) {
+    public RuntimeDictValue(HashMap<String, RuntimeValue> v) {
         dictValue = v;
     }
 
@@ -28,12 +28,12 @@ public class RuntimeDictValue extends RuntimeValue {
         String string = "{";
         int counter = 0;
 
-        for (Entry<RuntimeStringValue, RuntimeValue> str : dictValue.entrySet()) {
+        for (Entry<String, RuntimeValue> entry : dictValue.entrySet()) {
 
             if (counter < dictValue.size() - 1) {
-                string += str.getKey() + ":" + str.getValue() + ", ";
+                string += "\'" + entry.getKey() + "\'" + ": " + entry.getValue() + ", ";
             } else {
-                string += str.getKey() + ":" + str.getValue();
+                string += "\'" + entry.getKey() + "\'" + ": " + entry.getValue();
             }
             counter++;
         }
@@ -64,8 +64,8 @@ public class RuntimeDictValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-        if (dictValue.containsKey(v) && v instanceof RuntimeStringValue) {
-            return dictValue.get(v);
+        if (dictValue.containsKey(v.getStringValue("subscription", where)) && v instanceof RuntimeStringValue) {
+            return dictValue.get(v.getStringValue("subscription", where));
         }
         return null; // Required by the compiler!
     }

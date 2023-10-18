@@ -58,7 +58,7 @@ public class AspDictDisplay extends AspAtom {
             }
 
             stringLitList.get(i).prettyPrint();
-            prettyWrite(": ");
+            prettyWrite(":");
             exprList.get(i).prettyPrint();
 
             ++nPrinted;
@@ -69,10 +69,10 @@ public class AspDictDisplay extends AspAtom {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        HashMap<RuntimeStringValue, RuntimeValue> hashmap = new HashMap<>();
+        HashMap<String, RuntimeValue> hashmap = new HashMap<>();
 
         for (int i = 0; i < stringLitList.size(); i++) {
-            hashmap.put((RuntimeStringValue) stringLitList.get(i).eval(curScope), exprList.get(i).eval(curScope));
+            hashmap.put(stringLitList.get(i).stringlit, exprList.get(i).eval(curScope));
         }
 
         return new RuntimeDictValue(hashmap);

@@ -76,7 +76,7 @@ public class AspFactor extends AspSyntax {
         int trueCounter = 0;
 
         for (int i = 0; i < prefixBeforeList.size(); i++) {
-            
+
             if (prefixBeforeList.get(i) == true) {
                 RuntimeValue p = primaries.get(i).eval(curScope);
                 TokenKind k = prefixes.get(trueCounter).fpVal;
@@ -99,21 +99,23 @@ public class AspFactor extends AspSyntax {
             if (prefixBeforeList.get(i) == false) {
                 System.out.println("bllllll");
                 primaryValue = primaries.get(i).eval(curScope);
+                System.out.println(i);
+                System.out.println(primaryValue);
             }
 
             if (i > 0) {
                 System.out.println("blah");
                 TokenKind k = factorOprs.get(i - 1).foVal;
-                if (v == null) {
-                    System.out.println(primaryValue);
-                    v = primaries.get(i-1).eval(curScope);
-                }
+                // if (v == null) {
+                //     System.out.println(primaryValue);
+                //     v = primaries.get(0).eval(curScope);
+                // }
 
                 switch (k) {
                     case astToken:
-                        //System.out.println("we in asttoken");
+                        // System.out.println("we in asttoken");
                         v = v.evalMultiply(primaryValue, this);
-                        //System.out.println(v);
+                        // System.out.println(v);
                         break;
 
                     case slashToken:
@@ -138,10 +140,16 @@ public class AspFactor extends AspSyntax {
                         Main.panic("Illegal term operator: " + k + "!");
                 }
 
-                //primaryValue = v;
+                // primaryValue = v;
+            }
+
+            if (i == 0 && trueCounter == 0) {
+                v = primaries.get(0).eval(curScope);
+
             }
 
         }
+        System.out.println(v);
         return v;
     }
 }

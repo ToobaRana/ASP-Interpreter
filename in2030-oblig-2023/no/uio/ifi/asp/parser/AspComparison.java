@@ -48,12 +48,14 @@ public class AspComparison extends AspSyntax {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         RuntimeValue v = terms.get(0).eval(curScope);
         for (int i = 1; i < terms.size(); ++i) {
+            v = terms.get(i).eval(curScope);
+
             TokenKind k = compOprs.get(i - 1).coVal;
             switch (k) {
                 case lessToken:
                     v = v.evalLess(terms.get(i).eval(curScope), this);
                     break;
-                    
+
                 case greaterToken:
                     v = v.evalGreater(terms.get(i).eval(curScope), this);
                     break;
@@ -68,6 +70,8 @@ public class AspComparison extends AspSyntax {
 
                 case lessEqualToken:
                     v = v.evalLessEqual(terms.get(i).eval(curScope), this);
+                    System.out.println("termerrr " + terms.get(i).eval(curScope));
+                    System.out.println("fdujyheyhoiu4r5ugto " + v);
                     break;
 
                 case notEqualToken:
@@ -77,7 +81,14 @@ public class AspComparison extends AspSyntax {
                 default:
                     Main.panic("Illegal term operator: " + k + "!");
             }
+
+            if (v.getBoolValue("comparison", this) == false) {
+                System.out.println("inside iff: " + v);
+                return v;
+            }
+
         }
+        System.out.println("end return" + v);
         return v;
     }
 }
