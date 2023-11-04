@@ -6,13 +6,13 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 import java.util.ArrayList;
 
-public class AspAssignment extends AspSmallStmt {
+public class testFil extends AspSmallStmt {
 
     AspName name;
     ArrayList<AspSubscription> subscriptions = new ArrayList<>();
     AspExpr expr;
 
-    AspAssignment(int n) {
+    testFil(int n) {
         super(n);
     }
 

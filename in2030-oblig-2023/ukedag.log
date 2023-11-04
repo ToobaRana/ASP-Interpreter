@@ -24,7 +24,7 @@ Trace line 53: aar = 2002
 Trace line 54: Call function les_maaned with params []
 Trace line 22: while True: ...
 Trace line 23: Call function input with params [Oppgi en måned: ]
-Trace line 23: m_id = 'januar'
+Trace line 23: m_id = januar
 Trace line 24: Call function finn_maaned with params [januar]
 Trace line 16: Call function len with params [[0, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]]
 Trace line 16: Call function range with params [1, 13]
@@ -501,7 +501,7 @@ Trace line 44: Call function er_skuddaar with params [2001]
 Trace line 30: return False
 Trace line 47: Call function range with params [1, 1]
 Trace line 50: return 37269
-Trace line 56: u_dag = 'mandag'
+Trace line 56: u_dag = mandag
 Trace line 57: Call function str with params [14]
 Trace line 57: Call function print with params [14., januar, 2002, er en, mandag]
 Trace line 57: Expression statement produced None
