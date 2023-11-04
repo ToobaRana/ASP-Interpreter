@@ -199,10 +199,8 @@ public class RuntimeIntValue extends RuntimeValue {
         // int < int
         if (v instanceof RuntimeIntValue) {
             if (intValue < v.getIntValue("< operand", where)) {
-                System.out.println(intValue + "<" + v.getIntValue("< operand", where) + "== true");
                 return new RuntimeBoolValue(true);
             } else {
-                System.out.println(intValue + "<" + v.getIntValue("< operand", where) + "== false");
                 return new RuntimeBoolValue(false);
             }
         }
