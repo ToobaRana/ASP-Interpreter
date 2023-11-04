@@ -11,6 +11,7 @@ public class AspIfStmt extends AspCompoundStmt {
     ArrayList<AspExpr> exprList = new ArrayList<>();
     ArrayList<AspSuite> suiteList = new ArrayList<>();
     AspSuite suite;
+    Boolean hasElse = false;
 
     AspIfStmt(int n) {
         super(n);
@@ -39,6 +40,7 @@ public class AspIfStmt extends AspCompoundStmt {
 
         if (s.curToken().kind == elseToken) {
 
+            is.hasElse = true;
             skip(s, elseToken);
             skip(s, colonToken);
             is.suite = AspSuite.parse(s);
@@ -76,7 +78,28 @@ public class AspIfStmt extends AspCompoundStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        RuntimeValue v = null;
+        System.out.println("Inne i if :)))");
+        for (int i = 0; i < exprList.size(); i++) {
+            v = exprList.get(i).eval(curScope);
+
+            // If the "if" is "True"
+            if (v.getBoolValue("if", this)== true) {
+                System.out.println("Inne i if nr. 2");
+                trace("if True alt #" + (i + 1) + ": ...");
+
+                v = suiteList.get(i).eval(curScope);
+                return v; // Needs to be changed
+            }
+        }
+
+        // If there is an else statement
+        if (hasElse) {
+            trace("else: ...");
+            v = suite.eval(curScope);
+            return v;
+        }
+
         return null;
     }
-
 }

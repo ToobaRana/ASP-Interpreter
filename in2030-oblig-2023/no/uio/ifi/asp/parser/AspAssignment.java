@@ -1,5 +1,6 @@
 package no.uio.ifi.asp.parser;
 
+import no.uio.ifi.asp.main.Main;
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
@@ -48,8 +49,35 @@ public class AspAssignment extends AspSmallStmt {
     }
 
     @Override
-    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
+    public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        RuntimeValue rt = expr.eval(curScope);
+        RuntimeValue rt2 = null;
+
+        if (subscriptions.isEmpty()) {
+            if (curScope.hasGlobalName(name.name)) {
+                Main.globalScope.assign(name.name, rt);
+                trace(name.name + " = " + rt.showInfo());
+            } else {
+                curScope.assign(name.name, rt);
+                trace(name.name + " = " + rt.showInfo());
+            }
+        } else if (!subscriptions.isEmpty()) {
+            rt2 = name.eval(curScope);
+            for (int i = 0; i < subscriptions.size() - 1; i++) {
+                rt2 = rt2.evalSubscription(subscriptions.get(i).eval(curScope), this);
+            }
+            RuntimeValue lastPos = subscriptions.get(subscriptions.size() - 1).eval(curScope);
+            rt2.evalAssignElem(lastPos, rt, this);
+            trace(name.name + "[" + lastPos + "] = " + rt);
+            return rt;
+        } /*
+           * else {
+           * curScope.assign(name.p, rt);
+           * trace(name.p + " = " + rt.toString());
+           * return rt;
+           * }
+           */
+        return rt;
     }
 
 }

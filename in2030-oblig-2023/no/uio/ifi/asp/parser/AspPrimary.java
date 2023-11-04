@@ -43,14 +43,21 @@ public class AspPrimary extends AspSyntax {
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
 
         RuntimeValue v = atomType.eval(curScope);
-
+        //System.out.println("Inne i primary :))");
         for (AspPrimarySuffix suffix : primarySuffixes) {
             if (v instanceof RuntimeStringValue || v instanceof RuntimeListValue || v instanceof RuntimeDictValue) {
                 v = v.evalSubscription(suffix.eval(curScope), this);
+                //trace(v.showInfo());
             }
 
-            else if(suffix instanceof AspArguments){
-                v = suffix.eval(curScope);
+            else if (suffix instanceof AspArguments) {
+                // gets the actual parameters-list
+                RuntimeListValue vList = (RuntimeListValue) suffix.eval(curScope);
+                trace("Call function " + v.toString() + " with params " + vList.showInfo());
+
+                // calls evalFuncCall with the actual parameters and placement in the syntax
+                // tree
+                v = v.evalFuncCall(vList.listValue, this);
             }
         }
         return v;

@@ -4,6 +4,8 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
+import java.util.ArrayList;
+
 public class AspForStmt extends AspCompoundStmt {
 
     AspName name;
@@ -43,6 +45,19 @@ public class AspForStmt extends AspCompoundStmt {
 
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+
+        RuntimeValue v = expr.eval(curScope);
+
+        if (v instanceof RuntimeListValue) {
+            RuntimeListValue list = (RuntimeListValue) v;
+            ArrayList<RuntimeValue> exprValueList = list.listValue;
+
+            for (int i = 0; i < exprValueList.size(); i++) {
+                curScope.assign(name.name, exprValueList.get(i));
+                trace("for #" + (i + 1) + ": " + name.name + " = " + exprValueList.get(i).toString());
+                suite.eval(curScope);
+            }
+        }
         return null;
     }
 }

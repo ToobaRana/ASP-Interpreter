@@ -1,93 +1,85 @@
 package no.uio.ifi.asp.runtime;
-
-import java.util.HashMap;
-import java.util.Map.Entry;
-
+import java.util.ArrayList;
+import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.parser.AspSyntax;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class RuntimeDictValue extends RuntimeValue {
-
-    HashMap<String, RuntimeValue> dictValue = new HashMap<>();
+    HashMap<String, RuntimeValue> dict;
 
     public RuntimeDictValue(HashMap<String, RuntimeValue> v) {
-        dictValue = v;
+        dict = v;
     }
 
     @Override
-    String typeName() {
-        return "Dictionary";
+    protected String typeName() {
+        return "dictionary";
     }
 
-    @Override
     public String showInfo() {
         return toString();
     }
 
     @Override
     public String toString() {
-        String string = "{";
+        String setString = "";
         int counter = 0;
+        setString = setString + "{";
 
-        for (Entry<String, RuntimeValue> entry : dictValue.entrySet()) {
+        for (Map.Entry<String, RuntimeValue> entry : dict.entrySet()) {
+            String keyword = entry.getKey().toString();
+            RuntimeValue val = entry.getValue();
 
-            if (counter < dictValue.size() - 1) {
-                string += "\'" + entry.getKey() + "\'" + ": " + entry.getValue() + ", ";
+            if (counter < dict.size()-1){
+                setString = setString + "\'" + keyword + "\'" + ": " + val.showInfo() + ", ";
             } else {
-                string += "\'" + entry.getKey() + "\'" + ": " + entry.getValue();
+                setString = setString + "\'" + keyword + "\'" + ": " + val.showInfo();
             }
             counter++;
         }
-        string += "}";
-        return string;
-    }
-
-    @Override
-    public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
-        // any == none
-        if (v instanceof RuntimeNoneValue) {
-            return new RuntimeBoolValue(false);
-        }
-
-        runtimeError("Type error for ==.", where);
-        return null; // Required by the compiler.
-    }
-
-    @Override
-    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
-        // any != none
-        if (v instanceof RuntimeNoneValue) {
-            return new RuntimeBoolValue(true);
-        }
-
-        runtimeError("Type error for !=.", where);
-        return null; // Required by the compiler.
-    }
-
-    @Override
-    public RuntimeValue evalNot(AspSyntax where) {
-        return new RuntimeBoolValue(!getBoolValue("not operand", where));
-    }
-
-    @Override
-    public RuntimeValue evalLen(AspSyntax where) {
-        return new RuntimeIntValue(dictValue.size());
-    }
-
-    @Override
-    public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-        if (dictValue.containsKey(v.getStringValue("subscription", where)) ) {
-            return dictValue.get(v.getStringValue("subscription", where));
-        }
-        return null; // Required by the compiler!
+        setString = setString + '}';
+        return setString;
+        //return String.valueOf(dict);
     }
 
     @Override
     public boolean getBoolValue(String what, AspSyntax where) {
-        return (dictValue.size() != 0);
+        if (dict.size() == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     @Override
     public String getStringValue(String what, AspSyntax where) {
-        return this.toString();
+        return what;
+    }
+
+    @Override
+    public RuntimeValue evalNot(AspSyntax where) {
+        if (dict.size() == 0) {
+            return new RuntimeBoolValue(true);
+        }
+        return new RuntimeBoolValue(false);
+    }
+
+    public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
+        if (dict.containsKey(v.getStringValue(null, where))) {
+            RuntimeValue value = dict.get(v.getStringValue(null, where));
+            return value;
+        } else {
+            String errorMsg = "Dictionary key " + v.getStringValue(null, where) + " undefined!";
+            runtimeError(errorMsg, where);
+            return null;
+        }
+    }
+
+    @Override
+    public void evalAssignElem(RuntimeValue v, RuntimeValue v2, AspSyntax where) {
+        String keyword = v.getStringValue("assign dict", where);
+        dict.put(keyword, v2);
     }
 }
