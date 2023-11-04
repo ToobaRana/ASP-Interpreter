@@ -1,8 +1,10 @@
 package no.uio.ifi.asp.runtime;
+
 import java.util.ArrayList;
 import no.uio.ifi.asp.parser.AspSyntax;
 
 public class RuntimeListValue extends RuntimeValue {
+
     public ArrayList<RuntimeValue> listValue = new ArrayList<>();
 
     public RuntimeListValue(ArrayList<RuntimeValue> v) {
@@ -10,13 +12,13 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
-    protected String typeName() {
-        return "[]";
+    String typeName() {
+        return "List";
     }
-    
+
     @Override
     public String showInfo() {
-        return listValue.toString();
+        return toString();
     }
 
     @Override
@@ -25,16 +27,48 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
-    public String getStringValue(String what, AspSyntax where) {
-        return what;
+    public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
+        // list * int (int copies of list)
+        if (v instanceof RuntimeIntValue) {
+            int repetition = (int) v.getIntValue(" * operand", where);
+            ArrayList<RuntimeValue> resultList = new ArrayList<>();
+
+            for (int i = 0; i < repetition; i++) {
+                resultList.addAll(listValue);
+            }
+
+            return new RuntimeListValue(resultList);
+        }
+
+        runtimeError("'*' undefined for " + typeName() + "!", where);
+        return null; // Required by the compiler!
     }
 
     @Override
-    public boolean getBoolValue(String what, AspSyntax where) {
-        if (listValue == null) {
-            return false;
+    public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
+        // any == none
+        if (v instanceof RuntimeNoneValue) {
+            return new RuntimeBoolValue(false);
         }
-        return true;
+
+        runtimeError("Type error for ==.", where);
+        return null; // Required by the compiler.
+    }
+
+    @Override
+    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
+        // any != none
+        if (v instanceof RuntimeNoneValue) {
+            return new RuntimeBoolValue(true);
+        }
+
+        runtimeError("Type error for !=.", where);
+        return null; // Required by the compiler.
+    }
+
+    @Override
+    public RuntimeValue evalNot(AspSyntax where) {
+        return new RuntimeBoolValue(!getBoolValue("not operand", where));
     }
 
     @Override
@@ -43,76 +77,22 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
-    public RuntimeValue evalNot(AspSyntax where) {
-        if (listValue == null) {
-            return new RuntimeBoolValue(true);
-        }
-        return new RuntimeBoolValue(false);
-    }
-
-    @Override
-    public RuntimeValue evalEqual(RuntimeValue v, AspSyntax where) {
-        if(v instanceof RuntimeNoneValue) {
-            return new RuntimeBoolValue(false);
-        }
-        runtimeError("Error for '==' ", where);
-        return null;
-    }
-
-    public RuntimeValue evalNotEqual(RuntimeValue v, AspSyntax where) {
-        if(v instanceof RuntimeNoneValue) {
-            return new RuntimeBoolValue(true);
-        }
-        runtimeError("Error for '!=' ", where);
-        return null;
-    }
-
-    @Override
-    public RuntimeValue evalMultiply(RuntimeValue v, AspSyntax where) {
-        if (v instanceof RuntimeIntValue) {
-            ArrayList<RuntimeValue> newList = new ArrayList<>();
-            long time = (long)v.getIntValue("*", where);
-            
-            int counter = 0;
-            while (counter < time) {
-                newList.addAll(listValue);
-                counter++;
-            }
-            return new RuntimeListValue(newList);
-        }
-        runtimeError("Type error for *.", where);
-        return null;
-    }
-
-    public ArrayList<RuntimeValue> getListValue() {
-        if (listValue.isEmpty()){
-            return null;
-        } else {
-            return listValue;
-        }
-    }
-
     public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-        RuntimeValue v1 = null;
-        if (v instanceof RuntimeIntValue) {
-            int i = (int) (v.getIntValue("[]", where));
-            v1 = listValue.get(i);
+        if (!listValue.isEmpty() && v instanceof RuntimeIntValue) {
+            return listValue.get((int) v.getIntValue("subscription", where));
         }
-        return v1;
-    }
-
-    public int getSize() {
-        return listValue.size();
+        return null; // Required by the compiler!
     }
 
     @Override
-    public void evalAssignElem(RuntimeValue v, RuntimeValue v2, AspSyntax where) {
-        if (v instanceof RuntimeIntValue){
-            long midint = v.getIntValue("assign list", where);
-            int position = (int)midint;
-            listValue.set(position, v2);
-        } else {
-            runtimeError("Type error for assignElem.", where);
+    public void evalAssignElem(RuntimeValue inx, RuntimeValue val, AspSyntax where) {
+        if (inx instanceof RuntimeIntValue) {
+            listValue.set((int)inx.getIntValue("assign element", where), val);
         }
+    }
+
+    @Override
+    public boolean getBoolValue(String what, AspSyntax where) {
+        return (listValue.size() != 0);
     }
 }

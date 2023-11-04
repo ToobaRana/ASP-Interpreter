@@ -2,11 +2,11 @@ package no.uio.ifi.asp.runtime;
 
 import no.uio.ifi.asp.parser.AspSyntax;
 
-public class RuntimeStringValue extends RuntimeValue {
+public class testFil extends RuntimeValue {
 
     String strValue;
 
-    public RuntimeStringValue(String v) {
+    public testFil(String v) {
         strValue = v;
     }
 
