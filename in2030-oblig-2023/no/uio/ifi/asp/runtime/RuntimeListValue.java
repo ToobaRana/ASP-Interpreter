@@ -18,7 +18,7 @@ public class RuntimeListValue extends RuntimeValue {
 
     @Override
     public String showInfo() {
-        return toString();
+        return listValue.toString();
     }
 
     @Override
@@ -94,5 +94,10 @@ public class RuntimeListValue extends RuntimeValue {
     @Override
     public boolean getBoolValue(String what, AspSyntax where) {
         return (listValue.size() != 0);
+    }
+
+    @Override
+    public String getStringValue(String what, AspSyntax where) {
+        return what;
     }
 }

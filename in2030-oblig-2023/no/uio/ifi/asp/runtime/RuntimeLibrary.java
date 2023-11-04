@@ -25,7 +25,7 @@ public class RuntimeLibrary extends RuntimeScope {
                 for (int i = 0; i < actualParams.size(); ++i) {
                     if (i > 0)
                         System.out.print(" ");
-                    System.out.print(actualParams.get(i).toString());
+                    System.out.print(actualParams.get(i).toString().replaceAll("\'", ""));
                 }
                 System.out.println();
                 return new RuntimeNoneValue();
@@ -44,7 +44,7 @@ public class RuntimeLibrary extends RuntimeScope {
             @Override
             public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
                 checkNumParams(actualParams, 1, "input", where);
-                System.out.println(actualParams.get(0));
+                System.out.println(actualParams.get(0).toString().replaceAll("\'", ""));
                 return new RuntimeStringValue(keyboard.nextLine());
             }
         });

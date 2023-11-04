@@ -10655,85 +10655,85 @@ Trace line 11: while False:
 Trace line 32: Expression statement produced None
 Trace line 33: Call function list_primes with params []
 Trace line 21: n_printed = 0
-Trace line 22: line_buf = 
+Trace line 22: line_buf = ''
 Trace line 23: Call function range with params [2, 1001]
 Trace line 23: for #1: i = 2
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [2, 4]
 Trace line 16: Call function str with params [2]
-Trace line 16: res = 2
-Trace line 17: Call function len with params [2]
+Trace line 16: res = '2'
+Trace line 17: Call function len with params ['2']
 Trace line 17: while True: ...
-Trace line 17: res =  2
-Trace line 17: Call function len with params [ 2]
+Trace line 17: res = ' 2'
+Trace line 17: Call function len with params [' 2']
 Trace line 17: while True: ...
-Trace line 17: res =   2
-Trace line 17: Call function len with params [  2]
+Trace line 17: res = '  2'
+Trace line 17: Call function len with params ['  2']
 Trace line 17: while True: ...
-Trace line 17: res =    2
-Trace line 17: Call function len with params [   2]
+Trace line 17: res = '   2'
+Trace line 17: Call function len with params ['   2']
 Trace line 17: while False:
 Trace line 18: return '   2'
-Trace line 28: line_buf =    2
+Trace line 28: line_buf = '   2'
 Trace line 29: n_printed = 1
 Trace line 23: for #2: i = 3
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [3, 4]
 Trace line 16: Call function str with params [3]
-Trace line 16: res = 3
-Trace line 17: Call function len with params [3]
+Trace line 16: res = '3'
+Trace line 17: Call function len with params ['3']
 Trace line 17: while True: ...
-Trace line 17: res =  3
-Trace line 17: Call function len with params [ 3]
+Trace line 17: res = ' 3'
+Trace line 17: Call function len with params [' 3']
 Trace line 17: while True: ...
-Trace line 17: res =   3
-Trace line 17: Call function len with params [  3]
+Trace line 17: res = '  3'
+Trace line 17: Call function len with params ['  3']
 Trace line 17: while True: ...
-Trace line 17: res =    3
-Trace line 17: Call function len with params [   3]
+Trace line 17: res = '   3'
+Trace line 17: Call function len with params ['   3']
 Trace line 17: while False:
 Trace line 18: return '   3'
-Trace line 28: line_buf =    2   3
+Trace line 28: line_buf = '   2   3'
 Trace line 29: n_printed = 2
 Trace line 23: for #3: i = 4
 Trace line 23: for #4: i = 5
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [5, 4]
 Trace line 16: Call function str with params [5]
-Trace line 16: res = 5
-Trace line 17: Call function len with params [5]
+Trace line 16: res = '5'
+Trace line 17: Call function len with params ['5']
 Trace line 17: while True: ...
-Trace line 17: res =  5
-Trace line 17: Call function len with params [ 5]
+Trace line 17: res = ' 5'
+Trace line 17: Call function len with params [' 5']
 Trace line 17: while True: ...
-Trace line 17: res =   5
-Trace line 17: Call function len with params [  5]
+Trace line 17: res = '  5'
+Trace line 17: Call function len with params ['  5']
 Trace line 17: while True: ...
-Trace line 17: res =    5
-Trace line 17: Call function len with params [   5]
+Trace line 17: res = '   5'
+Trace line 17: Call function len with params ['   5']
 Trace line 17: while False:
 Trace line 18: return '   5'
-Trace line 28: line_buf =    2   3   5
+Trace line 28: line_buf = '   2   3   5'
 Trace line 29: n_printed = 3
 Trace line 23: for #5: i = 6
 Trace line 23: for #6: i = 7
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [7, 4]
 Trace line 16: Call function str with params [7]
-Trace line 16: res = 7
-Trace line 17: Call function len with params [7]
+Trace line 16: res = '7'
+Trace line 17: Call function len with params ['7']
 Trace line 17: while True: ...
-Trace line 17: res =  7
-Trace line 17: Call function len with params [ 7]
+Trace line 17: res = ' 7'
+Trace line 17: Call function len with params [' 7']
 Trace line 17: while True: ...
-Trace line 17: res =   7
-Trace line 17: Call function len with params [  7]
+Trace line 17: res = '  7'
+Trace line 17: Call function len with params ['  7']
 Trace line 17: while True: ...
-Trace line 17: res =    7
-Trace line 17: Call function len with params [   7]
+Trace line 17: res = '   7'
+Trace line 17: Call function len with params ['   7']
 Trace line 17: while False:
 Trace line 18: return '   7'
-Trace line 28: line_buf =    2   3   5   7
+Trace line 28: line_buf = '   2   3   5   7'
 Trace line 29: n_printed = 4
 Trace line 23: for #7: i = 8
 Trace line 23: for #8: i = 9
@@ -10742,34 +10742,34 @@ Trace line 23: for #10: i = 11
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [11, 4]
 Trace line 16: Call function str with params [11]
-Trace line 16: res = 11
-Trace line 17: Call function len with params [11]
+Trace line 16: res = '11'
+Trace line 17: Call function len with params ['11']
 Trace line 17: while True: ...
-Trace line 17: res =  11
-Trace line 17: Call function len with params [ 11]
+Trace line 17: res = ' 11'
+Trace line 17: Call function len with params [' 11']
 Trace line 17: while True: ...
-Trace line 17: res =   11
-Trace line 17: Call function len with params [  11]
+Trace line 17: res = '  11'
+Trace line 17: Call function len with params ['  11']
 Trace line 17: while False:
 Trace line 18: return '  11'
-Trace line 28: line_buf =    2   3   5   7  11
+Trace line 28: line_buf = '   2   3   5   7  11'
 Trace line 29: n_printed = 5
 Trace line 23: for #11: i = 12
 Trace line 23: for #12: i = 13
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [13, 4]
 Trace line 16: Call function str with params [13]
-Trace line 16: res = 13
-Trace line 17: Call function len with params [13]
+Trace line 16: res = '13'
+Trace line 17: Call function len with params ['13']
 Trace line 17: while True: ...
-Trace line 17: res =  13
-Trace line 17: Call function len with params [ 13]
+Trace line 17: res = ' 13'
+Trace line 17: Call function len with params [' 13']
 Trace line 17: while True: ...
-Trace line 17: res =   13
-Trace line 17: Call function len with params [  13]
+Trace line 17: res = '  13'
+Trace line 17: Call function len with params ['  13']
 Trace line 17: while False:
 Trace line 18: return '  13'
-Trace line 28: line_buf =    2   3   5   7  11  13
+Trace line 28: line_buf = '   2   3   5   7  11  13'
 Trace line 29: n_printed = 6
 Trace line 23: for #13: i = 14
 Trace line 23: for #14: i = 15
@@ -10778,34 +10778,34 @@ Trace line 23: for #16: i = 17
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [17, 4]
 Trace line 16: Call function str with params [17]
-Trace line 16: res = 17
-Trace line 17: Call function len with params [17]
+Trace line 16: res = '17'
+Trace line 17: Call function len with params ['17']
 Trace line 17: while True: ...
-Trace line 17: res =  17
-Trace line 17: Call function len with params [ 17]
+Trace line 17: res = ' 17'
+Trace line 17: Call function len with params [' 17']
 Trace line 17: while True: ...
-Trace line 17: res =   17
-Trace line 17: Call function len with params [  17]
+Trace line 17: res = '  17'
+Trace line 17: Call function len with params ['  17']
 Trace line 17: while False:
 Trace line 18: return '  17'
-Trace line 28: line_buf =    2   3   5   7  11  13  17
+Trace line 28: line_buf = '   2   3   5   7  11  13  17'
 Trace line 29: n_printed = 7
 Trace line 23: for #17: i = 18
 Trace line 23: for #18: i = 19
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [19, 4]
 Trace line 16: Call function str with params [19]
-Trace line 16: res = 19
-Trace line 17: Call function len with params [19]
+Trace line 16: res = '19'
+Trace line 17: Call function len with params ['19']
 Trace line 17: while True: ...
-Trace line 17: res =  19
-Trace line 17: Call function len with params [ 19]
+Trace line 17: res = ' 19'
+Trace line 17: Call function len with params [' 19']
 Trace line 17: while True: ...
-Trace line 17: res =   19
-Trace line 17: Call function len with params [  19]
+Trace line 17: res = '  19'
+Trace line 17: Call function len with params ['  19']
 Trace line 17: while False:
 Trace line 18: return '  19'
-Trace line 28: line_buf =    2   3   5   7  11  13  17  19
+Trace line 28: line_buf = '   2   3   5   7  11  13  17  19'
 Trace line 29: n_printed = 8
 Trace line 23: for #19: i = 20
 Trace line 23: for #20: i = 21
@@ -10814,17 +10814,17 @@ Trace line 23: for #22: i = 23
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [23, 4]
 Trace line 16: Call function str with params [23]
-Trace line 16: res = 23
-Trace line 17: Call function len with params [23]
+Trace line 16: res = '23'
+Trace line 17: Call function len with params ['23']
 Trace line 17: while True: ...
-Trace line 17: res =  23
-Trace line 17: Call function len with params [ 23]
+Trace line 17: res = ' 23'
+Trace line 17: Call function len with params [' 23']
 Trace line 17: while True: ...
-Trace line 17: res =   23
-Trace line 17: Call function len with params [  23]
+Trace line 17: res = '  23'
+Trace line 17: Call function len with params ['  23']
 Trace line 17: while False:
 Trace line 18: return '  23'
-Trace line 28: line_buf =    2   3   5   7  11  13  17  19  23
+Trace line 28: line_buf = '   2   3   5   7  11  13  17  19  23'
 Trace line 29: n_printed = 9
 Trace line 23: for #23: i = 24
 Trace line 23: for #24: i = 25
@@ -10835,38 +10835,38 @@ Trace line 23: for #28: i = 29
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [29, 4]
 Trace line 16: Call function str with params [29]
-Trace line 16: res = 29
-Trace line 17: Call function len with params [29]
+Trace line 16: res = '29'
+Trace line 17: Call function len with params ['29']
 Trace line 17: while True: ...
-Trace line 17: res =  29
-Trace line 17: Call function len with params [ 29]
+Trace line 17: res = ' 29'
+Trace line 17: Call function len with params [' 29']
 Trace line 17: while True: ...
-Trace line 17: res =   29
-Trace line 17: Call function len with params [  29]
+Trace line 17: res = '  29'
+Trace line 17: Call function len with params ['  29']
 Trace line 17: while False:
 Trace line 18: return '  29'
-Trace line 28: line_buf =    2   3   5   7  11  13  17  19  23  29
+Trace line 28: line_buf = '   2   3   5   7  11  13  17  19  23  29'
 Trace line 29: n_printed = 10
 Trace line 23: for #29: i = 30
 Trace line 23: for #30: i = 31
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [   2   3   5   7  11  13  17  19  23  29]
+Trace line 26: Call function print with params ['   2   3   5   7  11  13  17  19  23  29']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [31, 4]
 Trace line 16: Call function str with params [31]
-Trace line 16: res = 31
-Trace line 17: Call function len with params [31]
+Trace line 16: res = '31'
+Trace line 17: Call function len with params ['31']
 Trace line 17: while True: ...
-Trace line 17: res =  31
-Trace line 17: Call function len with params [ 31]
+Trace line 17: res = ' 31'
+Trace line 17: Call function len with params [' 31']
 Trace line 17: while True: ...
-Trace line 17: res =   31
-Trace line 17: Call function len with params [  31]
+Trace line 17: res = '  31'
+Trace line 17: Call function len with params ['  31']
 Trace line 17: while False:
 Trace line 18: return '  31'
-Trace line 28: line_buf =   31
+Trace line 28: line_buf = '  31'
 Trace line 29: n_printed = 11
 Trace line 23: for #31: i = 32
 Trace line 23: for #32: i = 33
@@ -10877,17 +10877,17 @@ Trace line 23: for #36: i = 37
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [37, 4]
 Trace line 16: Call function str with params [37]
-Trace line 16: res = 37
-Trace line 17: Call function len with params [37]
+Trace line 16: res = '37'
+Trace line 17: Call function len with params ['37']
 Trace line 17: while True: ...
-Trace line 17: res =  37
-Trace line 17: Call function len with params [ 37]
+Trace line 17: res = ' 37'
+Trace line 17: Call function len with params [' 37']
 Trace line 17: while True: ...
-Trace line 17: res =   37
-Trace line 17: Call function len with params [  37]
+Trace line 17: res = '  37'
+Trace line 17: Call function len with params ['  37']
 Trace line 17: while False:
 Trace line 18: return '  37'
-Trace line 28: line_buf =   31  37
+Trace line 28: line_buf = '  31  37'
 Trace line 29: n_printed = 12
 Trace line 23: for #37: i = 38
 Trace line 23: for #38: i = 39
@@ -10896,34 +10896,34 @@ Trace line 23: for #40: i = 41
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [41, 4]
 Trace line 16: Call function str with params [41]
-Trace line 16: res = 41
-Trace line 17: Call function len with params [41]
+Trace line 16: res = '41'
+Trace line 17: Call function len with params ['41']
 Trace line 17: while True: ...
-Trace line 17: res =  41
-Trace line 17: Call function len with params [ 41]
+Trace line 17: res = ' 41'
+Trace line 17: Call function len with params [' 41']
 Trace line 17: while True: ...
-Trace line 17: res =   41
-Trace line 17: Call function len with params [  41]
+Trace line 17: res = '  41'
+Trace line 17: Call function len with params ['  41']
 Trace line 17: while False:
 Trace line 18: return '  41'
-Trace line 28: line_buf =   31  37  41
+Trace line 28: line_buf = '  31  37  41'
 Trace line 29: n_printed = 13
 Trace line 23: for #41: i = 42
 Trace line 23: for #42: i = 43
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [43, 4]
 Trace line 16: Call function str with params [43]
-Trace line 16: res = 43
-Trace line 17: Call function len with params [43]
+Trace line 16: res = '43'
+Trace line 17: Call function len with params ['43']
 Trace line 17: while True: ...
-Trace line 17: res =  43
-Trace line 17: Call function len with params [ 43]
+Trace line 17: res = ' 43'
+Trace line 17: Call function len with params [' 43']
 Trace line 17: while True: ...
-Trace line 17: res =   43
-Trace line 17: Call function len with params [  43]
+Trace line 17: res = '  43'
+Trace line 17: Call function len with params ['  43']
 Trace line 17: while False:
 Trace line 18: return '  43'
-Trace line 28: line_buf =   31  37  41  43
+Trace line 28: line_buf = '  31  37  41  43'
 Trace line 29: n_printed = 14
 Trace line 23: for #43: i = 44
 Trace line 23: for #44: i = 45
@@ -10932,17 +10932,17 @@ Trace line 23: for #46: i = 47
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [47, 4]
 Trace line 16: Call function str with params [47]
-Trace line 16: res = 47
-Trace line 17: Call function len with params [47]
+Trace line 16: res = '47'
+Trace line 17: Call function len with params ['47']
 Trace line 17: while True: ...
-Trace line 17: res =  47
-Trace line 17: Call function len with params [ 47]
+Trace line 17: res = ' 47'
+Trace line 17: Call function len with params [' 47']
 Trace line 17: while True: ...
-Trace line 17: res =   47
-Trace line 17: Call function len with params [  47]
+Trace line 17: res = '  47'
+Trace line 17: Call function len with params ['  47']
 Trace line 17: while False:
 Trace line 18: return '  47'
-Trace line 28: line_buf =   31  37  41  43  47
+Trace line 28: line_buf = '  31  37  41  43  47'
 Trace line 29: n_printed = 15
 Trace line 23: for #47: i = 48
 Trace line 23: for #48: i = 49
@@ -10953,17 +10953,17 @@ Trace line 23: for #52: i = 53
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [53, 4]
 Trace line 16: Call function str with params [53]
-Trace line 16: res = 53
-Trace line 17: Call function len with params [53]
+Trace line 16: res = '53'
+Trace line 17: Call function len with params ['53']
 Trace line 17: while True: ...
-Trace line 17: res =  53
-Trace line 17: Call function len with params [ 53]
+Trace line 17: res = ' 53'
+Trace line 17: Call function len with params [' 53']
 Trace line 17: while True: ...
-Trace line 17: res =   53
-Trace line 17: Call function len with params [  53]
+Trace line 17: res = '  53'
+Trace line 17: Call function len with params ['  53']
 Trace line 17: while False:
 Trace line 18: return '  53'
-Trace line 28: line_buf =   31  37  41  43  47  53
+Trace line 28: line_buf = '  31  37  41  43  47  53'
 Trace line 29: n_printed = 16
 Trace line 23: for #53: i = 54
 Trace line 23: for #54: i = 55
@@ -10974,34 +10974,34 @@ Trace line 23: for #58: i = 59
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [59, 4]
 Trace line 16: Call function str with params [59]
-Trace line 16: res = 59
-Trace line 17: Call function len with params [59]
+Trace line 16: res = '59'
+Trace line 17: Call function len with params ['59']
 Trace line 17: while True: ...
-Trace line 17: res =  59
-Trace line 17: Call function len with params [ 59]
+Trace line 17: res = ' 59'
+Trace line 17: Call function len with params [' 59']
 Trace line 17: while True: ...
-Trace line 17: res =   59
-Trace line 17: Call function len with params [  59]
+Trace line 17: res = '  59'
+Trace line 17: Call function len with params ['  59']
 Trace line 17: while False:
 Trace line 18: return '  59'
-Trace line 28: line_buf =   31  37  41  43  47  53  59
+Trace line 28: line_buf = '  31  37  41  43  47  53  59'
 Trace line 29: n_printed = 17
 Trace line 23: for #59: i = 60
 Trace line 23: for #60: i = 61
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [61, 4]
 Trace line 16: Call function str with params [61]
-Trace line 16: res = 61
-Trace line 17: Call function len with params [61]
+Trace line 16: res = '61'
+Trace line 17: Call function len with params ['61']
 Trace line 17: while True: ...
-Trace line 17: res =  61
-Trace line 17: Call function len with params [ 61]
+Trace line 17: res = ' 61'
+Trace line 17: Call function len with params [' 61']
 Trace line 17: while True: ...
-Trace line 17: res =   61
-Trace line 17: Call function len with params [  61]
+Trace line 17: res = '  61'
+Trace line 17: Call function len with params ['  61']
 Trace line 17: while False:
 Trace line 18: return '  61'
-Trace line 28: line_buf =   31  37  41  43  47  53  59  61
+Trace line 28: line_buf = '  31  37  41  43  47  53  59  61'
 Trace line 29: n_printed = 18
 Trace line 23: for #61: i = 62
 Trace line 23: for #62: i = 63
@@ -11012,17 +11012,17 @@ Trace line 23: for #66: i = 67
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [67, 4]
 Trace line 16: Call function str with params [67]
-Trace line 16: res = 67
-Trace line 17: Call function len with params [67]
+Trace line 16: res = '67'
+Trace line 17: Call function len with params ['67']
 Trace line 17: while True: ...
-Trace line 17: res =  67
-Trace line 17: Call function len with params [ 67]
+Trace line 17: res = ' 67'
+Trace line 17: Call function len with params [' 67']
 Trace line 17: while True: ...
-Trace line 17: res =   67
-Trace line 17: Call function len with params [  67]
+Trace line 17: res = '  67'
+Trace line 17: Call function len with params ['  67']
 Trace line 17: while False:
 Trace line 18: return '  67'
-Trace line 28: line_buf =   31  37  41  43  47  53  59  61  67
+Trace line 28: line_buf = '  31  37  41  43  47  53  59  61  67'
 Trace line 29: n_printed = 19
 Trace line 23: for #67: i = 68
 Trace line 23: for #68: i = 69
@@ -11031,38 +11031,38 @@ Trace line 23: for #70: i = 71
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [71, 4]
 Trace line 16: Call function str with params [71]
-Trace line 16: res = 71
-Trace line 17: Call function len with params [71]
+Trace line 16: res = '71'
+Trace line 17: Call function len with params ['71']
 Trace line 17: while True: ...
-Trace line 17: res =  71
-Trace line 17: Call function len with params [ 71]
+Trace line 17: res = ' 71'
+Trace line 17: Call function len with params [' 71']
 Trace line 17: while True: ...
-Trace line 17: res =   71
-Trace line 17: Call function len with params [  71]
+Trace line 17: res = '  71'
+Trace line 17: Call function len with params ['  71']
 Trace line 17: while False:
 Trace line 18: return '  71'
-Trace line 28: line_buf =   31  37  41  43  47  53  59  61  67  71
+Trace line 28: line_buf = '  31  37  41  43  47  53  59  61  67  71'
 Trace line 29: n_printed = 20
 Trace line 23: for #71: i = 72
 Trace line 23: for #72: i = 73
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [  31  37  41  43  47  53  59  61  67  71]
+Trace line 26: Call function print with params ['  31  37  41  43  47  53  59  61  67  71']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [73, 4]
 Trace line 16: Call function str with params [73]
-Trace line 16: res = 73
-Trace line 17: Call function len with params [73]
+Trace line 16: res = '73'
+Trace line 17: Call function len with params ['73']
 Trace line 17: while True: ...
-Trace line 17: res =  73
-Trace line 17: Call function len with params [ 73]
+Trace line 17: res = ' 73'
+Trace line 17: Call function len with params [' 73']
 Trace line 17: while True: ...
-Trace line 17: res =   73
-Trace line 17: Call function len with params [  73]
+Trace line 17: res = '  73'
+Trace line 17: Call function len with params ['  73']
 Trace line 17: while False:
 Trace line 18: return '  73'
-Trace line 28: line_buf =   73
+Trace line 28: line_buf = '  73'
 Trace line 29: n_printed = 21
 Trace line 23: for #73: i = 74
 Trace line 23: for #74: i = 75
@@ -11073,17 +11073,17 @@ Trace line 23: for #78: i = 79
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [79, 4]
 Trace line 16: Call function str with params [79]
-Trace line 16: res = 79
-Trace line 17: Call function len with params [79]
+Trace line 16: res = '79'
+Trace line 17: Call function len with params ['79']
 Trace line 17: while True: ...
-Trace line 17: res =  79
-Trace line 17: Call function len with params [ 79]
+Trace line 17: res = ' 79'
+Trace line 17: Call function len with params [' 79']
 Trace line 17: while True: ...
-Trace line 17: res =   79
-Trace line 17: Call function len with params [  79]
+Trace line 17: res = '  79'
+Trace line 17: Call function len with params ['  79']
 Trace line 17: while False:
 Trace line 18: return '  79'
-Trace line 28: line_buf =   73  79
+Trace line 28: line_buf = '  73  79'
 Trace line 29: n_printed = 22
 Trace line 23: for #79: i = 80
 Trace line 23: for #80: i = 81
@@ -11092,17 +11092,17 @@ Trace line 23: for #82: i = 83
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [83, 4]
 Trace line 16: Call function str with params [83]
-Trace line 16: res = 83
-Trace line 17: Call function len with params [83]
+Trace line 16: res = '83'
+Trace line 17: Call function len with params ['83']
 Trace line 17: while True: ...
-Trace line 17: res =  83
-Trace line 17: Call function len with params [ 83]
+Trace line 17: res = ' 83'
+Trace line 17: Call function len with params [' 83']
 Trace line 17: while True: ...
-Trace line 17: res =   83
-Trace line 17: Call function len with params [  83]
+Trace line 17: res = '  83'
+Trace line 17: Call function len with params ['  83']
 Trace line 17: while False:
 Trace line 18: return '  83'
-Trace line 28: line_buf =   73  79  83
+Trace line 28: line_buf = '  73  79  83'
 Trace line 29: n_printed = 23
 Trace line 23: for #83: i = 84
 Trace line 23: for #84: i = 85
@@ -11113,17 +11113,17 @@ Trace line 23: for #88: i = 89
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [89, 4]
 Trace line 16: Call function str with params [89]
-Trace line 16: res = 89
-Trace line 17: Call function len with params [89]
+Trace line 16: res = '89'
+Trace line 17: Call function len with params ['89']
 Trace line 17: while True: ...
-Trace line 17: res =  89
-Trace line 17: Call function len with params [ 89]
+Trace line 17: res = ' 89'
+Trace line 17: Call function len with params [' 89']
 Trace line 17: while True: ...
-Trace line 17: res =   89
-Trace line 17: Call function len with params [  89]
+Trace line 17: res = '  89'
+Trace line 17: Call function len with params ['  89']
 Trace line 17: while False:
 Trace line 18: return '  89'
-Trace line 28: line_buf =   73  79  83  89
+Trace line 28: line_buf = '  73  79  83  89'
 Trace line 29: n_printed = 24
 Trace line 23: for #89: i = 90
 Trace line 23: for #90: i = 91
@@ -11136,17 +11136,17 @@ Trace line 23: for #96: i = 97
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [97, 4]
 Trace line 16: Call function str with params [97]
-Trace line 16: res = 97
-Trace line 17: Call function len with params [97]
+Trace line 16: res = '97'
+Trace line 17: Call function len with params ['97']
 Trace line 17: while True: ...
-Trace line 17: res =  97
-Trace line 17: Call function len with params [ 97]
+Trace line 17: res = ' 97'
+Trace line 17: Call function len with params [' 97']
 Trace line 17: while True: ...
-Trace line 17: res =   97
-Trace line 17: Call function len with params [  97]
+Trace line 17: res = '  97'
+Trace line 17: Call function len with params ['  97']
 Trace line 17: while False:
 Trace line 18: return '  97'
-Trace line 28: line_buf =   73  79  83  89  97
+Trace line 28: line_buf = '  73  79  83  89  97'
 Trace line 29: n_printed = 25
 Trace line 23: for #97: i = 98
 Trace line 23: for #98: i = 99
@@ -11155,28 +11155,28 @@ Trace line 23: for #100: i = 101
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [101, 4]
 Trace line 16: Call function str with params [101]
-Trace line 16: res = 101
-Trace line 17: Call function len with params [101]
+Trace line 16: res = '101'
+Trace line 17: Call function len with params ['101']
 Trace line 17: while True: ...
-Trace line 17: res =  101
-Trace line 17: Call function len with params [ 101]
+Trace line 17: res = ' 101'
+Trace line 17: Call function len with params [' 101']
 Trace line 17: while False:
 Trace line 18: return ' 101'
-Trace line 28: line_buf =   73  79  83  89  97 101
+Trace line 28: line_buf = '  73  79  83  89  97 101'
 Trace line 29: n_printed = 26
 Trace line 23: for #101: i = 102
 Trace line 23: for #102: i = 103
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [103, 4]
 Trace line 16: Call function str with params [103]
-Trace line 16: res = 103
-Trace line 17: Call function len with params [103]
+Trace line 16: res = '103'
+Trace line 17: Call function len with params ['103']
 Trace line 17: while True: ...
-Trace line 17: res =  103
-Trace line 17: Call function len with params [ 103]
+Trace line 17: res = ' 103'
+Trace line 17: Call function len with params [' 103']
 Trace line 17: while False:
 Trace line 18: return ' 103'
-Trace line 28: line_buf =   73  79  83  89  97 101 103
+Trace line 28: line_buf = '  73  79  83  89  97 101 103'
 Trace line 29: n_printed = 27
 Trace line 23: for #103: i = 104
 Trace line 23: for #104: i = 105
@@ -11185,28 +11185,28 @@ Trace line 23: for #106: i = 107
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [107, 4]
 Trace line 16: Call function str with params [107]
-Trace line 16: res = 107
-Trace line 17: Call function len with params [107]
+Trace line 16: res = '107'
+Trace line 17: Call function len with params ['107']
 Trace line 17: while True: ...
-Trace line 17: res =  107
-Trace line 17: Call function len with params [ 107]
+Trace line 17: res = ' 107'
+Trace line 17: Call function len with params [' 107']
 Trace line 17: while False:
 Trace line 18: return ' 107'
-Trace line 28: line_buf =   73  79  83  89  97 101 103 107
+Trace line 28: line_buf = '  73  79  83  89  97 101 103 107'
 Trace line 29: n_printed = 28
 Trace line 23: for #107: i = 108
 Trace line 23: for #108: i = 109
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [109, 4]
 Trace line 16: Call function str with params [109]
-Trace line 16: res = 109
-Trace line 17: Call function len with params [109]
+Trace line 16: res = '109'
+Trace line 17: Call function len with params ['109']
 Trace line 17: while True: ...
-Trace line 17: res =  109
-Trace line 17: Call function len with params [ 109]
+Trace line 17: res = ' 109'
+Trace line 17: Call function len with params [' 109']
 Trace line 17: while False:
 Trace line 18: return ' 109'
-Trace line 28: line_buf =   73  79  83  89  97 101 103 107 109
+Trace line 28: line_buf = '  73  79  83  89  97 101 103 107 109'
 Trace line 29: n_printed = 29
 Trace line 23: for #109: i = 110
 Trace line 23: for #110: i = 111
@@ -11215,14 +11215,14 @@ Trace line 23: for #112: i = 113
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [113, 4]
 Trace line 16: Call function str with params [113]
-Trace line 16: res = 113
-Trace line 17: Call function len with params [113]
+Trace line 16: res = '113'
+Trace line 17: Call function len with params ['113']
 Trace line 17: while True: ...
-Trace line 17: res =  113
-Trace line 17: Call function len with params [ 113]
+Trace line 17: res = ' 113'
+Trace line 17: Call function len with params [' 113']
 Trace line 17: while False:
 Trace line 18: return ' 113'
-Trace line 28: line_buf =   73  79  83  89  97 101 103 107 109 113
+Trace line 28: line_buf = '  73  79  83  89  97 101 103 107 109 113'
 Trace line 29: n_printed = 30
 Trace line 23: for #113: i = 114
 Trace line 23: for #114: i = 115
@@ -11240,19 +11240,19 @@ Trace line 23: for #125: i = 126
 Trace line 23: for #126: i = 127
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [  73  79  83  89  97 101 103 107 109 113]
+Trace line 26: Call function print with params ['  73  79  83  89  97 101 103 107 109 113']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [127, 4]
 Trace line 16: Call function str with params [127]
-Trace line 16: res = 127
-Trace line 17: Call function len with params [127]
+Trace line 16: res = '127'
+Trace line 17: Call function len with params ['127']
 Trace line 17: while True: ...
-Trace line 17: res =  127
-Trace line 17: Call function len with params [ 127]
+Trace line 17: res = ' 127'
+Trace line 17: Call function len with params [' 127']
 Trace line 17: while False:
 Trace line 18: return ' 127'
-Trace line 28: line_buf =  127
+Trace line 28: line_buf = ' 127'
 Trace line 29: n_printed = 31
 Trace line 23: for #127: i = 128
 Trace line 23: for #128: i = 129
@@ -11261,14 +11261,14 @@ Trace line 23: for #130: i = 131
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [131, 4]
 Trace line 16: Call function str with params [131]
-Trace line 16: res = 131
-Trace line 17: Call function len with params [131]
+Trace line 16: res = '131'
+Trace line 17: Call function len with params ['131']
 Trace line 17: while True: ...
-Trace line 17: res =  131
-Trace line 17: Call function len with params [ 131]
+Trace line 17: res = ' 131'
+Trace line 17: Call function len with params [' 131']
 Trace line 17: while False:
 Trace line 18: return ' 131'
-Trace line 28: line_buf =  127 131
+Trace line 28: line_buf = ' 127 131'
 Trace line 29: n_printed = 32
 Trace line 23: for #131: i = 132
 Trace line 23: for #132: i = 133
@@ -11279,28 +11279,28 @@ Trace line 23: for #136: i = 137
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [137, 4]
 Trace line 16: Call function str with params [137]
-Trace line 16: res = 137
-Trace line 17: Call function len with params [137]
+Trace line 16: res = '137'
+Trace line 17: Call function len with params ['137']
 Trace line 17: while True: ...
-Trace line 17: res =  137
-Trace line 17: Call function len with params [ 137]
+Trace line 17: res = ' 137'
+Trace line 17: Call function len with params [' 137']
 Trace line 17: while False:
 Trace line 18: return ' 137'
-Trace line 28: line_buf =  127 131 137
+Trace line 28: line_buf = ' 127 131 137'
 Trace line 29: n_printed = 33
 Trace line 23: for #137: i = 138
 Trace line 23: for #138: i = 139
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [139, 4]
 Trace line 16: Call function str with params [139]
-Trace line 16: res = 139
-Trace line 17: Call function len with params [139]
+Trace line 16: res = '139'
+Trace line 17: Call function len with params ['139']
 Trace line 17: while True: ...
-Trace line 17: res =  139
-Trace line 17: Call function len with params [ 139]
+Trace line 17: res = ' 139'
+Trace line 17: Call function len with params [' 139']
 Trace line 17: while False:
 Trace line 18: return ' 139'
-Trace line 28: line_buf =  127 131 137 139
+Trace line 28: line_buf = ' 127 131 137 139'
 Trace line 29: n_printed = 34
 Trace line 23: for #139: i = 140
 Trace line 23: for #140: i = 141
@@ -11315,28 +11315,28 @@ Trace line 23: for #148: i = 149
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [149, 4]
 Trace line 16: Call function str with params [149]
-Trace line 16: res = 149
-Trace line 17: Call function len with params [149]
+Trace line 16: res = '149'
+Trace line 17: Call function len with params ['149']
 Trace line 17: while True: ...
-Trace line 17: res =  149
-Trace line 17: Call function len with params [ 149]
+Trace line 17: res = ' 149'
+Trace line 17: Call function len with params [' 149']
 Trace line 17: while False:
 Trace line 18: return ' 149'
-Trace line 28: line_buf =  127 131 137 139 149
+Trace line 28: line_buf = ' 127 131 137 139 149'
 Trace line 29: n_printed = 35
 Trace line 23: for #149: i = 150
 Trace line 23: for #150: i = 151
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [151, 4]
 Trace line 16: Call function str with params [151]
-Trace line 16: res = 151
-Trace line 17: Call function len with params [151]
+Trace line 16: res = '151'
+Trace line 17: Call function len with params ['151']
 Trace line 17: while True: ...
-Trace line 17: res =  151
-Trace line 17: Call function len with params [ 151]
+Trace line 17: res = ' 151'
+Trace line 17: Call function len with params [' 151']
 Trace line 17: while False:
 Trace line 18: return ' 151'
-Trace line 28: line_buf =  127 131 137 139 149 151
+Trace line 28: line_buf = ' 127 131 137 139 149 151'
 Trace line 29: n_printed = 36
 Trace line 23: for #151: i = 152
 Trace line 23: for #152: i = 153
@@ -11347,14 +11347,14 @@ Trace line 23: for #156: i = 157
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [157, 4]
 Trace line 16: Call function str with params [157]
-Trace line 16: res = 157
-Trace line 17: Call function len with params [157]
+Trace line 16: res = '157'
+Trace line 17: Call function len with params ['157']
 Trace line 17: while True: ...
-Trace line 17: res =  157
-Trace line 17: Call function len with params [ 157]
+Trace line 17: res = ' 157'
+Trace line 17: Call function len with params [' 157']
 Trace line 17: while False:
 Trace line 18: return ' 157'
-Trace line 28: line_buf =  127 131 137 139 149 151 157
+Trace line 28: line_buf = ' 127 131 137 139 149 151 157'
 Trace line 29: n_printed = 37
 Trace line 23: for #157: i = 158
 Trace line 23: for #158: i = 159
@@ -11365,14 +11365,14 @@ Trace line 23: for #162: i = 163
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [163, 4]
 Trace line 16: Call function str with params [163]
-Trace line 16: res = 163
-Trace line 17: Call function len with params [163]
+Trace line 16: res = '163'
+Trace line 17: Call function len with params ['163']
 Trace line 17: while True: ...
-Trace line 17: res =  163
-Trace line 17: Call function len with params [ 163]
+Trace line 17: res = ' 163'
+Trace line 17: Call function len with params [' 163']
 Trace line 17: while False:
 Trace line 18: return ' 163'
-Trace line 28: line_buf =  127 131 137 139 149 151 157 163
+Trace line 28: line_buf = ' 127 131 137 139 149 151 157 163'
 Trace line 29: n_printed = 38
 Trace line 23: for #163: i = 164
 Trace line 23: for #164: i = 165
@@ -11381,14 +11381,14 @@ Trace line 23: for #166: i = 167
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [167, 4]
 Trace line 16: Call function str with params [167]
-Trace line 16: res = 167
-Trace line 17: Call function len with params [167]
+Trace line 16: res = '167'
+Trace line 17: Call function len with params ['167']
 Trace line 17: while True: ...
-Trace line 17: res =  167
-Trace line 17: Call function len with params [ 167]
+Trace line 17: res = ' 167'
+Trace line 17: Call function len with params [' 167']
 Trace line 17: while False:
 Trace line 18: return ' 167'
-Trace line 28: line_buf =  127 131 137 139 149 151 157 163 167
+Trace line 28: line_buf = ' 127 131 137 139 149 151 157 163 167'
 Trace line 29: n_printed = 39
 Trace line 23: for #167: i = 168
 Trace line 23: for #168: i = 169
@@ -11399,14 +11399,14 @@ Trace line 23: for #172: i = 173
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [173, 4]
 Trace line 16: Call function str with params [173]
-Trace line 16: res = 173
-Trace line 17: Call function len with params [173]
+Trace line 16: res = '173'
+Trace line 17: Call function len with params ['173']
 Trace line 17: while True: ...
-Trace line 17: res =  173
-Trace line 17: Call function len with params [ 173]
+Trace line 17: res = ' 173'
+Trace line 17: Call function len with params [' 173']
 Trace line 17: while False:
 Trace line 18: return ' 173'
-Trace line 28: line_buf =  127 131 137 139 149 151 157 163 167 173
+Trace line 28: line_buf = ' 127 131 137 139 149 151 157 163 167 173'
 Trace line 29: n_printed = 40
 Trace line 23: for #173: i = 174
 Trace line 23: for #174: i = 175
@@ -11416,33 +11416,33 @@ Trace line 23: for #177: i = 178
 Trace line 23: for #178: i = 179
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 127 131 137 139 149 151 157 163 167 173]
+Trace line 26: Call function print with params [' 127 131 137 139 149 151 157 163 167 173']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [179, 4]
 Trace line 16: Call function str with params [179]
-Trace line 16: res = 179
-Trace line 17: Call function len with params [179]
+Trace line 16: res = '179'
+Trace line 17: Call function len with params ['179']
 Trace line 17: while True: ...
-Trace line 17: res =  179
-Trace line 17: Call function len with params [ 179]
+Trace line 17: res = ' 179'
+Trace line 17: Call function len with params [' 179']
 Trace line 17: while False:
 Trace line 18: return ' 179'
-Trace line 28: line_buf =  179
+Trace line 28: line_buf = ' 179'
 Trace line 29: n_printed = 41
 Trace line 23: for #179: i = 180
 Trace line 23: for #180: i = 181
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [181, 4]
 Trace line 16: Call function str with params [181]
-Trace line 16: res = 181
-Trace line 17: Call function len with params [181]
+Trace line 16: res = '181'
+Trace line 17: Call function len with params ['181']
 Trace line 17: while True: ...
-Trace line 17: res =  181
-Trace line 17: Call function len with params [ 181]
+Trace line 17: res = ' 181'
+Trace line 17: Call function len with params [' 181']
 Trace line 17: while False:
 Trace line 18: return ' 181'
-Trace line 28: line_buf =  179 181
+Trace line 28: line_buf = ' 179 181'
 Trace line 29: n_printed = 42
 Trace line 23: for #181: i = 182
 Trace line 23: for #182: i = 183
@@ -11457,28 +11457,28 @@ Trace line 23: for #190: i = 191
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [191, 4]
 Trace line 16: Call function str with params [191]
-Trace line 16: res = 191
-Trace line 17: Call function len with params [191]
+Trace line 16: res = '191'
+Trace line 17: Call function len with params ['191']
 Trace line 17: while True: ...
-Trace line 17: res =  191
-Trace line 17: Call function len with params [ 191]
+Trace line 17: res = ' 191'
+Trace line 17: Call function len with params [' 191']
 Trace line 17: while False:
 Trace line 18: return ' 191'
-Trace line 28: line_buf =  179 181 191
+Trace line 28: line_buf = ' 179 181 191'
 Trace line 29: n_printed = 43
 Trace line 23: for #191: i = 192
 Trace line 23: for #192: i = 193
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [193, 4]
 Trace line 16: Call function str with params [193]
-Trace line 16: res = 193
-Trace line 17: Call function len with params [193]
+Trace line 16: res = '193'
+Trace line 17: Call function len with params ['193']
 Trace line 17: while True: ...
-Trace line 17: res =  193
-Trace line 17: Call function len with params [ 193]
+Trace line 17: res = ' 193'
+Trace line 17: Call function len with params [' 193']
 Trace line 17: while False:
 Trace line 18: return ' 193'
-Trace line 28: line_buf =  179 181 191 193
+Trace line 28: line_buf = ' 179 181 191 193'
 Trace line 29: n_printed = 44
 Trace line 23: for #193: i = 194
 Trace line 23: for #194: i = 195
@@ -11487,28 +11487,28 @@ Trace line 23: for #196: i = 197
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [197, 4]
 Trace line 16: Call function str with params [197]
-Trace line 16: res = 197
-Trace line 17: Call function len with params [197]
+Trace line 16: res = '197'
+Trace line 17: Call function len with params ['197']
 Trace line 17: while True: ...
-Trace line 17: res =  197
-Trace line 17: Call function len with params [ 197]
+Trace line 17: res = ' 197'
+Trace line 17: Call function len with params [' 197']
 Trace line 17: while False:
 Trace line 18: return ' 197'
-Trace line 28: line_buf =  179 181 191 193 197
+Trace line 28: line_buf = ' 179 181 191 193 197'
 Trace line 29: n_printed = 45
 Trace line 23: for #197: i = 198
 Trace line 23: for #198: i = 199
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [199, 4]
 Trace line 16: Call function str with params [199]
-Trace line 16: res = 199
-Trace line 17: Call function len with params [199]
+Trace line 16: res = '199'
+Trace line 17: Call function len with params ['199']
 Trace line 17: while True: ...
-Trace line 17: res =  199
-Trace line 17: Call function len with params [ 199]
+Trace line 17: res = ' 199'
+Trace line 17: Call function len with params [' 199']
 Trace line 17: while False:
 Trace line 18: return ' 199'
-Trace line 28: line_buf =  179 181 191 193 197 199
+Trace line 28: line_buf = ' 179 181 191 193 197 199'
 Trace line 29: n_printed = 46
 Trace line 23: for #199: i = 200
 Trace line 23: for #200: i = 201
@@ -11525,14 +11525,14 @@ Trace line 23: for #210: i = 211
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [211, 4]
 Trace line 16: Call function str with params [211]
-Trace line 16: res = 211
-Trace line 17: Call function len with params [211]
+Trace line 16: res = '211'
+Trace line 17: Call function len with params ['211']
 Trace line 17: while True: ...
-Trace line 17: res =  211
-Trace line 17: Call function len with params [ 211]
+Trace line 17: res = ' 211'
+Trace line 17: Call function len with params [' 211']
 Trace line 17: while False:
 Trace line 18: return ' 211'
-Trace line 28: line_buf =  179 181 191 193 197 199 211
+Trace line 28: line_buf = ' 179 181 191 193 197 199 211'
 Trace line 29: n_printed = 47
 Trace line 23: for #211: i = 212
 Trace line 23: for #212: i = 213
@@ -11549,14 +11549,14 @@ Trace line 23: for #222: i = 223
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [223, 4]
 Trace line 16: Call function str with params [223]
-Trace line 16: res = 223
-Trace line 17: Call function len with params [223]
+Trace line 16: res = '223'
+Trace line 17: Call function len with params ['223']
 Trace line 17: while True: ...
-Trace line 17: res =  223
-Trace line 17: Call function len with params [ 223]
+Trace line 17: res = ' 223'
+Trace line 17: Call function len with params [' 223']
 Trace line 17: while False:
 Trace line 18: return ' 223'
-Trace line 28: line_buf =  179 181 191 193 197 199 211 223
+Trace line 28: line_buf = ' 179 181 191 193 197 199 211 223'
 Trace line 29: n_printed = 48
 Trace line 23: for #223: i = 224
 Trace line 23: for #224: i = 225
@@ -11565,28 +11565,28 @@ Trace line 23: for #226: i = 227
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [227, 4]
 Trace line 16: Call function str with params [227]
-Trace line 16: res = 227
-Trace line 17: Call function len with params [227]
+Trace line 16: res = '227'
+Trace line 17: Call function len with params ['227']
 Trace line 17: while True: ...
-Trace line 17: res =  227
-Trace line 17: Call function len with params [ 227]
+Trace line 17: res = ' 227'
+Trace line 17: Call function len with params [' 227']
 Trace line 17: while False:
 Trace line 18: return ' 227'
-Trace line 28: line_buf =  179 181 191 193 197 199 211 223 227
+Trace line 28: line_buf = ' 179 181 191 193 197 199 211 223 227'
 Trace line 29: n_printed = 49
 Trace line 23: for #227: i = 228
 Trace line 23: for #228: i = 229
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [229, 4]
 Trace line 16: Call function str with params [229]
-Trace line 16: res = 229
-Trace line 17: Call function len with params [229]
+Trace line 16: res = '229'
+Trace line 17: Call function len with params ['229']
 Trace line 17: while True: ...
-Trace line 17: res =  229
-Trace line 17: Call function len with params [ 229]
+Trace line 17: res = ' 229'
+Trace line 17: Call function len with params [' 229']
 Trace line 17: while False:
 Trace line 18: return ' 229'
-Trace line 28: line_buf =  179 181 191 193 197 199 211 223 227 229
+Trace line 28: line_buf = ' 179 181 191 193 197 199 211 223 227 229'
 Trace line 29: n_printed = 50
 Trace line 23: for #229: i = 230
 Trace line 23: for #230: i = 231
@@ -11594,19 +11594,19 @@ Trace line 23: for #231: i = 232
 Trace line 23: for #232: i = 233
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 179 181 191 193 197 199 211 223 227 229]
+Trace line 26: Call function print with params [' 179 181 191 193 197 199 211 223 227 229']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [233, 4]
 Trace line 16: Call function str with params [233]
-Trace line 16: res = 233
-Trace line 17: Call function len with params [233]
+Trace line 16: res = '233'
+Trace line 17: Call function len with params ['233']
 Trace line 17: while True: ...
-Trace line 17: res =  233
-Trace line 17: Call function len with params [ 233]
+Trace line 17: res = ' 233'
+Trace line 17: Call function len with params [' 233']
 Trace line 17: while False:
 Trace line 18: return ' 233'
-Trace line 28: line_buf =  233
+Trace line 28: line_buf = ' 233'
 Trace line 29: n_printed = 51
 Trace line 23: for #233: i = 234
 Trace line 23: for #234: i = 235
@@ -11617,28 +11617,28 @@ Trace line 23: for #238: i = 239
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [239, 4]
 Trace line 16: Call function str with params [239]
-Trace line 16: res = 239
-Trace line 17: Call function len with params [239]
+Trace line 16: res = '239'
+Trace line 17: Call function len with params ['239']
 Trace line 17: while True: ...
-Trace line 17: res =  239
-Trace line 17: Call function len with params [ 239]
+Trace line 17: res = ' 239'
+Trace line 17: Call function len with params [' 239']
 Trace line 17: while False:
 Trace line 18: return ' 239'
-Trace line 28: line_buf =  233 239
+Trace line 28: line_buf = ' 233 239'
 Trace line 29: n_printed = 52
 Trace line 23: for #239: i = 240
 Trace line 23: for #240: i = 241
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [241, 4]
 Trace line 16: Call function str with params [241]
-Trace line 16: res = 241
-Trace line 17: Call function len with params [241]
+Trace line 16: res = '241'
+Trace line 17: Call function len with params ['241']
 Trace line 17: while True: ...
-Trace line 17: res =  241
-Trace line 17: Call function len with params [ 241]
+Trace line 17: res = ' 241'
+Trace line 17: Call function len with params [' 241']
 Trace line 17: while False:
 Trace line 18: return ' 241'
-Trace line 28: line_buf =  233 239 241
+Trace line 28: line_buf = ' 233 239 241'
 Trace line 29: n_printed = 53
 Trace line 23: for #241: i = 242
 Trace line 23: for #242: i = 243
@@ -11653,14 +11653,14 @@ Trace line 23: for #250: i = 251
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [251, 4]
 Trace line 16: Call function str with params [251]
-Trace line 16: res = 251
-Trace line 17: Call function len with params [251]
+Trace line 16: res = '251'
+Trace line 17: Call function len with params ['251']
 Trace line 17: while True: ...
-Trace line 17: res =  251
-Trace line 17: Call function len with params [ 251]
+Trace line 17: res = ' 251'
+Trace line 17: Call function len with params [' 251']
 Trace line 17: while False:
 Trace line 18: return ' 251'
-Trace line 28: line_buf =  233 239 241 251
+Trace line 28: line_buf = ' 233 239 241 251'
 Trace line 29: n_printed = 54
 Trace line 23: for #251: i = 252
 Trace line 23: for #252: i = 253
@@ -11671,14 +11671,14 @@ Trace line 23: for #256: i = 257
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [257, 4]
 Trace line 16: Call function str with params [257]
-Trace line 16: res = 257
-Trace line 17: Call function len with params [257]
+Trace line 16: res = '257'
+Trace line 17: Call function len with params ['257']
 Trace line 17: while True: ...
-Trace line 17: res =  257
-Trace line 17: Call function len with params [ 257]
+Trace line 17: res = ' 257'
+Trace line 17: Call function len with params [' 257']
 Trace line 17: while False:
 Trace line 18: return ' 257'
-Trace line 28: line_buf =  233 239 241 251 257
+Trace line 28: line_buf = ' 233 239 241 251 257'
 Trace line 29: n_printed = 55
 Trace line 23: for #257: i = 258
 Trace line 23: for #258: i = 259
@@ -11689,14 +11689,14 @@ Trace line 23: for #262: i = 263
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [263, 4]
 Trace line 16: Call function str with params [263]
-Trace line 16: res = 263
-Trace line 17: Call function len with params [263]
+Trace line 16: res = '263'
+Trace line 17: Call function len with params ['263']
 Trace line 17: while True: ...
-Trace line 17: res =  263
-Trace line 17: Call function len with params [ 263]
+Trace line 17: res = ' 263'
+Trace line 17: Call function len with params [' 263']
 Trace line 17: while False:
 Trace line 18: return ' 263'
-Trace line 28: line_buf =  233 239 241 251 257 263
+Trace line 28: line_buf = ' 233 239 241 251 257 263'
 Trace line 29: n_printed = 56
 Trace line 23: for #263: i = 264
 Trace line 23: for #264: i = 265
@@ -11707,28 +11707,28 @@ Trace line 23: for #268: i = 269
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [269, 4]
 Trace line 16: Call function str with params [269]
-Trace line 16: res = 269
-Trace line 17: Call function len with params [269]
+Trace line 16: res = '269'
+Trace line 17: Call function len with params ['269']
 Trace line 17: while True: ...
-Trace line 17: res =  269
-Trace line 17: Call function len with params [ 269]
+Trace line 17: res = ' 269'
+Trace line 17: Call function len with params [' 269']
 Trace line 17: while False:
 Trace line 18: return ' 269'
-Trace line 28: line_buf =  233 239 241 251 257 263 269
+Trace line 28: line_buf = ' 233 239 241 251 257 263 269'
 Trace line 29: n_printed = 57
 Trace line 23: for #269: i = 270
 Trace line 23: for #270: i = 271
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [271, 4]
 Trace line 16: Call function str with params [271]
-Trace line 16: res = 271
-Trace line 17: Call function len with params [271]
+Trace line 16: res = '271'
+Trace line 17: Call function len with params ['271']
 Trace line 17: while True: ...
-Trace line 17: res =  271
-Trace line 17: Call function len with params [ 271]
+Trace line 17: res = ' 271'
+Trace line 17: Call function len with params [' 271']
 Trace line 17: while False:
 Trace line 18: return ' 271'
-Trace line 28: line_buf =  233 239 241 251 257 263 269 271
+Trace line 28: line_buf = ' 233 239 241 251 257 263 269 271'
 Trace line 29: n_printed = 58
 Trace line 23: for #271: i = 272
 Trace line 23: for #272: i = 273
@@ -11739,14 +11739,14 @@ Trace line 23: for #276: i = 277
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [277, 4]
 Trace line 16: Call function str with params [277]
-Trace line 16: res = 277
-Trace line 17: Call function len with params [277]
+Trace line 16: res = '277'
+Trace line 17: Call function len with params ['277']
 Trace line 17: while True: ...
-Trace line 17: res =  277
-Trace line 17: Call function len with params [ 277]
+Trace line 17: res = ' 277'
+Trace line 17: Call function len with params [' 277']
 Trace line 17: while False:
 Trace line 18: return ' 277'
-Trace line 28: line_buf =  233 239 241 251 257 263 269 271 277
+Trace line 28: line_buf = ' 233 239 241 251 257 263 269 271 277'
 Trace line 29: n_printed = 59
 Trace line 23: for #277: i = 278
 Trace line 23: for #278: i = 279
@@ -11755,32 +11755,32 @@ Trace line 23: for #280: i = 281
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [281, 4]
 Trace line 16: Call function str with params [281]
-Trace line 16: res = 281
-Trace line 17: Call function len with params [281]
+Trace line 16: res = '281'
+Trace line 17: Call function len with params ['281']
 Trace line 17: while True: ...
-Trace line 17: res =  281
-Trace line 17: Call function len with params [ 281]
+Trace line 17: res = ' 281'
+Trace line 17: Call function len with params [' 281']
 Trace line 17: while False:
 Trace line 18: return ' 281'
-Trace line 28: line_buf =  233 239 241 251 257 263 269 271 277 281
+Trace line 28: line_buf = ' 233 239 241 251 257 263 269 271 277 281'
 Trace line 29: n_printed = 60
 Trace line 23: for #281: i = 282
 Trace line 23: for #282: i = 283
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 233 239 241 251 257 263 269 271 277 281]
+Trace line 26: Call function print with params [' 233 239 241 251 257 263 269 271 277 281']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [283, 4]
 Trace line 16: Call function str with params [283]
-Trace line 16: res = 283
-Trace line 17: Call function len with params [283]
+Trace line 16: res = '283'
+Trace line 17: Call function len with params ['283']
 Trace line 17: while True: ...
-Trace line 17: res =  283
-Trace line 17: Call function len with params [ 283]
+Trace line 17: res = ' 283'
+Trace line 17: Call function len with params [' 283']
 Trace line 17: while False:
 Trace line 18: return ' 283'
-Trace line 28: line_buf =  283
+Trace line 28: line_buf = ' 283'
 Trace line 29: n_printed = 61
 Trace line 23: for #283: i = 284
 Trace line 23: for #284: i = 285
@@ -11795,14 +11795,14 @@ Trace line 23: for #292: i = 293
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [293, 4]
 Trace line 16: Call function str with params [293]
-Trace line 16: res = 293
-Trace line 17: Call function len with params [293]
+Trace line 16: res = '293'
+Trace line 17: Call function len with params ['293']
 Trace line 17: while True: ...
-Trace line 17: res =  293
-Trace line 17: Call function len with params [ 293]
+Trace line 17: res = ' 293'
+Trace line 17: Call function len with params [' 293']
 Trace line 17: while False:
 Trace line 18: return ' 293'
-Trace line 28: line_buf =  283 293
+Trace line 28: line_buf = ' 283 293'
 Trace line 29: n_printed = 62
 Trace line 23: for #293: i = 294
 Trace line 23: for #294: i = 295
@@ -11821,14 +11821,14 @@ Trace line 23: for #306: i = 307
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [307, 4]
 Trace line 16: Call function str with params [307]
-Trace line 16: res = 307
-Trace line 17: Call function len with params [307]
+Trace line 16: res = '307'
+Trace line 17: Call function len with params ['307']
 Trace line 17: while True: ...
-Trace line 17: res =  307
-Trace line 17: Call function len with params [ 307]
+Trace line 17: res = ' 307'
+Trace line 17: Call function len with params [' 307']
 Trace line 17: while False:
 Trace line 18: return ' 307'
-Trace line 28: line_buf =  283 293 307
+Trace line 28: line_buf = ' 283 293 307'
 Trace line 29: n_printed = 63
 Trace line 23: for #307: i = 308
 Trace line 23: for #308: i = 309
@@ -11837,28 +11837,28 @@ Trace line 23: for #310: i = 311
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [311, 4]
 Trace line 16: Call function str with params [311]
-Trace line 16: res = 311
-Trace line 17: Call function len with params [311]
+Trace line 16: res = '311'
+Trace line 17: Call function len with params ['311']
 Trace line 17: while True: ...
-Trace line 17: res =  311
-Trace line 17: Call function len with params [ 311]
+Trace line 17: res = ' 311'
+Trace line 17: Call function len with params [' 311']
 Trace line 17: while False:
 Trace line 18: return ' 311'
-Trace line 28: line_buf =  283 293 307 311
+Trace line 28: line_buf = ' 283 293 307 311'
 Trace line 29: n_printed = 64
 Trace line 23: for #311: i = 312
 Trace line 23: for #312: i = 313
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [313, 4]
 Trace line 16: Call function str with params [313]
-Trace line 16: res = 313
-Trace line 17: Call function len with params [313]
+Trace line 16: res = '313'
+Trace line 17: Call function len with params ['313']
 Trace line 17: while True: ...
-Trace line 17: res =  313
-Trace line 17: Call function len with params [ 313]
+Trace line 17: res = ' 313'
+Trace line 17: Call function len with params [' 313']
 Trace line 17: while False:
 Trace line 18: return ' 313'
-Trace line 28: line_buf =  283 293 307 311 313
+Trace line 28: line_buf = ' 283 293 307 311 313'
 Trace line 29: n_printed = 65
 Trace line 23: for #313: i = 314
 Trace line 23: for #314: i = 315
@@ -11867,14 +11867,14 @@ Trace line 23: for #316: i = 317
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [317, 4]
 Trace line 16: Call function str with params [317]
-Trace line 16: res = 317
-Trace line 17: Call function len with params [317]
+Trace line 16: res = '317'
+Trace line 17: Call function len with params ['317']
 Trace line 17: while True: ...
-Trace line 17: res =  317
-Trace line 17: Call function len with params [ 317]
+Trace line 17: res = ' 317'
+Trace line 17: Call function len with params [' 317']
 Trace line 17: while False:
 Trace line 18: return ' 317'
-Trace line 28: line_buf =  283 293 307 311 313 317
+Trace line 28: line_buf = ' 283 293 307 311 313 317'
 Trace line 29: n_printed = 66
 Trace line 23: for #317: i = 318
 Trace line 23: for #318: i = 319
@@ -11893,14 +11893,14 @@ Trace line 23: for #330: i = 331
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [331, 4]
 Trace line 16: Call function str with params [331]
-Trace line 16: res = 331
-Trace line 17: Call function len with params [331]
+Trace line 16: res = '331'
+Trace line 17: Call function len with params ['331']
 Trace line 17: while True: ...
-Trace line 17: res =  331
-Trace line 17: Call function len with params [ 331]
+Trace line 17: res = ' 331'
+Trace line 17: Call function len with params [' 331']
 Trace line 17: while False:
 Trace line 18: return ' 331'
-Trace line 28: line_buf =  283 293 307 311 313 317 331
+Trace line 28: line_buf = ' 283 293 307 311 313 317 331'
 Trace line 29: n_printed = 67
 Trace line 23: for #331: i = 332
 Trace line 23: for #332: i = 333
@@ -11911,14 +11911,14 @@ Trace line 23: for #336: i = 337
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [337, 4]
 Trace line 16: Call function str with params [337]
-Trace line 16: res = 337
-Trace line 17: Call function len with params [337]
+Trace line 16: res = '337'
+Trace line 17: Call function len with params ['337']
 Trace line 17: while True: ...
-Trace line 17: res =  337
-Trace line 17: Call function len with params [ 337]
+Trace line 17: res = ' 337'
+Trace line 17: Call function len with params [' 337']
 Trace line 17: while False:
 Trace line 18: return ' 337'
-Trace line 28: line_buf =  283 293 307 311 313 317 331 337
+Trace line 28: line_buf = ' 283 293 307 311 313 317 331 337'
 Trace line 29: n_printed = 68
 Trace line 23: for #337: i = 338
 Trace line 23: for #338: i = 339
@@ -11933,28 +11933,28 @@ Trace line 23: for #346: i = 347
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [347, 4]
 Trace line 16: Call function str with params [347]
-Trace line 16: res = 347
-Trace line 17: Call function len with params [347]
+Trace line 16: res = '347'
+Trace line 17: Call function len with params ['347']
 Trace line 17: while True: ...
-Trace line 17: res =  347
-Trace line 17: Call function len with params [ 347]
+Trace line 17: res = ' 347'
+Trace line 17: Call function len with params [' 347']
 Trace line 17: while False:
 Trace line 18: return ' 347'
-Trace line 28: line_buf =  283 293 307 311 313 317 331 337 347
+Trace line 28: line_buf = ' 283 293 307 311 313 317 331 337 347'
 Trace line 29: n_printed = 69
 Trace line 23: for #347: i = 348
 Trace line 23: for #348: i = 349
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [349, 4]
 Trace line 16: Call function str with params [349]
-Trace line 16: res = 349
-Trace line 17: Call function len with params [349]
+Trace line 16: res = '349'
+Trace line 17: Call function len with params ['349']
 Trace line 17: while True: ...
-Trace line 17: res =  349
-Trace line 17: Call function len with params [ 349]
+Trace line 17: res = ' 349'
+Trace line 17: Call function len with params [' 349']
 Trace line 17: while False:
 Trace line 18: return ' 349'
-Trace line 28: line_buf =  283 293 307 311 313 317 331 337 347 349
+Trace line 28: line_buf = ' 283 293 307 311 313 317 331 337 347 349'
 Trace line 29: n_printed = 70
 Trace line 23: for #349: i = 350
 Trace line 23: for #350: i = 351
@@ -11962,19 +11962,19 @@ Trace line 23: for #351: i = 352
 Trace line 23: for #352: i = 353
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 283 293 307 311 313 317 331 337 347 349]
+Trace line 26: Call function print with params [' 283 293 307 311 313 317 331 337 347 349']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [353, 4]
 Trace line 16: Call function str with params [353]
-Trace line 16: res = 353
-Trace line 17: Call function len with params [353]
+Trace line 16: res = '353'
+Trace line 17: Call function len with params ['353']
 Trace line 17: while True: ...
-Trace line 17: res =  353
-Trace line 17: Call function len with params [ 353]
+Trace line 17: res = ' 353'
+Trace line 17: Call function len with params [' 353']
 Trace line 17: while False:
 Trace line 18: return ' 353'
-Trace line 28: line_buf =  353
+Trace line 28: line_buf = ' 353'
 Trace line 29: n_printed = 71
 Trace line 23: for #353: i = 354
 Trace line 23: for #354: i = 355
@@ -11985,14 +11985,14 @@ Trace line 23: for #358: i = 359
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [359, 4]
 Trace line 16: Call function str with params [359]
-Trace line 16: res = 359
-Trace line 17: Call function len with params [359]
+Trace line 16: res = '359'
+Trace line 17: Call function len with params ['359']
 Trace line 17: while True: ...
-Trace line 17: res =  359
-Trace line 17: Call function len with params [ 359]
+Trace line 17: res = ' 359'
+Trace line 17: Call function len with params [' 359']
 Trace line 17: while False:
 Trace line 18: return ' 359'
-Trace line 28: line_buf =  353 359
+Trace line 28: line_buf = ' 353 359'
 Trace line 29: n_printed = 72
 Trace line 23: for #359: i = 360
 Trace line 23: for #360: i = 361
@@ -12005,14 +12005,14 @@ Trace line 23: for #366: i = 367
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [367, 4]
 Trace line 16: Call function str with params [367]
-Trace line 16: res = 367
-Trace line 17: Call function len with params [367]
+Trace line 16: res = '367'
+Trace line 17: Call function len with params ['367']
 Trace line 17: while True: ...
-Trace line 17: res =  367
-Trace line 17: Call function len with params [ 367]
+Trace line 17: res = ' 367'
+Trace line 17: Call function len with params [' 367']
 Trace line 17: while False:
 Trace line 18: return ' 367'
-Trace line 28: line_buf =  353 359 367
+Trace line 28: line_buf = ' 353 359 367'
 Trace line 29: n_printed = 73
 Trace line 23: for #367: i = 368
 Trace line 23: for #368: i = 369
@@ -12023,14 +12023,14 @@ Trace line 23: for #372: i = 373
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [373, 4]
 Trace line 16: Call function str with params [373]
-Trace line 16: res = 373
-Trace line 17: Call function len with params [373]
+Trace line 16: res = '373'
+Trace line 17: Call function len with params ['373']
 Trace line 17: while True: ...
-Trace line 17: res =  373
-Trace line 17: Call function len with params [ 373]
+Trace line 17: res = ' 373'
+Trace line 17: Call function len with params [' 373']
 Trace line 17: while False:
 Trace line 18: return ' 373'
-Trace line 28: line_buf =  353 359 367 373
+Trace line 28: line_buf = ' 353 359 367 373'
 Trace line 29: n_printed = 74
 Trace line 23: for #373: i = 374
 Trace line 23: for #374: i = 375
@@ -12041,14 +12041,14 @@ Trace line 23: for #378: i = 379
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [379, 4]
 Trace line 16: Call function str with params [379]
-Trace line 16: res = 379
-Trace line 17: Call function len with params [379]
+Trace line 16: res = '379'
+Trace line 17: Call function len with params ['379']
 Trace line 17: while True: ...
-Trace line 17: res =  379
-Trace line 17: Call function len with params [ 379]
+Trace line 17: res = ' 379'
+Trace line 17: Call function len with params [' 379']
 Trace line 17: while False:
 Trace line 18: return ' 379'
-Trace line 28: line_buf =  353 359 367 373 379
+Trace line 28: line_buf = ' 353 359 367 373 379'
 Trace line 29: n_printed = 75
 Trace line 23: for #379: i = 380
 Trace line 23: for #380: i = 381
@@ -12057,14 +12057,14 @@ Trace line 23: for #382: i = 383
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [383, 4]
 Trace line 16: Call function str with params [383]
-Trace line 16: res = 383
-Trace line 17: Call function len with params [383]
+Trace line 16: res = '383'
+Trace line 17: Call function len with params ['383']
 Trace line 17: while True: ...
-Trace line 17: res =  383
-Trace line 17: Call function len with params [ 383]
+Trace line 17: res = ' 383'
+Trace line 17: Call function len with params [' 383']
 Trace line 17: while False:
 Trace line 18: return ' 383'
-Trace line 28: line_buf =  353 359 367 373 379 383
+Trace line 28: line_buf = ' 353 359 367 373 379 383'
 Trace line 29: n_printed = 76
 Trace line 23: for #383: i = 384
 Trace line 23: for #384: i = 385
@@ -12075,14 +12075,14 @@ Trace line 23: for #388: i = 389
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [389, 4]
 Trace line 16: Call function str with params [389]
-Trace line 16: res = 389
-Trace line 17: Call function len with params [389]
+Trace line 16: res = '389'
+Trace line 17: Call function len with params ['389']
 Trace line 17: while True: ...
-Trace line 17: res =  389
-Trace line 17: Call function len with params [ 389]
+Trace line 17: res = ' 389'
+Trace line 17: Call function len with params [' 389']
 Trace line 17: while False:
 Trace line 18: return ' 389'
-Trace line 28: line_buf =  353 359 367 373 379 383 389
+Trace line 28: line_buf = ' 353 359 367 373 379 383 389'
 Trace line 29: n_printed = 77
 Trace line 23: for #389: i = 390
 Trace line 23: for #390: i = 391
@@ -12095,14 +12095,14 @@ Trace line 23: for #396: i = 397
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [397, 4]
 Trace line 16: Call function str with params [397]
-Trace line 16: res = 397
-Trace line 17: Call function len with params [397]
+Trace line 16: res = '397'
+Trace line 17: Call function len with params ['397']
 Trace line 17: while True: ...
-Trace line 17: res =  397
-Trace line 17: Call function len with params [ 397]
+Trace line 17: res = ' 397'
+Trace line 17: Call function len with params [' 397']
 Trace line 17: while False:
 Trace line 18: return ' 397'
-Trace line 28: line_buf =  353 359 367 373 379 383 389 397
+Trace line 28: line_buf = ' 353 359 367 373 379 383 389 397'
 Trace line 29: n_printed = 78
 Trace line 23: for #397: i = 398
 Trace line 23: for #398: i = 399
@@ -12111,14 +12111,14 @@ Trace line 23: for #400: i = 401
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [401, 4]
 Trace line 16: Call function str with params [401]
-Trace line 16: res = 401
-Trace line 17: Call function len with params [401]
+Trace line 16: res = '401'
+Trace line 17: Call function len with params ['401']
 Trace line 17: while True: ...
-Trace line 17: res =  401
-Trace line 17: Call function len with params [ 401]
+Trace line 17: res = ' 401'
+Trace line 17: Call function len with params [' 401']
 Trace line 17: while False:
 Trace line 18: return ' 401'
-Trace line 28: line_buf =  353 359 367 373 379 383 389 397 401
+Trace line 28: line_buf = ' 353 359 367 373 379 383 389 397 401'
 Trace line 29: n_printed = 79
 Trace line 23: for #401: i = 402
 Trace line 23: for #402: i = 403
@@ -12131,14 +12131,14 @@ Trace line 23: for #408: i = 409
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [409, 4]
 Trace line 16: Call function str with params [409]
-Trace line 16: res = 409
-Trace line 17: Call function len with params [409]
+Trace line 16: res = '409'
+Trace line 17: Call function len with params ['409']
 Trace line 17: while True: ...
-Trace line 17: res =  409
-Trace line 17: Call function len with params [ 409]
+Trace line 17: res = ' 409'
+Trace line 17: Call function len with params [' 409']
 Trace line 17: while False:
 Trace line 18: return ' 409'
-Trace line 28: line_buf =  353 359 367 373 379 383 389 397 401 409
+Trace line 28: line_buf = ' 353 359 367 373 379 383 389 397 401 409'
 Trace line 29: n_printed = 80
 Trace line 23: for #409: i = 410
 Trace line 23: for #410: i = 411
@@ -12152,33 +12152,33 @@ Trace line 23: for #417: i = 418
 Trace line 23: for #418: i = 419
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 353 359 367 373 379 383 389 397 401 409]
+Trace line 26: Call function print with params [' 353 359 367 373 379 383 389 397 401 409']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [419, 4]
 Trace line 16: Call function str with params [419]
-Trace line 16: res = 419
-Trace line 17: Call function len with params [419]
+Trace line 16: res = '419'
+Trace line 17: Call function len with params ['419']
 Trace line 17: while True: ...
-Trace line 17: res =  419
-Trace line 17: Call function len with params [ 419]
+Trace line 17: res = ' 419'
+Trace line 17: Call function len with params [' 419']
 Trace line 17: while False:
 Trace line 18: return ' 419'
-Trace line 28: line_buf =  419
+Trace line 28: line_buf = ' 419'
 Trace line 29: n_printed = 81
 Trace line 23: for #419: i = 420
 Trace line 23: for #420: i = 421
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [421, 4]
 Trace line 16: Call function str with params [421]
-Trace line 16: res = 421
-Trace line 17: Call function len with params [421]
+Trace line 16: res = '421'
+Trace line 17: Call function len with params ['421']
 Trace line 17: while True: ...
-Trace line 17: res =  421
-Trace line 17: Call function len with params [ 421]
+Trace line 17: res = ' 421'
+Trace line 17: Call function len with params [' 421']
 Trace line 17: while False:
 Trace line 18: return ' 421'
-Trace line 28: line_buf =  419 421
+Trace line 28: line_buf = ' 419 421'
 Trace line 29: n_printed = 82
 Trace line 23: for #421: i = 422
 Trace line 23: for #422: i = 423
@@ -12193,28 +12193,28 @@ Trace line 23: for #430: i = 431
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [431, 4]
 Trace line 16: Call function str with params [431]
-Trace line 16: res = 431
-Trace line 17: Call function len with params [431]
+Trace line 16: res = '431'
+Trace line 17: Call function len with params ['431']
 Trace line 17: while True: ...
-Trace line 17: res =  431
-Trace line 17: Call function len with params [ 431]
+Trace line 17: res = ' 431'
+Trace line 17: Call function len with params [' 431']
 Trace line 17: while False:
 Trace line 18: return ' 431'
-Trace line 28: line_buf =  419 421 431
+Trace line 28: line_buf = ' 419 421 431'
 Trace line 29: n_printed = 83
 Trace line 23: for #431: i = 432
 Trace line 23: for #432: i = 433
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [433, 4]
 Trace line 16: Call function str with params [433]
-Trace line 16: res = 433
-Trace line 17: Call function len with params [433]
+Trace line 16: res = '433'
+Trace line 17: Call function len with params ['433']
 Trace line 17: while True: ...
-Trace line 17: res =  433
-Trace line 17: Call function len with params [ 433]
+Trace line 17: res = ' 433'
+Trace line 17: Call function len with params [' 433']
 Trace line 17: while False:
 Trace line 18: return ' 433'
-Trace line 28: line_buf =  419 421 431 433
+Trace line 28: line_buf = ' 419 421 431 433'
 Trace line 29: n_printed = 84
 Trace line 23: for #433: i = 434
 Trace line 23: for #434: i = 435
@@ -12225,14 +12225,14 @@ Trace line 23: for #438: i = 439
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [439, 4]
 Trace line 16: Call function str with params [439]
-Trace line 16: res = 439
-Trace line 17: Call function len with params [439]
+Trace line 16: res = '439'
+Trace line 17: Call function len with params ['439']
 Trace line 17: while True: ...
-Trace line 17: res =  439
-Trace line 17: Call function len with params [ 439]
+Trace line 17: res = ' 439'
+Trace line 17: Call function len with params [' 439']
 Trace line 17: while False:
 Trace line 18: return ' 439'
-Trace line 28: line_buf =  419 421 431 433 439
+Trace line 28: line_buf = ' 419 421 431 433 439'
 Trace line 29: n_printed = 85
 Trace line 23: for #439: i = 440
 Trace line 23: for #440: i = 441
@@ -12241,14 +12241,14 @@ Trace line 23: for #442: i = 443
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [443, 4]
 Trace line 16: Call function str with params [443]
-Trace line 16: res = 443
-Trace line 17: Call function len with params [443]
+Trace line 16: res = '443'
+Trace line 17: Call function len with params ['443']
 Trace line 17: while True: ...
-Trace line 17: res =  443
-Trace line 17: Call function len with params [ 443]
+Trace line 17: res = ' 443'
+Trace line 17: Call function len with params [' 443']
 Trace line 17: while False:
 Trace line 18: return ' 443'
-Trace line 28: line_buf =  419 421 431 433 439 443
+Trace line 28: line_buf = ' 419 421 431 433 439 443'
 Trace line 29: n_printed = 86
 Trace line 23: for #443: i = 444
 Trace line 23: for #444: i = 445
@@ -12259,14 +12259,14 @@ Trace line 23: for #448: i = 449
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [449, 4]
 Trace line 16: Call function str with params [449]
-Trace line 16: res = 449
-Trace line 17: Call function len with params [449]
+Trace line 16: res = '449'
+Trace line 17: Call function len with params ['449']
 Trace line 17: while True: ...
-Trace line 17: res =  449
-Trace line 17: Call function len with params [ 449]
+Trace line 17: res = ' 449'
+Trace line 17: Call function len with params [' 449']
 Trace line 17: while False:
 Trace line 18: return ' 449'
-Trace line 28: line_buf =  419 421 431 433 439 443 449
+Trace line 28: line_buf = ' 419 421 431 433 439 443 449'
 Trace line 29: n_printed = 87
 Trace line 23: for #449: i = 450
 Trace line 23: for #450: i = 451
@@ -12279,14 +12279,14 @@ Trace line 23: for #456: i = 457
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [457, 4]
 Trace line 16: Call function str with params [457]
-Trace line 16: res = 457
-Trace line 17: Call function len with params [457]
+Trace line 16: res = '457'
+Trace line 17: Call function len with params ['457']
 Trace line 17: while True: ...
-Trace line 17: res =  457
-Trace line 17: Call function len with params [ 457]
+Trace line 17: res = ' 457'
+Trace line 17: Call function len with params [' 457']
 Trace line 17: while False:
 Trace line 18: return ' 457'
-Trace line 28: line_buf =  419 421 431 433 439 443 449 457
+Trace line 28: line_buf = ' 419 421 431 433 439 443 449 457'
 Trace line 29: n_printed = 88
 Trace line 23: for #457: i = 458
 Trace line 23: for #458: i = 459
@@ -12295,28 +12295,28 @@ Trace line 23: for #460: i = 461
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [461, 4]
 Trace line 16: Call function str with params [461]
-Trace line 16: res = 461
-Trace line 17: Call function len with params [461]
+Trace line 16: res = '461'
+Trace line 17: Call function len with params ['461']
 Trace line 17: while True: ...
-Trace line 17: res =  461
-Trace line 17: Call function len with params [ 461]
+Trace line 17: res = ' 461'
+Trace line 17: Call function len with params [' 461']
 Trace line 17: while False:
 Trace line 18: return ' 461'
-Trace line 28: line_buf =  419 421 431 433 439 443 449 457 461
+Trace line 28: line_buf = ' 419 421 431 433 439 443 449 457 461'
 Trace line 29: n_printed = 89
 Trace line 23: for #461: i = 462
 Trace line 23: for #462: i = 463
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [463, 4]
 Trace line 16: Call function str with params [463]
-Trace line 16: res = 463
-Trace line 17: Call function len with params [463]
+Trace line 16: res = '463'
+Trace line 17: Call function len with params ['463']
 Trace line 17: while True: ...
-Trace line 17: res =  463
-Trace line 17: Call function len with params [ 463]
+Trace line 17: res = ' 463'
+Trace line 17: Call function len with params [' 463']
 Trace line 17: while False:
 Trace line 18: return ' 463'
-Trace line 28: line_buf =  419 421 431 433 439 443 449 457 461 463
+Trace line 28: line_buf = ' 419 421 431 433 439 443 449 457 461 463'
 Trace line 29: n_printed = 90
 Trace line 23: for #463: i = 464
 Trace line 23: for #464: i = 465
@@ -12324,19 +12324,19 @@ Trace line 23: for #465: i = 466
 Trace line 23: for #466: i = 467
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 419 421 431 433 439 443 449 457 461 463]
+Trace line 26: Call function print with params [' 419 421 431 433 439 443 449 457 461 463']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [467, 4]
 Trace line 16: Call function str with params [467]
-Trace line 16: res = 467
-Trace line 17: Call function len with params [467]
+Trace line 16: res = '467'
+Trace line 17: Call function len with params ['467']
 Trace line 17: while True: ...
-Trace line 17: res =  467
-Trace line 17: Call function len with params [ 467]
+Trace line 17: res = ' 467'
+Trace line 17: Call function len with params [' 467']
 Trace line 17: while False:
 Trace line 18: return ' 467'
-Trace line 28: line_buf =  467
+Trace line 28: line_buf = ' 467'
 Trace line 29: n_printed = 91
 Trace line 23: for #467: i = 468
 Trace line 23: for #468: i = 469
@@ -12353,14 +12353,14 @@ Trace line 23: for #478: i = 479
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [479, 4]
 Trace line 16: Call function str with params [479]
-Trace line 16: res = 479
-Trace line 17: Call function len with params [479]
+Trace line 16: res = '479'
+Trace line 17: Call function len with params ['479']
 Trace line 17: while True: ...
-Trace line 17: res =  479
-Trace line 17: Call function len with params [ 479]
+Trace line 17: res = ' 479'
+Trace line 17: Call function len with params [' 479']
 Trace line 17: while False:
 Trace line 18: return ' 479'
-Trace line 28: line_buf =  467 479
+Trace line 28: line_buf = ' 467 479'
 Trace line 29: n_printed = 92
 Trace line 23: for #479: i = 480
 Trace line 23: for #480: i = 481
@@ -12373,14 +12373,14 @@ Trace line 23: for #486: i = 487
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [487, 4]
 Trace line 16: Call function str with params [487]
-Trace line 16: res = 487
-Trace line 17: Call function len with params [487]
+Trace line 16: res = '487'
+Trace line 17: Call function len with params ['487']
 Trace line 17: while True: ...
-Trace line 17: res =  487
-Trace line 17: Call function len with params [ 487]
+Trace line 17: res = ' 487'
+Trace line 17: Call function len with params [' 487']
 Trace line 17: while False:
 Trace line 18: return ' 487'
-Trace line 28: line_buf =  467 479 487
+Trace line 28: line_buf = ' 467 479 487'
 Trace line 29: n_printed = 93
 Trace line 23: for #487: i = 488
 Trace line 23: for #488: i = 489
@@ -12389,14 +12389,14 @@ Trace line 23: for #490: i = 491
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [491, 4]
 Trace line 16: Call function str with params [491]
-Trace line 16: res = 491
-Trace line 17: Call function len with params [491]
+Trace line 16: res = '491'
+Trace line 17: Call function len with params ['491']
 Trace line 17: while True: ...
-Trace line 17: res =  491
-Trace line 17: Call function len with params [ 491]
+Trace line 17: res = ' 491'
+Trace line 17: Call function len with params [' 491']
 Trace line 17: while False:
 Trace line 18: return ' 491'
-Trace line 28: line_buf =  467 479 487 491
+Trace line 28: line_buf = ' 467 479 487 491'
 Trace line 29: n_printed = 94
 Trace line 23: for #491: i = 492
 Trace line 23: for #492: i = 493
@@ -12409,14 +12409,14 @@ Trace line 23: for #498: i = 499
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [499, 4]
 Trace line 16: Call function str with params [499]
-Trace line 16: res = 499
-Trace line 17: Call function len with params [499]
+Trace line 16: res = '499'
+Trace line 17: Call function len with params ['499']
 Trace line 17: while True: ...
-Trace line 17: res =  499
-Trace line 17: Call function len with params [ 499]
+Trace line 17: res = ' 499'
+Trace line 17: Call function len with params [' 499']
 Trace line 17: while False:
 Trace line 18: return ' 499'
-Trace line 28: line_buf =  467 479 487 491 499
+Trace line 28: line_buf = ' 467 479 487 491 499'
 Trace line 29: n_printed = 95
 Trace line 23: for #499: i = 500
 Trace line 23: for #500: i = 501
@@ -12425,14 +12425,14 @@ Trace line 23: for #502: i = 503
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [503, 4]
 Trace line 16: Call function str with params [503]
-Trace line 16: res = 503
-Trace line 17: Call function len with params [503]
+Trace line 16: res = '503'
+Trace line 17: Call function len with params ['503']
 Trace line 17: while True: ...
-Trace line 17: res =  503
-Trace line 17: Call function len with params [ 503]
+Trace line 17: res = ' 503'
+Trace line 17: Call function len with params [' 503']
 Trace line 17: while False:
 Trace line 18: return ' 503'
-Trace line 28: line_buf =  467 479 487 491 499 503
+Trace line 28: line_buf = ' 467 479 487 491 499 503'
 Trace line 29: n_printed = 96
 Trace line 23: for #503: i = 504
 Trace line 23: for #504: i = 505
@@ -12443,14 +12443,14 @@ Trace line 23: for #508: i = 509
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [509, 4]
 Trace line 16: Call function str with params [509]
-Trace line 16: res = 509
-Trace line 17: Call function len with params [509]
+Trace line 16: res = '509'
+Trace line 17: Call function len with params ['509']
 Trace line 17: while True: ...
-Trace line 17: res =  509
-Trace line 17: Call function len with params [ 509]
+Trace line 17: res = ' 509'
+Trace line 17: Call function len with params [' 509']
 Trace line 17: while False:
 Trace line 18: return ' 509'
-Trace line 28: line_buf =  467 479 487 491 499 503 509
+Trace line 28: line_buf = ' 467 479 487 491 499 503 509'
 Trace line 29: n_printed = 97
 Trace line 23: for #509: i = 510
 Trace line 23: for #510: i = 511
@@ -12467,28 +12467,28 @@ Trace line 23: for #520: i = 521
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [521, 4]
 Trace line 16: Call function str with params [521]
-Trace line 16: res = 521
-Trace line 17: Call function len with params [521]
+Trace line 16: res = '521'
+Trace line 17: Call function len with params ['521']
 Trace line 17: while True: ...
-Trace line 17: res =  521
-Trace line 17: Call function len with params [ 521]
+Trace line 17: res = ' 521'
+Trace line 17: Call function len with params [' 521']
 Trace line 17: while False:
 Trace line 18: return ' 521'
-Trace line 28: line_buf =  467 479 487 491 499 503 509 521
+Trace line 28: line_buf = ' 467 479 487 491 499 503 509 521'
 Trace line 29: n_printed = 98
 Trace line 23: for #521: i = 522
 Trace line 23: for #522: i = 523
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [523, 4]
 Trace line 16: Call function str with params [523]
-Trace line 16: res = 523
-Trace line 17: Call function len with params [523]
+Trace line 16: res = '523'
+Trace line 17: Call function len with params ['523']
 Trace line 17: while True: ...
-Trace line 17: res =  523
-Trace line 17: Call function len with params [ 523]
+Trace line 17: res = ' 523'
+Trace line 17: Call function len with params [' 523']
 Trace line 17: while False:
 Trace line 18: return ' 523'
-Trace line 28: line_buf =  467 479 487 491 499 503 509 521 523
+Trace line 28: line_buf = ' 467 479 487 491 499 503 509 521 523'
 Trace line 29: n_printed = 99
 Trace line 23: for #523: i = 524
 Trace line 23: for #524: i = 525
@@ -12511,14 +12511,14 @@ Trace line 23: for #540: i = 541
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [541, 4]
 Trace line 16: Call function str with params [541]
-Trace line 16: res = 541
-Trace line 17: Call function len with params [541]
+Trace line 16: res = '541'
+Trace line 17: Call function len with params ['541']
 Trace line 17: while True: ...
-Trace line 17: res =  541
-Trace line 17: Call function len with params [ 541]
+Trace line 17: res = ' 541'
+Trace line 17: Call function len with params [' 541']
 Trace line 17: while False:
 Trace line 18: return ' 541'
-Trace line 28: line_buf =  467 479 487 491 499 503 509 521 523 541
+Trace line 28: line_buf = ' 467 479 487 491 499 503 509 521 523 541'
 Trace line 29: n_printed = 100
 Trace line 23: for #541: i = 542
 Trace line 23: for #542: i = 543
@@ -12528,19 +12528,19 @@ Trace line 23: for #545: i = 546
 Trace line 23: for #546: i = 547
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 467 479 487 491 499 503 509 521 523 541]
+Trace line 26: Call function print with params [' 467 479 487 491 499 503 509 521 523 541']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [547, 4]
 Trace line 16: Call function str with params [547]
-Trace line 16: res = 547
-Trace line 17: Call function len with params [547]
+Trace line 16: res = '547'
+Trace line 17: Call function len with params ['547']
 Trace line 17: while True: ...
-Trace line 17: res =  547
-Trace line 17: Call function len with params [ 547]
+Trace line 17: res = ' 547'
+Trace line 17: Call function len with params [' 547']
 Trace line 17: while False:
 Trace line 18: return ' 547'
-Trace line 28: line_buf =  547
+Trace line 28: line_buf = ' 547'
 Trace line 29: n_printed = 101
 Trace line 23: for #547: i = 548
 Trace line 23: for #548: i = 549
@@ -12555,14 +12555,14 @@ Trace line 23: for #556: i = 557
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [557, 4]
 Trace line 16: Call function str with params [557]
-Trace line 16: res = 557
-Trace line 17: Call function len with params [557]
+Trace line 16: res = '557'
+Trace line 17: Call function len with params ['557']
 Trace line 17: while True: ...
-Trace line 17: res =  557
-Trace line 17: Call function len with params [ 557]
+Trace line 17: res = ' 557'
+Trace line 17: Call function len with params [' 557']
 Trace line 17: while False:
 Trace line 18: return ' 557'
-Trace line 28: line_buf =  547 557
+Trace line 28: line_buf = ' 547 557'
 Trace line 29: n_printed = 102
 Trace line 23: for #557: i = 558
 Trace line 23: for #558: i = 559
@@ -12573,14 +12573,14 @@ Trace line 23: for #562: i = 563
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [563, 4]
 Trace line 16: Call function str with params [563]
-Trace line 16: res = 563
-Trace line 17: Call function len with params [563]
+Trace line 16: res = '563'
+Trace line 17: Call function len with params ['563']
 Trace line 17: while True: ...
-Trace line 17: res =  563
-Trace line 17: Call function len with params [ 563]
+Trace line 17: res = ' 563'
+Trace line 17: Call function len with params [' 563']
 Trace line 17: while False:
 Trace line 18: return ' 563'
-Trace line 28: line_buf =  547 557 563
+Trace line 28: line_buf = ' 547 557 563'
 Trace line 29: n_printed = 103
 Trace line 23: for #563: i = 564
 Trace line 23: for #564: i = 565
@@ -12591,28 +12591,28 @@ Trace line 23: for #568: i = 569
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [569, 4]
 Trace line 16: Call function str with params [569]
-Trace line 16: res = 569
-Trace line 17: Call function len with params [569]
+Trace line 16: res = '569'
+Trace line 17: Call function len with params ['569']
 Trace line 17: while True: ...
-Trace line 17: res =  569
-Trace line 17: Call function len with params [ 569]
+Trace line 17: res = ' 569'
+Trace line 17: Call function len with params [' 569']
 Trace line 17: while False:
 Trace line 18: return ' 569'
-Trace line 28: line_buf =  547 557 563 569
+Trace line 28: line_buf = ' 547 557 563 569'
 Trace line 29: n_printed = 104
 Trace line 23: for #569: i = 570
 Trace line 23: for #570: i = 571
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [571, 4]
 Trace line 16: Call function str with params [571]
-Trace line 16: res = 571
-Trace line 17: Call function len with params [571]
+Trace line 16: res = '571'
+Trace line 17: Call function len with params ['571']
 Trace line 17: while True: ...
-Trace line 17: res =  571
-Trace line 17: Call function len with params [ 571]
+Trace line 17: res = ' 571'
+Trace line 17: Call function len with params [' 571']
 Trace line 17: while False:
 Trace line 18: return ' 571'
-Trace line 28: line_buf =  547 557 563 569 571
+Trace line 28: line_buf = ' 547 557 563 569 571'
 Trace line 29: n_printed = 105
 Trace line 23: for #571: i = 572
 Trace line 23: for #572: i = 573
@@ -12623,14 +12623,14 @@ Trace line 23: for #576: i = 577
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [577, 4]
 Trace line 16: Call function str with params [577]
-Trace line 16: res = 577
-Trace line 17: Call function len with params [577]
+Trace line 16: res = '577'
+Trace line 17: Call function len with params ['577']
 Trace line 17: while True: ...
-Trace line 17: res =  577
-Trace line 17: Call function len with params [ 577]
+Trace line 17: res = ' 577'
+Trace line 17: Call function len with params [' 577']
 Trace line 17: while False:
 Trace line 18: return ' 577'
-Trace line 28: line_buf =  547 557 563 569 571 577
+Trace line 28: line_buf = ' 547 557 563 569 571 577'
 Trace line 29: n_printed = 106
 Trace line 23: for #577: i = 578
 Trace line 23: for #578: i = 579
@@ -12645,14 +12645,14 @@ Trace line 23: for #586: i = 587
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [587, 4]
 Trace line 16: Call function str with params [587]
-Trace line 16: res = 587
-Trace line 17: Call function len with params [587]
+Trace line 16: res = '587'
+Trace line 17: Call function len with params ['587']
 Trace line 17: while True: ...
-Trace line 17: res =  587
-Trace line 17: Call function len with params [ 587]
+Trace line 17: res = ' 587'
+Trace line 17: Call function len with params [' 587']
 Trace line 17: while False:
 Trace line 18: return ' 587'
-Trace line 28: line_buf =  547 557 563 569 571 577 587
+Trace line 28: line_buf = ' 547 557 563 569 571 577 587'
 Trace line 29: n_printed = 107
 Trace line 23: for #587: i = 588
 Trace line 23: for #588: i = 589
@@ -12663,14 +12663,14 @@ Trace line 23: for #592: i = 593
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [593, 4]
 Trace line 16: Call function str with params [593]
-Trace line 16: res = 593
-Trace line 17: Call function len with params [593]
+Trace line 16: res = '593'
+Trace line 17: Call function len with params ['593']
 Trace line 17: while True: ...
-Trace line 17: res =  593
-Trace line 17: Call function len with params [ 593]
+Trace line 17: res = ' 593'
+Trace line 17: Call function len with params [' 593']
 Trace line 17: while False:
 Trace line 18: return ' 593'
-Trace line 28: line_buf =  547 557 563 569 571 577 587 593
+Trace line 28: line_buf = ' 547 557 563 569 571 577 587 593'
 Trace line 29: n_printed = 108
 Trace line 23: for #593: i = 594
 Trace line 23: for #594: i = 595
@@ -12681,28 +12681,28 @@ Trace line 23: for #598: i = 599
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [599, 4]
 Trace line 16: Call function str with params [599]
-Trace line 16: res = 599
-Trace line 17: Call function len with params [599]
+Trace line 16: res = '599'
+Trace line 17: Call function len with params ['599']
 Trace line 17: while True: ...
-Trace line 17: res =  599
-Trace line 17: Call function len with params [ 599]
+Trace line 17: res = ' 599'
+Trace line 17: Call function len with params [' 599']
 Trace line 17: while False:
 Trace line 18: return ' 599'
-Trace line 28: line_buf =  547 557 563 569 571 577 587 593 599
+Trace line 28: line_buf = ' 547 557 563 569 571 577 587 593 599'
 Trace line 29: n_printed = 109
 Trace line 23: for #599: i = 600
 Trace line 23: for #600: i = 601
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [601, 4]
 Trace line 16: Call function str with params [601]
-Trace line 16: res = 601
-Trace line 17: Call function len with params [601]
+Trace line 16: res = '601'
+Trace line 17: Call function len with params ['601']
 Trace line 17: while True: ...
-Trace line 17: res =  601
-Trace line 17: Call function len with params [ 601]
+Trace line 17: res = ' 601'
+Trace line 17: Call function len with params [' 601']
 Trace line 17: while False:
 Trace line 18: return ' 601'
-Trace line 28: line_buf =  547 557 563 569 571 577 587 593 599 601
+Trace line 28: line_buf = ' 547 557 563 569 571 577 587 593 599 601'
 Trace line 29: n_printed = 110
 Trace line 23: for #601: i = 602
 Trace line 23: for #602: i = 603
@@ -12712,19 +12712,19 @@ Trace line 23: for #605: i = 606
 Trace line 23: for #606: i = 607
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 547 557 563 569 571 577 587 593 599 601]
+Trace line 26: Call function print with params [' 547 557 563 569 571 577 587 593 599 601']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [607, 4]
 Trace line 16: Call function str with params [607]
-Trace line 16: res = 607
-Trace line 17: Call function len with params [607]
+Trace line 16: res = '607'
+Trace line 17: Call function len with params ['607']
 Trace line 17: while True: ...
-Trace line 17: res =  607
-Trace line 17: Call function len with params [ 607]
+Trace line 17: res = ' 607'
+Trace line 17: Call function len with params [' 607']
 Trace line 17: while False:
 Trace line 18: return ' 607'
-Trace line 28: line_buf =  607
+Trace line 28: line_buf = ' 607'
 Trace line 29: n_printed = 111
 Trace line 23: for #607: i = 608
 Trace line 23: for #608: i = 609
@@ -12735,14 +12735,14 @@ Trace line 23: for #612: i = 613
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [613, 4]
 Trace line 16: Call function str with params [613]
-Trace line 16: res = 613
-Trace line 17: Call function len with params [613]
+Trace line 16: res = '613'
+Trace line 17: Call function len with params ['613']
 Trace line 17: while True: ...
-Trace line 17: res =  613
-Trace line 17: Call function len with params [ 613]
+Trace line 17: res = ' 613'
+Trace line 17: Call function len with params [' 613']
 Trace line 17: while False:
 Trace line 18: return ' 613'
-Trace line 28: line_buf =  607 613
+Trace line 28: line_buf = ' 607 613'
 Trace line 29: n_printed = 112
 Trace line 23: for #613: i = 614
 Trace line 23: for #614: i = 615
@@ -12751,28 +12751,28 @@ Trace line 23: for #616: i = 617
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [617, 4]
 Trace line 16: Call function str with params [617]
-Trace line 16: res = 617
-Trace line 17: Call function len with params [617]
+Trace line 16: res = '617'
+Trace line 17: Call function len with params ['617']
 Trace line 17: while True: ...
-Trace line 17: res =  617
-Trace line 17: Call function len with params [ 617]
+Trace line 17: res = ' 617'
+Trace line 17: Call function len with params [' 617']
 Trace line 17: while False:
 Trace line 18: return ' 617'
-Trace line 28: line_buf =  607 613 617
+Trace line 28: line_buf = ' 607 613 617'
 Trace line 29: n_printed = 113
 Trace line 23: for #617: i = 618
 Trace line 23: for #618: i = 619
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [619, 4]
 Trace line 16: Call function str with params [619]
-Trace line 16: res = 619
-Trace line 17: Call function len with params [619]
+Trace line 16: res = '619'
+Trace line 17: Call function len with params ['619']
 Trace line 17: while True: ...
-Trace line 17: res =  619
-Trace line 17: Call function len with params [ 619]
+Trace line 17: res = ' 619'
+Trace line 17: Call function len with params [' 619']
 Trace line 17: while False:
 Trace line 18: return ' 619'
-Trace line 28: line_buf =  607 613 617 619
+Trace line 28: line_buf = ' 607 613 617 619'
 Trace line 29: n_printed = 114
 Trace line 23: for #619: i = 620
 Trace line 23: for #620: i = 621
@@ -12789,14 +12789,14 @@ Trace line 23: for #630: i = 631
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [631, 4]
 Trace line 16: Call function str with params [631]
-Trace line 16: res = 631
-Trace line 17: Call function len with params [631]
+Trace line 16: res = '631'
+Trace line 17: Call function len with params ['631']
 Trace line 17: while True: ...
-Trace line 17: res =  631
-Trace line 17: Call function len with params [ 631]
+Trace line 17: res = ' 631'
+Trace line 17: Call function len with params [' 631']
 Trace line 17: while False:
 Trace line 18: return ' 631'
-Trace line 28: line_buf =  607 613 617 619 631
+Trace line 28: line_buf = ' 607 613 617 619 631'
 Trace line 29: n_printed = 115
 Trace line 23: for #631: i = 632
 Trace line 23: for #632: i = 633
@@ -12811,28 +12811,28 @@ Trace line 23: for #640: i = 641
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [641, 4]
 Trace line 16: Call function str with params [641]
-Trace line 16: res = 641
-Trace line 17: Call function len with params [641]
+Trace line 16: res = '641'
+Trace line 17: Call function len with params ['641']
 Trace line 17: while True: ...
-Trace line 17: res =  641
-Trace line 17: Call function len with params [ 641]
+Trace line 17: res = ' 641'
+Trace line 17: Call function len with params [' 641']
 Trace line 17: while False:
 Trace line 18: return ' 641'
-Trace line 28: line_buf =  607 613 617 619 631 641
+Trace line 28: line_buf = ' 607 613 617 619 631 641'
 Trace line 29: n_printed = 116
 Trace line 23: for #641: i = 642
 Trace line 23: for #642: i = 643
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [643, 4]
 Trace line 16: Call function str with params [643]
-Trace line 16: res = 643
-Trace line 17: Call function len with params [643]
+Trace line 16: res = '643'
+Trace line 17: Call function len with params ['643']
 Trace line 17: while True: ...
-Trace line 17: res =  643
-Trace line 17: Call function len with params [ 643]
+Trace line 17: res = ' 643'
+Trace line 17: Call function len with params [' 643']
 Trace line 17: while False:
 Trace line 18: return ' 643'
-Trace line 28: line_buf =  607 613 617 619 631 641 643
+Trace line 28: line_buf = ' 607 613 617 619 631 641 643'
 Trace line 29: n_printed = 117
 Trace line 23: for #643: i = 644
 Trace line 23: for #644: i = 645
@@ -12841,14 +12841,14 @@ Trace line 23: for #646: i = 647
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [647, 4]
 Trace line 16: Call function str with params [647]
-Trace line 16: res = 647
-Trace line 17: Call function len with params [647]
+Trace line 16: res = '647'
+Trace line 17: Call function len with params ['647']
 Trace line 17: while True: ...
-Trace line 17: res =  647
-Trace line 17: Call function len with params [ 647]
+Trace line 17: res = ' 647'
+Trace line 17: Call function len with params [' 647']
 Trace line 17: while False:
 Trace line 18: return ' 647'
-Trace line 28: line_buf =  607 613 617 619 631 641 643 647
+Trace line 28: line_buf = ' 607 613 617 619 631 641 643 647'
 Trace line 29: n_printed = 118
 Trace line 23: for #647: i = 648
 Trace line 23: for #648: i = 649
@@ -12859,14 +12859,14 @@ Trace line 23: for #652: i = 653
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [653, 4]
 Trace line 16: Call function str with params [653]
-Trace line 16: res = 653
-Trace line 17: Call function len with params [653]
+Trace line 16: res = '653'
+Trace line 17: Call function len with params ['653']
 Trace line 17: while True: ...
-Trace line 17: res =  653
-Trace line 17: Call function len with params [ 653]
+Trace line 17: res = ' 653'
+Trace line 17: Call function len with params [' 653']
 Trace line 17: while False:
 Trace line 18: return ' 653'
-Trace line 28: line_buf =  607 613 617 619 631 641 643 647 653
+Trace line 28: line_buf = ' 607 613 617 619 631 641 643 647 653'
 Trace line 29: n_printed = 119
 Trace line 23: for #653: i = 654
 Trace line 23: for #654: i = 655
@@ -12877,32 +12877,32 @@ Trace line 23: for #658: i = 659
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [659, 4]
 Trace line 16: Call function str with params [659]
-Trace line 16: res = 659
-Trace line 17: Call function len with params [659]
+Trace line 16: res = '659'
+Trace line 17: Call function len with params ['659']
 Trace line 17: while True: ...
-Trace line 17: res =  659
-Trace line 17: Call function len with params [ 659]
+Trace line 17: res = ' 659'
+Trace line 17: Call function len with params [' 659']
 Trace line 17: while False:
 Trace line 18: return ' 659'
-Trace line 28: line_buf =  607 613 617 619 631 641 643 647 653 659
+Trace line 28: line_buf = ' 607 613 617 619 631 641 643 647 653 659'
 Trace line 29: n_printed = 120
 Trace line 23: for #659: i = 660
 Trace line 23: for #660: i = 661
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 607 613 617 619 631 641 643 647 653 659]
+Trace line 26: Call function print with params [' 607 613 617 619 631 641 643 647 653 659']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [661, 4]
 Trace line 16: Call function str with params [661]
-Trace line 16: res = 661
-Trace line 17: Call function len with params [661]
+Trace line 16: res = '661'
+Trace line 17: Call function len with params ['661']
 Trace line 17: while True: ...
-Trace line 17: res =  661
-Trace line 17: Call function len with params [ 661]
+Trace line 17: res = ' 661'
+Trace line 17: Call function len with params [' 661']
 Trace line 17: while False:
 Trace line 18: return ' 661'
-Trace line 28: line_buf =  661
+Trace line 28: line_buf = ' 661'
 Trace line 29: n_printed = 121
 Trace line 23: for #661: i = 662
 Trace line 23: for #662: i = 663
@@ -12919,14 +12919,14 @@ Trace line 23: for #672: i = 673
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [673, 4]
 Trace line 16: Call function str with params [673]
-Trace line 16: res = 673
-Trace line 17: Call function len with params [673]
+Trace line 16: res = '673'
+Trace line 17: Call function len with params ['673']
 Trace line 17: while True: ...
-Trace line 17: res =  673
-Trace line 17: Call function len with params [ 673]
+Trace line 17: res = ' 673'
+Trace line 17: Call function len with params [' 673']
 Trace line 17: while False:
 Trace line 18: return ' 673'
-Trace line 28: line_buf =  661 673
+Trace line 28: line_buf = ' 661 673'
 Trace line 29: n_printed = 122
 Trace line 23: for #673: i = 674
 Trace line 23: for #674: i = 675
@@ -12935,14 +12935,14 @@ Trace line 23: for #676: i = 677
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [677, 4]
 Trace line 16: Call function str with params [677]
-Trace line 16: res = 677
-Trace line 17: Call function len with params [677]
+Trace line 16: res = '677'
+Trace line 17: Call function len with params ['677']
 Trace line 17: while True: ...
-Trace line 17: res =  677
-Trace line 17: Call function len with params [ 677]
+Trace line 17: res = ' 677'
+Trace line 17: Call function len with params [' 677']
 Trace line 17: while False:
 Trace line 18: return ' 677'
-Trace line 28: line_buf =  661 673 677
+Trace line 28: line_buf = ' 661 673 677'
 Trace line 29: n_printed = 123
 Trace line 23: for #677: i = 678
 Trace line 23: for #678: i = 679
@@ -12953,14 +12953,14 @@ Trace line 23: for #682: i = 683
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [683, 4]
 Trace line 16: Call function str with params [683]
-Trace line 16: res = 683
-Trace line 17: Call function len with params [683]
+Trace line 16: res = '683'
+Trace line 17: Call function len with params ['683']
 Trace line 17: while True: ...
-Trace line 17: res =  683
-Trace line 17: Call function len with params [ 683]
+Trace line 17: res = ' 683'
+Trace line 17: Call function len with params [' 683']
 Trace line 17: while False:
 Trace line 18: return ' 683'
-Trace line 28: line_buf =  661 673 677 683
+Trace line 28: line_buf = ' 661 673 677 683'
 Trace line 29: n_printed = 124
 Trace line 23: for #683: i = 684
 Trace line 23: for #684: i = 685
@@ -12973,14 +12973,14 @@ Trace line 23: for #690: i = 691
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [691, 4]
 Trace line 16: Call function str with params [691]
-Trace line 16: res = 691
-Trace line 17: Call function len with params [691]
+Trace line 16: res = '691'
+Trace line 17: Call function len with params ['691']
 Trace line 17: while True: ...
-Trace line 17: res =  691
-Trace line 17: Call function len with params [ 691]
+Trace line 17: res = ' 691'
+Trace line 17: Call function len with params [' 691']
 Trace line 17: while False:
 Trace line 18: return ' 691'
-Trace line 28: line_buf =  661 673 677 683 691
+Trace line 28: line_buf = ' 661 673 677 683 691'
 Trace line 29: n_printed = 125
 Trace line 23: for #691: i = 692
 Trace line 23: for #692: i = 693
@@ -12995,14 +12995,14 @@ Trace line 23: for #700: i = 701
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [701, 4]
 Trace line 16: Call function str with params [701]
-Trace line 16: res = 701
-Trace line 17: Call function len with params [701]
+Trace line 16: res = '701'
+Trace line 17: Call function len with params ['701']
 Trace line 17: while True: ...
-Trace line 17: res =  701
-Trace line 17: Call function len with params [ 701]
+Trace line 17: res = ' 701'
+Trace line 17: Call function len with params [' 701']
 Trace line 17: while False:
 Trace line 18: return ' 701'
-Trace line 28: line_buf =  661 673 677 683 691 701
+Trace line 28: line_buf = ' 661 673 677 683 691 701'
 Trace line 29: n_printed = 126
 Trace line 23: for #701: i = 702
 Trace line 23: for #702: i = 703
@@ -13015,14 +13015,14 @@ Trace line 23: for #708: i = 709
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [709, 4]
 Trace line 16: Call function str with params [709]
-Trace line 16: res = 709
-Trace line 17: Call function len with params [709]
+Trace line 16: res = '709'
+Trace line 17: Call function len with params ['709']
 Trace line 17: while True: ...
-Trace line 17: res =  709
-Trace line 17: Call function len with params [ 709]
+Trace line 17: res = ' 709'
+Trace line 17: Call function len with params [' 709']
 Trace line 17: while False:
 Trace line 18: return ' 709'
-Trace line 28: line_buf =  661 673 677 683 691 701 709
+Trace line 28: line_buf = ' 661 673 677 683 691 701 709'
 Trace line 29: n_printed = 127
 Trace line 23: for #709: i = 710
 Trace line 23: for #710: i = 711
@@ -13037,14 +13037,14 @@ Trace line 23: for #718: i = 719
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [719, 4]
 Trace line 16: Call function str with params [719]
-Trace line 16: res = 719
-Trace line 17: Call function len with params [719]
+Trace line 16: res = '719'
+Trace line 17: Call function len with params ['719']
 Trace line 17: while True: ...
-Trace line 17: res =  719
-Trace line 17: Call function len with params [ 719]
+Trace line 17: res = ' 719'
+Trace line 17: Call function len with params [' 719']
 Trace line 17: while False:
 Trace line 18: return ' 719'
-Trace line 28: line_buf =  661 673 677 683 691 701 709 719
+Trace line 28: line_buf = ' 661 673 677 683 691 701 709 719'
 Trace line 29: n_printed = 128
 Trace line 23: for #719: i = 720
 Trace line 23: for #720: i = 721
@@ -13057,14 +13057,14 @@ Trace line 23: for #726: i = 727
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [727, 4]
 Trace line 16: Call function str with params [727]
-Trace line 16: res = 727
-Trace line 17: Call function len with params [727]
+Trace line 16: res = '727'
+Trace line 17: Call function len with params ['727']
 Trace line 17: while True: ...
-Trace line 17: res =  727
-Trace line 17: Call function len with params [ 727]
+Trace line 17: res = ' 727'
+Trace line 17: Call function len with params [' 727']
 Trace line 17: while False:
 Trace line 18: return ' 727'
-Trace line 28: line_buf =  661 673 677 683 691 701 709 719 727
+Trace line 28: line_buf = ' 661 673 677 683 691 701 709 719 727'
 Trace line 29: n_printed = 129
 Trace line 23: for #727: i = 728
 Trace line 23: for #728: i = 729
@@ -13075,14 +13075,14 @@ Trace line 23: for #732: i = 733
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [733, 4]
 Trace line 16: Call function str with params [733]
-Trace line 16: res = 733
-Trace line 17: Call function len with params [733]
+Trace line 16: res = '733'
+Trace line 17: Call function len with params ['733']
 Trace line 17: while True: ...
-Trace line 17: res =  733
-Trace line 17: Call function len with params [ 733]
+Trace line 17: res = ' 733'
+Trace line 17: Call function len with params [' 733']
 Trace line 17: while False:
 Trace line 18: return ' 733'
-Trace line 28: line_buf =  661 673 677 683 691 701 709 719 727 733
+Trace line 28: line_buf = ' 661 673 677 683 691 701 709 719 727 733'
 Trace line 29: n_printed = 130
 Trace line 23: for #733: i = 734
 Trace line 23: for #734: i = 735
@@ -13092,19 +13092,19 @@ Trace line 23: for #737: i = 738
 Trace line 23: for #738: i = 739
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 661 673 677 683 691 701 709 719 727 733]
+Trace line 26: Call function print with params [' 661 673 677 683 691 701 709 719 727 733']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [739, 4]
 Trace line 16: Call function str with params [739]
-Trace line 16: res = 739
-Trace line 17: Call function len with params [739]
+Trace line 16: res = '739'
+Trace line 17: Call function len with params ['739']
 Trace line 17: while True: ...
-Trace line 17: res =  739
-Trace line 17: Call function len with params [ 739]
+Trace line 17: res = ' 739'
+Trace line 17: Call function len with params [' 739']
 Trace line 17: while False:
 Trace line 18: return ' 739'
-Trace line 28: line_buf =  739
+Trace line 28: line_buf = ' 739'
 Trace line 29: n_printed = 131
 Trace line 23: for #739: i = 740
 Trace line 23: for #740: i = 741
@@ -13113,14 +13113,14 @@ Trace line 23: for #742: i = 743
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [743, 4]
 Trace line 16: Call function str with params [743]
-Trace line 16: res = 743
-Trace line 17: Call function len with params [743]
+Trace line 16: res = '743'
+Trace line 17: Call function len with params ['743']
 Trace line 17: while True: ...
-Trace line 17: res =  743
-Trace line 17: Call function len with params [ 743]
+Trace line 17: res = ' 743'
+Trace line 17: Call function len with params [' 743']
 Trace line 17: while False:
 Trace line 18: return ' 743'
-Trace line 28: line_buf =  739 743
+Trace line 28: line_buf = ' 739 743'
 Trace line 29: n_printed = 132
 Trace line 23: for #743: i = 744
 Trace line 23: for #744: i = 745
@@ -13133,14 +13133,14 @@ Trace line 23: for #750: i = 751
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [751, 4]
 Trace line 16: Call function str with params [751]
-Trace line 16: res = 751
-Trace line 17: Call function len with params [751]
+Trace line 16: res = '751'
+Trace line 17: Call function len with params ['751']
 Trace line 17: while True: ...
-Trace line 17: res =  751
-Trace line 17: Call function len with params [ 751]
+Trace line 17: res = ' 751'
+Trace line 17: Call function len with params [' 751']
 Trace line 17: while False:
 Trace line 18: return ' 751'
-Trace line 28: line_buf =  739 743 751
+Trace line 28: line_buf = ' 739 743 751'
 Trace line 29: n_printed = 133
 Trace line 23: for #751: i = 752
 Trace line 23: for #752: i = 753
@@ -13151,14 +13151,14 @@ Trace line 23: for #756: i = 757
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [757, 4]
 Trace line 16: Call function str with params [757]
-Trace line 16: res = 757
-Trace line 17: Call function len with params [757]
+Trace line 16: res = '757'
+Trace line 17: Call function len with params ['757']
 Trace line 17: while True: ...
-Trace line 17: res =  757
-Trace line 17: Call function len with params [ 757]
+Trace line 17: res = ' 757'
+Trace line 17: Call function len with params [' 757']
 Trace line 17: while False:
 Trace line 18: return ' 757'
-Trace line 28: line_buf =  739 743 751 757
+Trace line 28: line_buf = ' 739 743 751 757'
 Trace line 29: n_printed = 134
 Trace line 23: for #757: i = 758
 Trace line 23: for #758: i = 759
@@ -13167,14 +13167,14 @@ Trace line 23: for #760: i = 761
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [761, 4]
 Trace line 16: Call function str with params [761]
-Trace line 16: res = 761
-Trace line 17: Call function len with params [761]
+Trace line 16: res = '761'
+Trace line 17: Call function len with params ['761']
 Trace line 17: while True: ...
-Trace line 17: res =  761
-Trace line 17: Call function len with params [ 761]
+Trace line 17: res = ' 761'
+Trace line 17: Call function len with params [' 761']
 Trace line 17: while False:
 Trace line 18: return ' 761'
-Trace line 28: line_buf =  739 743 751 757 761
+Trace line 28: line_buf = ' 739 743 751 757 761'
 Trace line 29: n_printed = 135
 Trace line 23: for #761: i = 762
 Trace line 23: for #762: i = 763
@@ -13187,14 +13187,14 @@ Trace line 23: for #768: i = 769
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [769, 4]
 Trace line 16: Call function str with params [769]
-Trace line 16: res = 769
-Trace line 17: Call function len with params [769]
+Trace line 16: res = '769'
+Trace line 17: Call function len with params ['769']
 Trace line 17: while True: ...
-Trace line 17: res =  769
-Trace line 17: Call function len with params [ 769]
+Trace line 17: res = ' 769'
+Trace line 17: Call function len with params [' 769']
 Trace line 17: while False:
 Trace line 18: return ' 769'
-Trace line 28: line_buf =  739 743 751 757 761 769
+Trace line 28: line_buf = ' 739 743 751 757 761 769'
 Trace line 29: n_printed = 136
 Trace line 23: for #769: i = 770
 Trace line 23: for #770: i = 771
@@ -13203,14 +13203,14 @@ Trace line 23: for #772: i = 773
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [773, 4]
 Trace line 16: Call function str with params [773]
-Trace line 16: res = 773
-Trace line 17: Call function len with params [773]
+Trace line 16: res = '773'
+Trace line 17: Call function len with params ['773']
 Trace line 17: while True: ...
-Trace line 17: res =  773
-Trace line 17: Call function len with params [ 773]
+Trace line 17: res = ' 773'
+Trace line 17: Call function len with params [' 773']
 Trace line 17: while False:
 Trace line 18: return ' 773'
-Trace line 28: line_buf =  739 743 751 757 761 769 773
+Trace line 28: line_buf = ' 739 743 751 757 761 769 773'
 Trace line 29: n_printed = 137
 Trace line 23: for #773: i = 774
 Trace line 23: for #774: i = 775
@@ -13229,14 +13229,14 @@ Trace line 23: for #786: i = 787
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [787, 4]
 Trace line 16: Call function str with params [787]
-Trace line 16: res = 787
-Trace line 17: Call function len with params [787]
+Trace line 16: res = '787'
+Trace line 17: Call function len with params ['787']
 Trace line 17: while True: ...
-Trace line 17: res =  787
-Trace line 17: Call function len with params [ 787]
+Trace line 17: res = ' 787'
+Trace line 17: Call function len with params [' 787']
 Trace line 17: while False:
 Trace line 18: return ' 787'
-Trace line 28: line_buf =  739 743 751 757 761 769 773 787
+Trace line 28: line_buf = ' 739 743 751 757 761 769 773 787'
 Trace line 29: n_printed = 138
 Trace line 23: for #787: i = 788
 Trace line 23: for #788: i = 789
@@ -13251,14 +13251,14 @@ Trace line 23: for #796: i = 797
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [797, 4]
 Trace line 16: Call function str with params [797]
-Trace line 16: res = 797
-Trace line 17: Call function len with params [797]
+Trace line 16: res = '797'
+Trace line 17: Call function len with params ['797']
 Trace line 17: while True: ...
-Trace line 17: res =  797
-Trace line 17: Call function len with params [ 797]
+Trace line 17: res = ' 797'
+Trace line 17: Call function len with params [' 797']
 Trace line 17: while False:
 Trace line 18: return ' 797'
-Trace line 28: line_buf =  739 743 751 757 761 769 773 787 797
+Trace line 28: line_buf = ' 739 743 751 757 761 769 773 787 797'
 Trace line 29: n_printed = 139
 Trace line 23: for #797: i = 798
 Trace line 23: for #798: i = 799
@@ -13275,32 +13275,32 @@ Trace line 23: for #808: i = 809
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [809, 4]
 Trace line 16: Call function str with params [809]
-Trace line 16: res = 809
-Trace line 17: Call function len with params [809]
+Trace line 16: res = '809'
+Trace line 17: Call function len with params ['809']
 Trace line 17: while True: ...
-Trace line 17: res =  809
-Trace line 17: Call function len with params [ 809]
+Trace line 17: res = ' 809'
+Trace line 17: Call function len with params [' 809']
 Trace line 17: while False:
 Trace line 18: return ' 809'
-Trace line 28: line_buf =  739 743 751 757 761 769 773 787 797 809
+Trace line 28: line_buf = ' 739 743 751 757 761 769 773 787 797 809'
 Trace line 29: n_printed = 140
 Trace line 23: for #809: i = 810
 Trace line 23: for #810: i = 811
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 739 743 751 757 761 769 773 787 797 809]
+Trace line 26: Call function print with params [' 739 743 751 757 761 769 773 787 797 809']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [811, 4]
 Trace line 16: Call function str with params [811]
-Trace line 16: res = 811
-Trace line 17: Call function len with params [811]
+Trace line 16: res = '811'
+Trace line 17: Call function len with params ['811']
 Trace line 17: while True: ...
-Trace line 17: res =  811
-Trace line 17: Call function len with params [ 811]
+Trace line 17: res = ' 811'
+Trace line 17: Call function len with params [' 811']
 Trace line 17: while False:
 Trace line 18: return ' 811'
-Trace line 28: line_buf =  811
+Trace line 28: line_buf = ' 811'
 Trace line 29: n_printed = 141
 Trace line 23: for #811: i = 812
 Trace line 23: for #812: i = 813
@@ -13315,28 +13315,28 @@ Trace line 23: for #820: i = 821
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [821, 4]
 Trace line 16: Call function str with params [821]
-Trace line 16: res = 821
-Trace line 17: Call function len with params [821]
+Trace line 16: res = '821'
+Trace line 17: Call function len with params ['821']
 Trace line 17: while True: ...
-Trace line 17: res =  821
-Trace line 17: Call function len with params [ 821]
+Trace line 17: res = ' 821'
+Trace line 17: Call function len with params [' 821']
 Trace line 17: while False:
 Trace line 18: return ' 821'
-Trace line 28: line_buf =  811 821
+Trace line 28: line_buf = ' 811 821'
 Trace line 29: n_printed = 142
 Trace line 23: for #821: i = 822
 Trace line 23: for #822: i = 823
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [823, 4]
 Trace line 16: Call function str with params [823]
-Trace line 16: res = 823
-Trace line 17: Call function len with params [823]
+Trace line 16: res = '823'
+Trace line 17: Call function len with params ['823']
 Trace line 17: while True: ...
-Trace line 17: res =  823
-Trace line 17: Call function len with params [ 823]
+Trace line 17: res = ' 823'
+Trace line 17: Call function len with params [' 823']
 Trace line 17: while False:
 Trace line 18: return ' 823'
-Trace line 28: line_buf =  811 821 823
+Trace line 28: line_buf = ' 811 821 823'
 Trace line 29: n_printed = 143
 Trace line 23: for #823: i = 824
 Trace line 23: for #824: i = 825
@@ -13345,28 +13345,28 @@ Trace line 23: for #826: i = 827
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [827, 4]
 Trace line 16: Call function str with params [827]
-Trace line 16: res = 827
-Trace line 17: Call function len with params [827]
+Trace line 16: res = '827'
+Trace line 17: Call function len with params ['827']
 Trace line 17: while True: ...
-Trace line 17: res =  827
-Trace line 17: Call function len with params [ 827]
+Trace line 17: res = ' 827'
+Trace line 17: Call function len with params [' 827']
 Trace line 17: while False:
 Trace line 18: return ' 827'
-Trace line 28: line_buf =  811 821 823 827
+Trace line 28: line_buf = ' 811 821 823 827'
 Trace line 29: n_printed = 144
 Trace line 23: for #827: i = 828
 Trace line 23: for #828: i = 829
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [829, 4]
 Trace line 16: Call function str with params [829]
-Trace line 16: res = 829
-Trace line 17: Call function len with params [829]
+Trace line 16: res = '829'
+Trace line 17: Call function len with params ['829']
 Trace line 17: while True: ...
-Trace line 17: res =  829
-Trace line 17: Call function len with params [ 829]
+Trace line 17: res = ' 829'
+Trace line 17: Call function len with params [' 829']
 Trace line 17: while False:
 Trace line 18: return ' 829'
-Trace line 28: line_buf =  811 821 823 827 829
+Trace line 28: line_buf = ' 811 821 823 827 829'
 Trace line 29: n_printed = 145
 Trace line 23: for #829: i = 830
 Trace line 23: for #830: i = 831
@@ -13381,14 +13381,14 @@ Trace line 23: for #838: i = 839
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [839, 4]
 Trace line 16: Call function str with params [839]
-Trace line 16: res = 839
-Trace line 17: Call function len with params [839]
+Trace line 16: res = '839'
+Trace line 17: Call function len with params ['839']
 Trace line 17: while True: ...
-Trace line 17: res =  839
-Trace line 17: Call function len with params [ 839]
+Trace line 17: res = ' 839'
+Trace line 17: Call function len with params [' 839']
 Trace line 17: while False:
 Trace line 18: return ' 839'
-Trace line 28: line_buf =  811 821 823 827 829 839
+Trace line 28: line_buf = ' 811 821 823 827 829 839'
 Trace line 29: n_printed = 146
 Trace line 23: for #839: i = 840
 Trace line 23: for #840: i = 841
@@ -13407,14 +13407,14 @@ Trace line 23: for #852: i = 853
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [853, 4]
 Trace line 16: Call function str with params [853]
-Trace line 16: res = 853
-Trace line 17: Call function len with params [853]
+Trace line 16: res = '853'
+Trace line 17: Call function len with params ['853']
 Trace line 17: while True: ...
-Trace line 17: res =  853
-Trace line 17: Call function len with params [ 853]
+Trace line 17: res = ' 853'
+Trace line 17: Call function len with params [' 853']
 Trace line 17: while False:
 Trace line 18: return ' 853'
-Trace line 28: line_buf =  811 821 823 827 829 839 853
+Trace line 28: line_buf = ' 811 821 823 827 829 839 853'
 Trace line 29: n_printed = 147
 Trace line 23: for #853: i = 854
 Trace line 23: for #854: i = 855
@@ -13423,28 +13423,28 @@ Trace line 23: for #856: i = 857
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [857, 4]
 Trace line 16: Call function str with params [857]
-Trace line 16: res = 857
-Trace line 17: Call function len with params [857]
+Trace line 16: res = '857'
+Trace line 17: Call function len with params ['857']
 Trace line 17: while True: ...
-Trace line 17: res =  857
-Trace line 17: Call function len with params [ 857]
+Trace line 17: res = ' 857'
+Trace line 17: Call function len with params [' 857']
 Trace line 17: while False:
 Trace line 18: return ' 857'
-Trace line 28: line_buf =  811 821 823 827 829 839 853 857
+Trace line 28: line_buf = ' 811 821 823 827 829 839 853 857'
 Trace line 29: n_printed = 148
 Trace line 23: for #857: i = 858
 Trace line 23: for #858: i = 859
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [859, 4]
 Trace line 16: Call function str with params [859]
-Trace line 16: res = 859
-Trace line 17: Call function len with params [859]
+Trace line 16: res = '859'
+Trace line 17: Call function len with params ['859']
 Trace line 17: while True: ...
-Trace line 17: res =  859
-Trace line 17: Call function len with params [ 859]
+Trace line 17: res = ' 859'
+Trace line 17: Call function len with params [' 859']
 Trace line 17: while False:
 Trace line 18: return ' 859'
-Trace line 28: line_buf =  811 821 823 827 829 839 853 857 859
+Trace line 28: line_buf = ' 811 821 823 827 829 839 853 857 859'
 Trace line 29: n_printed = 149
 Trace line 23: for #859: i = 860
 Trace line 23: for #860: i = 861
@@ -13453,14 +13453,14 @@ Trace line 23: for #862: i = 863
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [863, 4]
 Trace line 16: Call function str with params [863]
-Trace line 16: res = 863
-Trace line 17: Call function len with params [863]
+Trace line 16: res = '863'
+Trace line 17: Call function len with params ['863']
 Trace line 17: while True: ...
-Trace line 17: res =  863
-Trace line 17: Call function len with params [ 863]
+Trace line 17: res = ' 863'
+Trace line 17: Call function len with params [' 863']
 Trace line 17: while False:
 Trace line 18: return ' 863'
-Trace line 28: line_buf =  811 821 823 827 829 839 853 857 859 863
+Trace line 28: line_buf = ' 811 821 823 827 829 839 853 857 859 863'
 Trace line 29: n_printed = 150
 Trace line 23: for #863: i = 864
 Trace line 23: for #864: i = 865
@@ -13478,19 +13478,19 @@ Trace line 23: for #875: i = 876
 Trace line 23: for #876: i = 877
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 811 821 823 827 829 839 853 857 859 863]
+Trace line 26: Call function print with params [' 811 821 823 827 829 839 853 857 859 863']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [877, 4]
 Trace line 16: Call function str with params [877]
-Trace line 16: res = 877
-Trace line 17: Call function len with params [877]
+Trace line 16: res = '877'
+Trace line 17: Call function len with params ['877']
 Trace line 17: while True: ...
-Trace line 17: res =  877
-Trace line 17: Call function len with params [ 877]
+Trace line 17: res = ' 877'
+Trace line 17: Call function len with params [' 877']
 Trace line 17: while False:
 Trace line 18: return ' 877'
-Trace line 28: line_buf =  877
+Trace line 28: line_buf = ' 877'
 Trace line 29: n_printed = 151
 Trace line 23: for #877: i = 878
 Trace line 23: for #878: i = 879
@@ -13499,28 +13499,28 @@ Trace line 23: for #880: i = 881
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [881, 4]
 Trace line 16: Call function str with params [881]
-Trace line 16: res = 881
-Trace line 17: Call function len with params [881]
+Trace line 16: res = '881'
+Trace line 17: Call function len with params ['881']
 Trace line 17: while True: ...
-Trace line 17: res =  881
-Trace line 17: Call function len with params [ 881]
+Trace line 17: res = ' 881'
+Trace line 17: Call function len with params [' 881']
 Trace line 17: while False:
 Trace line 18: return ' 881'
-Trace line 28: line_buf =  877 881
+Trace line 28: line_buf = ' 877 881'
 Trace line 29: n_printed = 152
 Trace line 23: for #881: i = 882
 Trace line 23: for #882: i = 883
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [883, 4]
 Trace line 16: Call function str with params [883]
-Trace line 16: res = 883
-Trace line 17: Call function len with params [883]
+Trace line 16: res = '883'
+Trace line 17: Call function len with params ['883']
 Trace line 17: while True: ...
-Trace line 17: res =  883
-Trace line 17: Call function len with params [ 883]
+Trace line 17: res = ' 883'
+Trace line 17: Call function len with params [' 883']
 Trace line 17: while False:
 Trace line 18: return ' 883'
-Trace line 28: line_buf =  877 881 883
+Trace line 28: line_buf = ' 877 881 883'
 Trace line 29: n_printed = 153
 Trace line 23: for #883: i = 884
 Trace line 23: for #884: i = 885
@@ -13529,14 +13529,14 @@ Trace line 23: for #886: i = 887
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [887, 4]
 Trace line 16: Call function str with params [887]
-Trace line 16: res = 887
-Trace line 17: Call function len with params [887]
+Trace line 16: res = '887'
+Trace line 17: Call function len with params ['887']
 Trace line 17: while True: ...
-Trace line 17: res =  887
-Trace line 17: Call function len with params [ 887]
+Trace line 17: res = ' 887'
+Trace line 17: Call function len with params [' 887']
 Trace line 17: while False:
 Trace line 18: return ' 887'
-Trace line 28: line_buf =  877 881 883 887
+Trace line 28: line_buf = ' 877 881 883 887'
 Trace line 29: n_printed = 154
 Trace line 23: for #887: i = 888
 Trace line 23: for #888: i = 889
@@ -13561,14 +13561,14 @@ Trace line 23: for #906: i = 907
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [907, 4]
 Trace line 16: Call function str with params [907]
-Trace line 16: res = 907
-Trace line 17: Call function len with params [907]
+Trace line 16: res = '907'
+Trace line 17: Call function len with params ['907']
 Trace line 17: while True: ...
-Trace line 17: res =  907
-Trace line 17: Call function len with params [ 907]
+Trace line 17: res = ' 907'
+Trace line 17: Call function len with params [' 907']
 Trace line 17: while False:
 Trace line 18: return ' 907'
-Trace line 28: line_buf =  877 881 883 887 907
+Trace line 28: line_buf = ' 877 881 883 887 907'
 Trace line 29: n_printed = 155
 Trace line 23: for #907: i = 908
 Trace line 23: for #908: i = 909
@@ -13577,14 +13577,14 @@ Trace line 23: for #910: i = 911
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [911, 4]
 Trace line 16: Call function str with params [911]
-Trace line 16: res = 911
-Trace line 17: Call function len with params [911]
+Trace line 16: res = '911'
+Trace line 17: Call function len with params ['911']
 Trace line 17: while True: ...
-Trace line 17: res =  911
-Trace line 17: Call function len with params [ 911]
+Trace line 17: res = ' 911'
+Trace line 17: Call function len with params [' 911']
 Trace line 17: while False:
 Trace line 18: return ' 911'
-Trace line 28: line_buf =  877 881 883 887 907 911
+Trace line 28: line_buf = ' 877 881 883 887 907 911'
 Trace line 29: n_printed = 156
 Trace line 23: for #911: i = 912
 Trace line 23: for #912: i = 913
@@ -13597,14 +13597,14 @@ Trace line 23: for #918: i = 919
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [919, 4]
 Trace line 16: Call function str with params [919]
-Trace line 16: res = 919
-Trace line 17: Call function len with params [919]
+Trace line 16: res = '919'
+Trace line 17: Call function len with params ['919']
 Trace line 17: while True: ...
-Trace line 17: res =  919
-Trace line 17: Call function len with params [ 919]
+Trace line 17: res = ' 919'
+Trace line 17: Call function len with params [' 919']
 Trace line 17: while False:
 Trace line 18: return ' 919'
-Trace line 28: line_buf =  877 881 883 887 907 911 919
+Trace line 28: line_buf = ' 877 881 883 887 907 911 919'
 Trace line 29: n_printed = 157
 Trace line 23: for #919: i = 920
 Trace line 23: for #920: i = 921
@@ -13619,14 +13619,14 @@ Trace line 23: for #928: i = 929
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [929, 4]
 Trace line 16: Call function str with params [929]
-Trace line 16: res = 929
-Trace line 17: Call function len with params [929]
+Trace line 16: res = '929'
+Trace line 17: Call function len with params ['929']
 Trace line 17: while True: ...
-Trace line 17: res =  929
-Trace line 17: Call function len with params [ 929]
+Trace line 17: res = ' 929'
+Trace line 17: Call function len with params [' 929']
 Trace line 17: while False:
 Trace line 18: return ' 929'
-Trace line 28: line_buf =  877 881 883 887 907 911 919 929
+Trace line 28: line_buf = ' 877 881 883 887 907 911 919 929'
 Trace line 29: n_printed = 158
 Trace line 23: for #929: i = 930
 Trace line 23: for #930: i = 931
@@ -13639,14 +13639,14 @@ Trace line 23: for #936: i = 937
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [937, 4]
 Trace line 16: Call function str with params [937]
-Trace line 16: res = 937
-Trace line 17: Call function len with params [937]
+Trace line 16: res = '937'
+Trace line 17: Call function len with params ['937']
 Trace line 17: while True: ...
-Trace line 17: res =  937
-Trace line 17: Call function len with params [ 937]
+Trace line 17: res = ' 937'
+Trace line 17: Call function len with params [' 937']
 Trace line 17: while False:
 Trace line 18: return ' 937'
-Trace line 28: line_buf =  877 881 883 887 907 911 919 929 937
+Trace line 28: line_buf = ' 877 881 883 887 907 911 919 929 937'
 Trace line 29: n_printed = 159
 Trace line 23: for #937: i = 938
 Trace line 23: for #938: i = 939
@@ -13655,14 +13655,14 @@ Trace line 23: for #940: i = 941
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [941, 4]
 Trace line 16: Call function str with params [941]
-Trace line 16: res = 941
-Trace line 17: Call function len with params [941]
+Trace line 16: res = '941'
+Trace line 17: Call function len with params ['941']
 Trace line 17: while True: ...
-Trace line 17: res =  941
-Trace line 17: Call function len with params [ 941]
+Trace line 17: res = ' 941'
+Trace line 17: Call function len with params [' 941']
 Trace line 17: while False:
 Trace line 18: return ' 941'
-Trace line 28: line_buf =  877 881 883 887 907 911 919 929 937 941
+Trace line 28: line_buf = ' 877 881 883 887 907 911 919 929 937 941'
 Trace line 29: n_printed = 160
 Trace line 23: for #941: i = 942
 Trace line 23: for #942: i = 943
@@ -13672,19 +13672,19 @@ Trace line 23: for #945: i = 946
 Trace line 23: for #946: i = 947
 Trace line 24: if True alt #1: ...
 Trace line 25: if True alt #1: ...
-Trace line 26: Call function print with params [ 877 881 883 887 907 911 919 929 937 941]
+Trace line 26: Call function print with params [' 877 881 883 887 907 911 919 929 937 941']
 Trace line 26: Expression statement produced None
-Trace line 27: line_buf = 
+Trace line 27: line_buf = ''
 Trace line 28: Call function format with params [947, 4]
 Trace line 16: Call function str with params [947]
-Trace line 16: res = 947
-Trace line 17: Call function len with params [947]
+Trace line 16: res = '947'
+Trace line 17: Call function len with params ['947']
 Trace line 17: while True: ...
-Trace line 17: res =  947
-Trace line 17: Call function len with params [ 947]
+Trace line 17: res = ' 947'
+Trace line 17: Call function len with params [' 947']
 Trace line 17: while False:
 Trace line 18: return ' 947'
-Trace line 28: line_buf =  947
+Trace line 28: line_buf = ' 947'
 Trace line 29: n_printed = 161
 Trace line 23: for #947: i = 948
 Trace line 23: for #948: i = 949
@@ -13695,14 +13695,14 @@ Trace line 23: for #952: i = 953
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [953, 4]
 Trace line 16: Call function str with params [953]
-Trace line 16: res = 953
-Trace line 17: Call function len with params [953]
+Trace line 16: res = '953'
+Trace line 17: Call function len with params ['953']
 Trace line 17: while True: ...
-Trace line 17: res =  953
-Trace line 17: Call function len with params [ 953]
+Trace line 17: res = ' 953'
+Trace line 17: Call function len with params [' 953']
 Trace line 17: while False:
 Trace line 18: return ' 953'
-Trace line 28: line_buf =  947 953
+Trace line 28: line_buf = ' 947 953'
 Trace line 29: n_printed = 162
 Trace line 23: for #953: i = 954
 Trace line 23: for #954: i = 955
@@ -13721,14 +13721,14 @@ Trace line 23: for #966: i = 967
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [967, 4]
 Trace line 16: Call function str with params [967]
-Trace line 16: res = 967
-Trace line 17: Call function len with params [967]
+Trace line 16: res = '967'
+Trace line 17: Call function len with params ['967']
 Trace line 17: while True: ...
-Trace line 17: res =  967
-Trace line 17: Call function len with params [ 967]
+Trace line 17: res = ' 967'
+Trace line 17: Call function len with params [' 967']
 Trace line 17: while False:
 Trace line 18: return ' 967'
-Trace line 28: line_buf =  947 953 967
+Trace line 28: line_buf = ' 947 953 967'
 Trace line 29: n_printed = 163
 Trace line 23: for #967: i = 968
 Trace line 23: for #968: i = 969
@@ -13737,14 +13737,14 @@ Trace line 23: for #970: i = 971
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [971, 4]
 Trace line 16: Call function str with params [971]
-Trace line 16: res = 971
-Trace line 17: Call function len with params [971]
+Trace line 16: res = '971'
+Trace line 17: Call function len with params ['971']
 Trace line 17: while True: ...
-Trace line 17: res =  971
-Trace line 17: Call function len with params [ 971]
+Trace line 17: res = ' 971'
+Trace line 17: Call function len with params [' 971']
 Trace line 17: while False:
 Trace line 18: return ' 971'
-Trace line 28: line_buf =  947 953 967 971
+Trace line 28: line_buf = ' 947 953 967 971'
 Trace line 29: n_printed = 164
 Trace line 23: for #971: i = 972
 Trace line 23: for #972: i = 973
@@ -13755,14 +13755,14 @@ Trace line 23: for #976: i = 977
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [977, 4]
 Trace line 16: Call function str with params [977]
-Trace line 16: res = 977
-Trace line 17: Call function len with params [977]
+Trace line 16: res = '977'
+Trace line 17: Call function len with params ['977']
 Trace line 17: while True: ...
-Trace line 17: res =  977
-Trace line 17: Call function len with params [ 977]
+Trace line 17: res = ' 977'
+Trace line 17: Call function len with params [' 977']
 Trace line 17: while False:
 Trace line 18: return ' 977'
-Trace line 28: line_buf =  947 953 967 971 977
+Trace line 28: line_buf = ' 947 953 967 971 977'
 Trace line 29: n_printed = 165
 Trace line 23: for #977: i = 978
 Trace line 23: for #978: i = 979
@@ -13773,14 +13773,14 @@ Trace line 23: for #982: i = 983
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [983, 4]
 Trace line 16: Call function str with params [983]
-Trace line 16: res = 983
-Trace line 17: Call function len with params [983]
+Trace line 16: res = '983'
+Trace line 17: Call function len with params ['983']
 Trace line 17: while True: ...
-Trace line 17: res =  983
-Trace line 17: Call function len with params [ 983]
+Trace line 17: res = ' 983'
+Trace line 17: Call function len with params [' 983']
 Trace line 17: while False:
 Trace line 18: return ' 983'
-Trace line 28: line_buf =  947 953 967 971 977 983
+Trace line 28: line_buf = ' 947 953 967 971 977 983'
 Trace line 29: n_printed = 166
 Trace line 23: for #983: i = 984
 Trace line 23: for #984: i = 985
@@ -13793,14 +13793,14 @@ Trace line 23: for #990: i = 991
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [991, 4]
 Trace line 16: Call function str with params [991]
-Trace line 16: res = 991
-Trace line 17: Call function len with params [991]
+Trace line 16: res = '991'
+Trace line 17: Call function len with params ['991']
 Trace line 17: while True: ...
-Trace line 17: res =  991
-Trace line 17: Call function len with params [ 991]
+Trace line 17: res = ' 991'
+Trace line 17: Call function len with params [' 991']
 Trace line 17: while False:
 Trace line 18: return ' 991'
-Trace line 28: line_buf =  947 953 967 971 977 983 991
+Trace line 28: line_buf = ' 947 953 967 971 977 983 991'
 Trace line 29: n_printed = 167
 Trace line 23: for #991: i = 992
 Trace line 23: for #992: i = 993
@@ -13811,18 +13811,18 @@ Trace line 23: for #996: i = 997
 Trace line 24: if True alt #1: ...
 Trace line 28: Call function format with params [997, 4]
 Trace line 16: Call function str with params [997]
-Trace line 16: res = 997
-Trace line 17: Call function len with params [997]
+Trace line 16: res = '997'
+Trace line 17: Call function len with params ['997']
 Trace line 17: while True: ...
-Trace line 17: res =  997
-Trace line 17: Call function len with params [ 997]
+Trace line 17: res = ' 997'
+Trace line 17: Call function len with params [' 997']
 Trace line 17: while False:
 Trace line 18: return ' 997'
-Trace line 28: line_buf =  947 953 967 971 977 983 991 997
+Trace line 28: line_buf = ' 947 953 967 971 977 983 991 997'
 Trace line 29: n_printed = 168
 Trace line 23: for #997: i = 998
 Trace line 23: for #998: i = 999
 Trace line 23: for #999: i = 1000
-Trace line 30: Call function print with params [ 947 953 967 971 977 983 991 997]
+Trace line 30: Call function print with params [' 947 953 967 971 977 983 991 997']
 Trace line 30: Expression statement produced None
 Trace line 33: Expression statement produced None

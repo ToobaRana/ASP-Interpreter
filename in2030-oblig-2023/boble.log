@@ -99,5 +99,5 @@ Trace line 8: for #6: i = 6
 Trace line 13: if True alt #1: ...
 Trace line 13: return 0
 Trace line 17: Expression statement produced 0
-Trace line 18: Call function print with params [Resultatet etter, 9, ombyttinger er, [-3, 0, 1, 3, 3, 12, 17]]
+Trace line 18: Call function print with params ['Resultatet etter', 9, 'ombyttinger er', [-3, 0, 1, 3, 3, 12, 17]]
 Trace line 18: Expression statement produced None

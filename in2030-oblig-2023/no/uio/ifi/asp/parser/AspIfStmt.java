@@ -79,15 +79,12 @@ public class AspIfStmt extends AspCompoundStmt {
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         RuntimeValue v = null;
-        System.out.println("Inne i if :)))");
         for (int i = 0; i < exprList.size(); i++) {
             v = exprList.get(i).eval(curScope);
 
             // If the "if" is "True"
             if (v.getBoolValue("if", this)== true) {
-                System.out.println("Inne i if nr. 2");
                 trace("if True alt #" + (i + 1) + ": ...");
-
                 v = suiteList.get(i).eval(curScope);
                 return v; // Needs to be changed
             }
