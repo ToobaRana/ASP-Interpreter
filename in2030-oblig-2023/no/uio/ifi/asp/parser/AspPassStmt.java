@@ -31,5 +31,4 @@ public class AspPassStmt extends AspSmallStmt {
         trace("pass");
         return null;
     }
-
 }

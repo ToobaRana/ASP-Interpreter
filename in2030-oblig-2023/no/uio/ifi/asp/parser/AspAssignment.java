@@ -52,7 +52,6 @@ public class AspAssignment extends AspSmallStmt {
         RuntimeValue v = expr.eval(curScope);
 
         if (subscriptions.isEmpty()) {
-            //v = expr.eval(curScope);
             curScope.assign(name.name, v);
             trace(name.name + " = " + v.toString());
         }
@@ -60,7 +59,6 @@ public class AspAssignment extends AspSmallStmt {
         // if subscriptions contains something
         else {
             RuntimeValue a = name.eval(curScope);
-            //v = expr.eval(curScope);
 
             // loop through subscriptions without last element
             for (int i = 0; i < subscriptions.size() - 1; i++) {

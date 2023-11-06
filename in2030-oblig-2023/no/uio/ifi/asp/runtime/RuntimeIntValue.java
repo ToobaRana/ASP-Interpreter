@@ -315,5 +315,4 @@ public class RuntimeIntValue extends RuntimeValue {
     public String getStringValue(String what, AspSyntax where) {
         return "" + intValue;
     }
-
 }

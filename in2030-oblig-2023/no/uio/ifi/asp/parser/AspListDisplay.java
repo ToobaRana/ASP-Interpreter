@@ -28,7 +28,6 @@ public class AspListDisplay extends AspAtom {
                 if (s.curToken().kind != commaToken) {
                     break;
                 }
-
                 skip(s, commaToken);
             }
         }

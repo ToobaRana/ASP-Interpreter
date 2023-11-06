@@ -83,10 +83,10 @@ public class AspIfStmt extends AspCompoundStmt {
             v = exprList.get(i).eval(curScope);
 
             // If the "if" is "True"
-            if (v.getBoolValue("if", this)== true) {
+            if (v.getBoolValue("if", this) == true) {
                 trace("if True alt #" + (i + 1) + ": ...");
                 v = suiteList.get(i).eval(curScope);
-                return v; // Needs to be changed
+                return v;
             }
         }
 
@@ -96,7 +96,6 @@ public class AspIfStmt extends AspCompoundStmt {
             v = suite.eval(curScope);
             return v;
         }
-
         return null;
     }
 }

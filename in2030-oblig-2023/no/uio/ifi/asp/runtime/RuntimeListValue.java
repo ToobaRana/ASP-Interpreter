@@ -87,17 +87,12 @@ public class RuntimeListValue extends RuntimeValue {
     @Override
     public void evalAssignElem(RuntimeValue inx, RuntimeValue val, AspSyntax where) {
         if (inx instanceof RuntimeIntValue) {
-            listValue.set((int)inx.getIntValue("assign element", where), val);
+            listValue.set((int) inx.getIntValue("assign element", where), val);
         }
     }
 
     @Override
     public boolean getBoolValue(String what, AspSyntax where) {
         return (listValue.size() != 0);
-    }
-
-    @Override
-    public String getStringValue(String what, AspSyntax where) {
-        return what;
     }
 }

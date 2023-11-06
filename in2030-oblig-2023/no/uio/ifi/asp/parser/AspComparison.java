@@ -47,7 +47,6 @@ public class AspComparison extends AspSyntax {
     @Override
     RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         RuntimeValue v = terms.get(0).eval(curScope);
-        // System.out.println("v at start eval: " + v);
 
         for (int i = 1; i < terms.size(); ++i) {
             TokenKind k = compOprs.get(i - 1).coVal;
@@ -58,9 +57,7 @@ public class AspComparison extends AspSyntax {
 
             switch (k) {
                 case lessToken:
-                    // System.out.println("v before eval: " + v);
                     v = v.evalLess(terms.get(i).eval(curScope), this);
-                    // System.out.println("v after eval: " + v);
                     break;
 
                 case greaterToken:

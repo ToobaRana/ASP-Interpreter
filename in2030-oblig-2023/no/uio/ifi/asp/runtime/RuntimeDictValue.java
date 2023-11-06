@@ -75,7 +75,7 @@ public class RuntimeDictValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
-        if (dictValue.containsKey(v.getStringValue("subscription", where)) ) {
+        if (dictValue.containsKey(v.getStringValue("subscription", where))) {
             return dictValue.get(v.getStringValue("subscription", where));
         }
         return null; // Required by the compiler!

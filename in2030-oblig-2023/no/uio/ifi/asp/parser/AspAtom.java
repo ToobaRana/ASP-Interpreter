@@ -2,10 +2,6 @@
 
 package no.uio.ifi.asp.parser;
 
-import no.uio.ifi.asp.runtime.RuntimeBoolValue;
-import no.uio.ifi.asp.runtime.RuntimeReturnValue;
-import no.uio.ifi.asp.runtime.RuntimeScope;
-import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.*;
 
 abstract class AspAtom extends AspSyntax {
@@ -69,8 +65,4 @@ abstract class AspAtom extends AspSyntax {
 
         return aa;
     }
-
-   
-
-    
 }

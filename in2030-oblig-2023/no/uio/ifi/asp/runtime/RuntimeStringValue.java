@@ -175,5 +175,4 @@ public class RuntimeStringValue extends RuntimeValue {
     public String getStringValue(String what, AspSyntax where) {
         return strValue;
     }
-
 }

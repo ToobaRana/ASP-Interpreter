@@ -30,8 +30,7 @@ public class AspName extends AspAtom {
     }
 
     @Override
-    RuntimeValue eval(RuntimeScope curScope)
-            throws RuntimeReturnValue {
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return curScope.find(name, this);
     }
 }
