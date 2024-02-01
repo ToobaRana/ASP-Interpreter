@@ -4,10 +4,10 @@ Hensikten med prosjektet var å utvikle en interpret for språket ASP, en forenk
 
 Prosjektet besto av fire hoveddeler:
 
-1. **Skanneren
-2. **Parseren
-3. **Interpretering av uttrykk
-4. **Full interpretering
+1. **Skanneren**
+2. **Parseren**
+3. **Interpretering av uttrykk**
+4. **Full interpretering**
 
 
 ## Kompilering og kjøring av interpreten
@@ -17,7 +17,7 @@ For å kunne kompilere og kjøre programmet, er det nødvendig å installere Ant
 java -jar filnavn.asp
 ```
 
-For ytterligere detaljer om prosjektet og emne, sjekk [kompendium](https://www.uio.no/studier/emner/matnat/ifi/IN2030/h23/dokumenter/kompendium.pdf) og [emnesiden](https://www.uio.no/studier/emner/matnat/ifi/IN2030/#course_content)
+For ytterligere detaljer om prosjektet og emne, sjekk [kompendium](https://www.uio.no/studier/emner/matnat/ifi/IN2030/h23/dokumenter/kompendium.pdf) og [emnesiden](https://www.uio.no/studier/emner/matnat/ifi/IN2030/#course_content).
 
 ---
 
